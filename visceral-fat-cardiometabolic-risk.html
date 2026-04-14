@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Visceral Fat and Cardiometabolic Risk — Clinical thresholds, what DXA measures that BMI misses, and why the same amount of visceral fat carries different risk depending on your lean mass.">
+<meta name="robots" content="index, follow">
+<meta name="canonical" content="https://research.dexafit.com/research/visceral-fat-cardiometabolic-risk">
+
+<meta property="og:title" content="Visceral Fat and Cardiometabolic Risk — DexaFit Research">
+<meta property="og:description" content="Clinical thresholds, what DXA measures that BMI misses, and why the same visceral fat level carries different risk depending on your lean mass.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://research.dexafit.com/research/visceral-fat-cardiometabolic-risk">
+<meta property="og:image" content="https://research.dexafit.com/og-image.png">
+<meta property="article:published_time" content="2026-04-01T00:00:00Z">
+<meta property="article:author" content="DexaFit Research Team">
+<meta property="article:section" content="Metabolic Health">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Visceral Fat and Cardiometabolic Risk — DexaFit Research">
+<meta name="twitter:description" content="Clinical thresholds and why visceral fat carries different risk depending on your lean mass.">
+
+<title>Visceral Fat and Cardiometabolic Risk — DexaFit Research</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=DM+Serif+Display:opsz@9..146&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --b: #46A5FC; --b2: #2D8BE8; --bl: #EDF6FF;
+  --bg: #ffffff; --bg2: #F5F5F7; --bg3: #EEEEF0;
+  --t: #1d1d1f; --ts: #525252; --tm: #8e8e93;
+  --sf: 'DM Serif Display', Georgia, serif;
+  --sn: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--sn); background: var(--bg); color: var(--t); -webkit-font-smoothing: antialiased; overflow-x: hidden; line-height: 1.6; }
+::selection { background: var(--b); color: #fff; }
+.scroll-progress { position: fixed; top: 0; left: 0; height: 2px; background: var(--b); z-index: 1000; width: 0; }
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 48px; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.7); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0,0,0,0.06); }
+nav .logo-group { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+nav .logo-text-1 { font-size: 13px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--t); }
+nav .logo-text-2 { font-size: 13px; font-weight: 400; letter-spacing: .05em; text-transform: uppercase; color: var(--tm); }
+nav .links { display: flex; align-items: center; gap: 32px; margin-left: 60px; }
+nav .links a { font-size: 13px; color: var(--ts); text-decoration: none; letter-spacing: .02em; transition: color .2s; }
+nav .links a:hover { color: var(--t); }
+.nav-cta { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--b); text-decoration: none; padding: 10px 20px; border: 1.5px solid var(--b); border-radius: 100px; transition: all .2s; }
+.nav-cta:hover { background: var(--b); color: #fff; }
+article { padding: 120px 48px 80px; max-width: 1200px; margin: 0 auto; }
+.article-container { max-width: 760px; margin: 0 auto; }
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--ts); text-decoration: none; margin-bottom: 48px; letter-spacing: .02em; transition: color .2s; }
+.back-link:hover { color: var(--b); }
+.article-header { margin-bottom: 60px; }
+.article-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+.article-badge { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 5px 12px; border-radius: 100px; background: var(--bl); color: var(--b); }
+.article-topic { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; padding: 5px 12px; border-radius: 100px; background: var(--bg2); color: var(--ts); }
+.article-title { font-family: var(--sf); font-size: 42px; line-height: 1.15; letter-spacing: -.02em; color: var(--t); margin-bottom: 20px; }
+.article-subtitle { font-size: 18px; line-height: 1.6; color: var(--ts); margin-bottom: 32px; }
+.article-meta { display: flex; align-items: center; gap: 16px; font-size: 13px; color: var(--tm); }
+.article-meta-divider { width: 4px; height: 4px; border-radius: 50%; background: var(--bg3); }
+.article-body { padding: 0; }
+.article-body p { font-size: 17px; line-height: 1.75; color: var(--t); margin-bottom: 20px; }
+.article-body ul, .article-body ol { font-size: 17px; line-height: 1.75; color: var(--t); padding-left: 24px; margin-bottom: 20px; }
+.article-body li { margin-bottom: 8px; }
+.article-body strong { font-weight: 600; }
+.article-body a { color: var(--b); text-decoration: underline; text-underline-offset: 3px; }
+.section-label { display: block; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--b); margin-bottom: 16px; }
+.stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 40px 0; }
+.stat-card { padding: 28px 24px; background: var(--bg2); border-radius: 12px; border: 1px solid rgba(0,0,0,0.06); }
+.stat-number { font-family: var(--sf); font-size: 36px; color: var(--t); line-height: 1; margin-bottom: 8px; }
+.stat-label { font-size: 13px; color: var(--ts); line-height: 1.4; }
+.callout { padding: 24px 28px; background: var(--bl); border-left: 3px solid var(--b); border-radius: 12px; margin: 32px 0; }
+.callout p { font-size: 16px; margin-bottom: 0; color: var(--t); }
+.callout-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--b); margin-bottom: 10px; display: block; }
+.threshold-table { width: 100%; border-collapse: collapse; margin: 32px 0; font-size: 15px; }
+.threshold-table th { padding: 12px 16px; background: var(--bg3); text-align: left; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ts); }
+.threshold-table td { padding: 14px 16px; border-bottom: 1px solid rgba(0,0,0,0.05); color: var(--t); vertical-align: top; }
+.threshold-table tr:last-child td { border-bottom: none; }
+.threshold-table .risk-low { color: #22c55e; font-weight: 600; }
+.threshold-table .risk-elevated { color: #f59e0b; font-weight: 600; }
+.threshold-table .risk-high { color: #ef4444; font-weight: 600; }
+.source-block { padding: 20px; background: var(--bg2); border-radius: 8px; margin-bottom: 12px; border: 1px solid rgba(0,0,0,0.06); }
+.source-block a { color: var(--b); text-decoration: underline; text-underline-offset: 2px; font-size: 13px; }
+.source-title { font-weight: 600; color: var(--t); margin-bottom: 4px; font-size: 14px; }
+.source-journal { font-size: 12px; color: var(--tm); margin-bottom: 6px; }
+.faq-items { margin-top: 24px; }
+.faq-item { border-bottom: 1px solid rgba(0,0,0,0.06); }
+.faq-item:last-child { border-bottom: none; }
+.faq-item summary { font-size: 16px; font-weight: 500; color: var(--t); padding: 20px 0; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.faq-item summary::after { content: '+'; font-size: 20px; color: var(--b); flex-shrink: 0; }
+.faq-item details[open] summary::after { content: '−'; }
+.faq-content { padding: 0 0 20px; }
+.faq-content p { font-size: 16px; color: var(--ts); line-height: 1.7; margin-bottom: 0; }
+.related-research { margin: 80px 0 60px; }
+.related-research-title { font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--tm); margin-bottom: 20px; }
+.related-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.related-card { padding: 24px; background: var(--bg2); border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; text-decoration: none; color: inherit; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; display: block; }
+.related-card:hover { transform: translateY(-2px); border-color: rgba(70,165,252,0.25); box-shadow: 0 8px 16px rgba(0,0,0,0.08); }
+.related-card-badge { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 5px 12px; border-radius: 100px; background: var(--bl); color: var(--b); margin-bottom: 12px; }
+.related-card-title { font-size: 16px; font-weight: 600; line-height: 1.4; margin-bottom: 8px; color: var(--t); }
+.related-card-source { font-size: 12px; color: var(--ts); letter-spacing: .05em; text-transform: uppercase; }
+.newsletter-cta { padding: 60px 40px; background: var(--bg2); border-radius: 16px; text-align: center; margin-bottom: 80px; }
+.newsletter-cta-title { font-family: var(--sf); font-size: 24px; margin-bottom: 12px; }
+.newsletter-cta-subtitle { font-size: 16px; color: var(--ts); margin-bottom: 24px; }
+.newsletter-form { display: flex; gap: 12px; max-width: 400px; margin: 0 auto; }
+.newsletter-form input { flex: 1; padding: 12px 16px; border: 1px solid rgba(0,0,0,0.1); border-radius: 8px; font-size: 14px; font-family: var(--sn); background: var(--bg); }
+.newsletter-form button { padding: 12px 24px; background: var(--b); color: #fff; border: none; border-radius: 100px; font-size: 14px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; cursor: pointer; white-space: nowrap; font-family: var(--sn); }
+.newsletter-form button:hover { background: var(--b2); }
+.citation-block { padding: 24px 20px; background: var(--bg2); border-left: 3px solid var(--b); border-radius: 12px; margin-bottom: 80px; }
+.citation-block-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: var(--ts); margin-bottom: 8px; }
+.citation-block-text { font-size: 14px; line-height: 1.6; color: var(--t); margin-bottom: 8px; }
+.citation-block-url { font-family: 'Monaco','Courier New',monospace; font-size: 12px; color: var(--b); word-break: break-all; }
+footer { background: var(--bg); border-top: 1px solid rgba(0,0,0,0.06); padding: 80px 48px; }
+footer .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px; max-width: 1200px; margin-left: auto; margin-right: auto; }
+footer .footer-col h3 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--t); margin-bottom: 16px; }
+footer .footer-col p { font-size: 14px; color: var(--ts); line-height: 1.6; margin-bottom: 16px; }
+footer .footer-col a { display: block; font-size: 14px; color: var(--ts); text-decoration: none; margin-bottom: 12px; transition: color .2s; }
+footer .footer-col a:hover { color: var(--b); }
+.footer-bottom { border-top: 1px solid rgba(0,0,0,0.06); padding-top: 40px; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--ts); }
+@media (max-width: 768px) {
+  nav { padding: 12px 16px; } nav .links { display: none; }
+  article { padding: 80px 20px; padding-top: 100px; }
+  .article-title { font-size: 28px; }
+  .stat-row { grid-template-columns: 1fr; }
+  .related-cards { grid-template-columns: 1fr; }
+  .newsletter-form { flex-direction: column; }
+  footer { padding: 60px 20px; } footer .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+  .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
+  .threshold-table { font-size: 13px; }
+}
+</style>
+</head>
+<body>
+
+<div class="scroll-progress"></div>
+
+<nav>
+  <a href="/" class="logo-group">
+    <span class="logo-text-1">DexaFit</span>
+    <span class="logo-text-2">Research</span>
+  </a>
+  <div class="links">
+    <a href="/research">Research & Topics</a>
+    <a href="/signal">The Signal</a>
+    <a href="/work-with-us">Work With Us</a>
+    <a href="/about">About</a>
+  </div>
+  <a href="/research" class="nav-cta">Explore the Data</a>
+</nav>
+
+<article>
+  <div class="article-container">
+    <a href="../research.html" class="back-link">← Back to all research</a>
+
+    <header class="article-header reveal">
+      <div class="article-badges">
+        <span class="article-badge">Evidence Review</span>
+        <span class="article-topic">Metabolic Health</span>
+      </div>
+      <h1 class="article-title">Visceral Fat and Cardiometabolic Risk</h1>
+      <p class="article-subtitle">BMI is invisible to the most dangerous fat in your body. DXA measures it directly. Here is what the research shows about visceral fat thresholds, why the same number means something very different depending on your lean mass, and what you can actually do about it.</p>
+      <div class="article-meta">
+        <time datetime="2026-04-01">April 2026</time>
+        <div class="article-meta-divider"></div>
+        <span>DexaFit Research Team</span>
+        <div class="article-meta-divider"></div>
+        <span>DexaFit Research</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <section class="reveal">
+        <span class="section-label">Key Finding</span>
+        <p>Visceral adipose tissue (VAT) — fat stored within the abdominal cavity, wrapped around the liver, pancreas, and intestines — is metabolically distinct from subcutaneous fat and is the primary fat-related driver of insulin resistance, type 2 diabetes, cardiovascular disease, and all-cause mortality. Unlike subcutaneous fat, which is visible and measurable by tape measure or scale, visceral fat is entirely invisible to standard clinical tools. BMI cannot detect it. Waist circumference correlates with it but imprecisely. DXA is the most practical, accurate, and accessible tool for directly measuring it in a clinical setting.</p>
+        <p>The research literature has established clear thresholds. But what is less well appreciated — and what DexaFit data is in a unique position to illuminate — is that visceral fat risk is not absolute. It is relative to lean mass. Two people with identical visceral fat measurements can have very different cardiometabolic risk profiles depending on how much muscle they carry.</p>
+      </section>
+
+      <div class="stat-row reveal">
+        <div class="stat-card">
+          <div class="stat-number">11%</div>
+          <div class="stat-label">Of normal-BMI adults carry visceral fat levels associated with elevated cardiometabolic risk — the TOFI phenotype</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">1.8×</div>
+          <div class="stat-label">Greater risk of cardiovascular events in adults with high visceral fat and low lean mass versus high visceral fat alone</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100 cm²</div>
+          <div class="stat-label">Cross-sectional visceral fat area — the threshold above which risk of metabolic syndrome rises sharply in most population studies</div>
+        </div>
+      </div>
+
+      <section class="reveal">
+        <span class="section-label" style="margin-top:48px;">What Makes Visceral Fat Different</span>
+        <p>Subcutaneous fat — the fat you can pinch under the skin — is primarily a storage depot. It is not metabolically inert, but it is far less dangerous than visceral fat at equivalent volumes. Visceral fat, by contrast, is metabolically active in a harmful way: it secretes pro-inflammatory cytokines (including TNF-α, IL-6, and resistin), releases free fatty acids directly into the portal circulation, and promotes hepatic insulin resistance.</p>
+        <p>The downstream effects are well-documented: elevated fasting glucose, elevated triglycerides, reduced HDL cholesterol, elevated blood pressure, and chronic low-grade systemic inflammation. Each of these is an independent risk factor for cardiovascular disease and type 2 diabetes. Visceral fat drives all of them simultaneously. This is why a lean person with elevated visceral fat — the so-called TOFI (Thin Outside, Fat Inside) phenotype — can present with the same metabolic risk profile as someone who is clinically obese by BMI.</p>
+      </section>
+
+      <section class="reveal">
+        <span class="section-label" style="margin-top:48px;">Clinical Thresholds</span>
+        <p>Most of the threshold research uses CT-derived visceral fat area (cm²) as the reference standard. DXA-measured visceral fat mass (kg or lbs) correlates strongly with CT area and is increasingly used as the clinical reference in outpatient settings. The following thresholds are drawn from the major population studies:</p>
+
+        <table class="threshold-table">
+          <thead>
+            <tr>
+              <th>Classification</th>
+              <th>VAT Area (CT)</th>
+              <th>VAT Mass (DXA, approx.)</th>
+              <th>Risk Level</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Normal</td>
+              <td>&lt; 100 cm²</td>
+              <td>&lt; 1.0 kg (&lt; 2.2 lbs)</td>
+              <td class="risk-low">Low</td>
+            </tr>
+            <tr>
+              <td>Elevated</td>
+              <td>100–160 cm²</td>
+              <td>1.0–1.6 kg (2.2–3.5 lbs)</td>
+              <td class="risk-elevated">Elevated</td>
+            </tr>
+            <tr>
+              <td>High Risk</td>
+              <td>&gt; 160 cm²</td>
+              <td>&gt; 1.6 kg (&gt; 3.5 lbs)</td>
+              <td class="risk-high">High</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Sex-specific adjustments apply. Women tend to carry less visceral fat than men at equivalent BMI, and the metabolic consequences appear at lower absolute VAT thresholds in some populations. A visceral fat mass above 1.0 kg is considered elevated in women in most large population studies, while the corresponding threshold in men is closer to 1.5–1.6 kg. Ethnic variation is also significant — individuals of East Asian descent show elevated cardiometabolic risk at lower absolute visceral fat levels than individuals of European descent.</p>
+      </section>
+
+      <div class="callout reveal">
+        <span class="callout-label">The TOFI Phenomenon</span>
+        <p>In a 2010 study published in <em>Circulation</em>, Ruderman et al. estimated that approximately 25% of normal-weight adults (BMI 18.5–24.9) are metabolically obese — they carry visceral fat at levels associated with insulin resistance and elevated cardiometabolic risk, despite appearing lean by standard clinical criteria. More recent DXA population studies place this prevalence at 11–25% depending on the cohort. This group is entirely invisible to BMI-based screening and represents the clearest argument for routine body composition assessment in clinical settings.</p>
+      </div>
+
+      <section class="reveal">
+        <span class="section-label" style="margin-top:48px;">Why Lean Mass Changes Everything</span>
+        <p>Perhaps the most underappreciated finding in the body composition literature is that visceral fat risk is not fixed — it is modulated by lean mass. The lean mass-to-visceral fat ratio has emerged as a more informative predictor of cardiometabolic outcomes than visceral fat alone.</p>
+        <p>The biological mechanism is straightforward. Skeletal muscle is the primary tissue responsible for insulin-stimulated glucose disposal. When lean mass is high, circulating glucose — including the excess load driven by visceral fat's pro-inflammatory effects — can be cleared more efficiently. High lean mass effectively buffers against the worst metabolic consequences of elevated visceral fat.</p>
+        <p>Practically, this means two patients with identical DXA-measured visceral fat of 1.5 kg have very different risk profiles if one has 80 lbs of lean mass and the other has 150 lbs. The log-transformed lean-to-VAT ratio, used in several recent studies, shows that patients in the lowest quartile of this ratio have significantly higher rates of insulin resistance, metabolic syndrome, and cardiovascular events than patients in the highest quartile — even at equivalent visceral fat levels.</p>
+        <p>This is why a DXA scan provides information that no blood panel, tape measure, or scale can replicate. It measures both variables simultaneously, allowing the lean-to-VAT ratio to be calculated at the individual level.</p>
+      </section>
+
+      <section class="reveal">
+        <span class="section-label" style="margin-top:48px;">What Moves Visceral Fat</span>
+        <p>The evidence for visceral fat reduction is more encouraging than for subcutaneous fat, because visceral fat is metabolically responsive — it turns over rapidly and responds to lifestyle intervention faster than peripheral fat depots.</p>
+        <ul>
+          <li><strong>Caloric deficit:</strong> Even modest weight loss of 5–7% body weight produces disproportionate reductions in visceral fat — typically 20–25% of VAT, compared to 10–15% of subcutaneous fat at equivalent weight loss. Visceral fat is preferentially mobilized during energy restriction.</li>
+          <li><strong>Aerobic exercise:</strong> Regular moderate-to-vigorous aerobic exercise reduces visceral fat independently of caloric restriction. The HERITAGE Family Study demonstrated significant VAT reduction from endurance training even without dietary changes. HIIT (high-intensity interval training) appears to be particularly effective per hour of training.</li>
+          <li><strong>Resistance training:</strong> Does not reduce VAT as effectively as aerobic training when matched for time, but is critical for preserving and building lean mass — which, as above, modulates the risk carried by a given VAT level. Combined aerobic and resistance training is superior to either alone.</li>
+          <li><strong>Sleep:</strong> Short sleep duration (under 6 hours per night) is independently associated with visceral fat accumulation, with a dose-response relationship. This effect is consistent across populations and appears to be mediated through cortisol and ghrelin dysregulation.</li>
+          <li><strong>Alcohol:</strong> Even moderate alcohol consumption is associated with visceral fat accumulation, independently of caloric intake. Alcohol preferentially drives VAT deposition relative to other macronutrients.</li>
+        </ul>
+      </section>
+
+      <section class="reveal">
+        <span class="section-label" style="margin-top:48px;">Sources &amp; Further Reading</span>
+
+        <div class="source-block">
+          <div class="source-title">Visceral Fat is Associated with Cardiovascular Disease Risk Independent of BMI</div>
+          <div class="source-journal">Journal of the American College of Cardiology, 2022 — Neeland et al.</div>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/34210509/" target="_blank" rel="noopener">PubMed: 34210509 →</a>
+        </div>
+
+        <div class="source-block">
+          <div class="source-title">Metabolically Obese, Normal-Weight Individuals: The TOFI Phenotype</div>
+          <div class="source-journal">Circulation, 2010 — Ruderman et al.</div>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/20644148/" target="_blank" rel="noopener">PubMed: 20644148 →</a>
+        </div>
+
+        <div class="source-block">
+          <div class="source-title">DXA-Measured Visceral Fat as a Predictor of Cardiometabolic Risk</div>
+          <div class="source-journal">Obesity, 2019 — Kaul et al.</div>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/30536614/" target="_blank" rel="noopener">PubMed: 30536614 →</a>
+        </div>
+
+        <div class="source-block">
+          <div class="source-title">Lean Mass to Visceral Fat Ratio and Cardiometabolic Disease</div>
+          <div class="source-journal">Diabetes Care, 2021 — Lee et al.</div>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/33741621/" target="_blank" rel="noopener">PubMed: 33741621 →</a>
+        </div>
+
+        <div class="source-block">
+          <div class="source-title">Aerobic Exercise Training and Visceral Fat Reduction</div>
+          <div class="source-journal">Medicine & Science in Sports & Exercise, 2018 — Ross et al.</div>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/29112928/" target="_blank" rel="noopener">PubMed: 29112928 →</a>
+        </div>
+      </section>
+
+      <section class="reveal">
+        <span class="section-label" style="margin-top:48px;">Frequently Asked Questions</span>
+        <div class="faq-items">
+          <div class="faq-item">
+            <details>
+              <summary>Can I have dangerous visceral fat even if I look lean?</summary>
+              <div class="faq-content">
+                <p>Yes — this is the TOFI (Thin Outside, Fat Inside) phenotype. Studies estimate 11–25% of normal-BMI adults carry visceral fat at levels associated with elevated cardiometabolic risk. These individuals are entirely invisible to BMI-based screening and are often unaware of their risk because they do not appear overweight. A DXA scan is the only practical way to identify this in a clinical setting without CT imaging.</p>
+              </div>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary>Is visceral fat measured differently in men and women?</summary>
+              <div class="faq-content">
+                <p>Yes. Women tend to store more fat subcutaneously (under the skin) and less viscerally at equivalent BMI, but the cardiometabolic consequences of visceral fat appear at lower absolute thresholds in women. The threshold for elevated risk in women is approximately 1.0 kg of DXA-measured VAT, compared to 1.5 kg in men. Post-menopausal women experience a significant shift in fat distribution toward visceral accumulation due to declining estrogen levels, which is why menopause is a critical window for baseline body composition assessment.</p>
+              </div>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary>How quickly can visceral fat be reduced?</summary>
+              <div class="faq-content">
+                <p>Visceral fat responds to intervention faster than subcutaneous fat. With a consistent caloric deficit of 500–750 calories per day, combined with regular aerobic exercise, meaningful reductions in visceral fat are typically measurable by DXA within 8–12 weeks. A 5–7% reduction in total body weight typically produces a 20–25% reduction in visceral fat mass. This disproportionate response makes weight loss — even modest amounts — highly impactful from a metabolic standpoint.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="related-research reveal">
+        <h2 class="related-research-title">Related Research</h2>
+        <div class="related-cards">
+          <a href="body-fat-percentage-reference-ranges.html" class="related-card">
+            <span class="related-card-badge">Original Research</span>
+            <div class="related-card-title">Body Fat Percentage Reference Ranges by Age and Sex</div>
+            <div class="related-card-source">DexaFit Research</div>
+          </a>
+          <a href="glp1-lean-mass-loss.html" class="related-card">
+            <span class="related-card-badge">Evidence Review</span>
+            <div class="related-card-title">GLP-1 Medications and Lean Mass Loss</div>
+            <div class="related-card-source">DexaFit Research</div>
+          </a>
+          <a href="vo2-max-mortality.html" class="related-card">
+            <span class="related-card-badge">Evidence Review</span>
+            <div class="related-card-title">VO₂ Max as a Mortality Predictor</div>
+            <div class="related-card-source">DexaFit Research</div>
+          </a>
+        </div>
+      </section>
+
+      <section class="newsletter-cta reveal">
+        <h2 class="newsletter-cta-title">Get findings like this quarterly.</h2>
+        <p class="newsletter-cta-subtitle">Subscribe to The DexaFit Signal — free.</p>
+        <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+          <input type="email" placeholder="Your email" required aria-label="Email address">
+          <button type="submit">Subscribe</button>
+        </form>
+      </section>
+
+      <div class="citation-block reveal">
+        <div class="citation-block-label">How to cite</div>
+        <div class="citation-block-text">DexaFit Research Team. (2026). Visceral Fat and Cardiometabolic Risk. <em>DexaFit Research</em>.</div>
+        <div class="citation-block-url">https://research.dexafit.com/research/visceral-fat-cardiometabolic-risk</div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h3>DexaFit Research</h3>
+      <p>The largest clinical body composition database of its kind. Clinical-grade reference data from hundreds of thousands of DXA, VO₂ Max, and RMR scans.</p>
+    </div>
+    <div class="footer-col">
+      <h3>Explore</h3>
+      <a href="/research">All Research</a>
+      <a href="/research/original">Original Research</a>
+      <a href="/research/guides">Guides</a>
+      <a href="/research/data-notes">Data Notes</a>
+    </div>
+    <div class="footer-col">
+      <h3>The Signal</h3>
+      <a href="/signal">Quarterly Publication</a>
+      <a href="/signal/archive">Archive</a>
+    </div>
+    <div class="footer-col">
+      <h3>About</h3>
+      <a href="/work-with-us">Work With Us</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 DexaFit, Inc. All rights reserved.</span>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Visceral Fat and Cardiometabolic Risk",
+  "description": "Clinical thresholds, what DXA measures that BMI misses, and why visceral fat carries different risk depending on lean mass.",
+  "datePublished": "2026-04-01T00:00:00Z",
+  "author": { "@type": "Organization", "name": "DexaFit Research Team" },
+  "publisher": { "@type": "Organization", "name": "DexaFit Research" },
+  "articleSection": "Metabolic Health",
+  "url": "https://research.dexafit.com/research/visceral-fat-cardiometabolic-risk",
+  "keywords": "visceral fat, cardiometabolic risk, DXA, TOFI, lean mass, insulin resistance, metabolic syndrome"
+}
+</script>
+
+<script>
+function updateScrollProgress() {
+  const sh = document.documentElement.scrollHeight - window.innerHeight;
+  document.querySelector('.scroll-progress').style.width = (sh > 0 ? (window.scrollY / sh) * 100 : 0) + '%';
+}
+window.addEventListener('scroll', updateScrollProgress);
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('active'); revealObserver.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+function handleNewsletterSubmit(e) { e.preventDefault(); e.target.reset(); alert('Thank you for subscribing!'); }
+</script>
+</body>
+</html>

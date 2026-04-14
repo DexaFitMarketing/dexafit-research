@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Body Fat Percentage Reference Ranges by Age and Sex — The first large-scale, DXA-derived body fat percentage reference ranges by age and sex, drawn from the largest combined dataset of clinical-grade body composition scans across four continents.">
+<meta name="robots" content="index, follow">
+<meta name="canonical" content="https://research.dexafit.com/research/body-fat-percentage-reference-ranges">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Body Fat Percentage Reference Ranges by Age and Sex — DexaFit Research">
+<meta property="og:description" content="The first large-scale, DXA-derived body fat percentage reference ranges by age and sex, drawn from the largest combined dataset of clinical-grade body composition scans across four continents.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://research.dexafit.com/research/body-fat-percentage-reference-ranges">
+<meta property="og:image" content="https://research.dexafit.com/og-image.png">
+
+<!-- Article-specific Open Graph -->
+<meta property="article:published_time" content="2026-03-01T00:00:00Z">
+<meta property="article:author" content="DexaFit Research Team">
+<meta property="article:section" content="Body Composition">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Body Fat Percentage Reference Ranges by Age and Sex — DexaFit Research">
+<meta name="twitter:description" content="The first large-scale, DXA-derived body fat percentage reference ranges by age and sex.">
+
+<title>Body Fat Percentage Reference Ranges by Age and Sex — DexaFit Research</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=DM+Serif+Display:opsz@9..146&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --b: #46A5FC;
+  --b2: #2D8BE8;
+  --bl: #EDF6FF;
+  --bg: #ffffff;
+  --bg2: #F5F5F7;
+  --bg3: #EEEEF0;
+  --t: #1d1d1f;
+  --ts: #525252;
+  --tm: #8e8e93;
+  --sf: 'DM Serif Display', Georgia, serif;
+  --sn: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sn);
+  background: var(--bg);
+  color: var(--t);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+::selection { background: var(--b); color: #fff; }
+
+/* SCROLL PROGRESS BAR */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: var(--b);
+  z-index: 1000;
+  width: 0;
+}
+
+/* SCROLL REVEAL */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* NAVIGATION */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 16px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+nav .logo-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+nav .logo-text-1 {
+  font-family: var(--sn);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #000;
+}
+nav .logo-text-2 {
+  font-family: var(--sn);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--b);
+}
+nav .links {
+  display: flex;
+  gap: 32px;
+  flex: 1;
+  margin-left: 80px;
+}
+nav .links a {
+  font-size: 13px;
+  color: var(--ts);
+  text-decoration: none;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  transition: color .3s;
+}
+nav .links a:hover { color: var(--t); }
+nav .links a.nav-active { color: var(--b); }
+
+.nav-cta {
+  background: var(--b);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  transition: background .3s;
+}
+.nav-cta:hover { background: var(--b2); }
+
+/* ARTICLE LAYOUT */
+article {
+  padding: 120px 48px;
+  padding-top: 140px;
+  min-height: 100vh;
+}
+
+.article-container {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* BACK LINK */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--ts);
+  text-decoration: none;
+  margin-bottom: 48px;
+  transition: color .2s;
+}
+.back-link:hover { color: var(--t); }
+
+/* ARTICLE HEADER */
+.article-header {
+  margin-bottom: 48px;
+  max-width: 750px;
+}
+
+.article-badges {
+  margin-bottom: 20px;
+}
+
+.article-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 100px;
+  white-space: nowrap;
+  margin-right: 8px;
+  margin-bottom: 12px;
+  background: var(--bl);
+  color: var(--b);
+}
+
+.article-topic {
+  display: inline-block;
+  font-size: 11px;
+  color: var(--ts);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  padding: 4px 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.article-title {
+  font-family: var(--sf);
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin: 24px 0 20px;
+  color: var(--t);
+}
+
+.article-subtitle {
+  font-size: 16px;
+  color: var(--ts);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: var(--tm);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.article-meta-divider {
+  width: 1px;
+  height: 14px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* ARTICLE BODY */
+.article-body {
+  max-width: 680px;
+  margin: 60px auto 0;
+  padding: 0 20px;
+}
+
+.article-body h2 {
+  font-family: var(--sf);
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 48px 0 24px;
+  color: var(--t);
+}
+
+.article-body h2:first-child {
+  margin-top: 0;
+}
+
+.article-body p {
+  font-family: var(--sn);
+  font-size: 17px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: var(--t);
+}
+
+.article-body strong {
+  font-weight: 600;
+  color: var(--t);
+}
+
+.article-body ul {
+  margin: 24px 0;
+  padding-left: 24px;
+  list-style: none;
+}
+
+.article-body ul li {
+  font-family: var(--sn);
+  font-size: 17px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+  color: var(--t);
+  position: relative;
+  padding-left: 12px;
+}
+
+.article-body ul li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--b);
+  font-weight: bold;
+}
+
+/* SECTION LABELS */
+.section-label {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--b);
+  margin-bottom: 16px;
+  display: block;
+}
+
+/* FAQ SECTION */
+.faq-items {
+  margin: 32px 0;
+}
+
+.faq-item {
+  margin-bottom: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.faq-item:hover {
+  border-color: rgba(70, 165, 252, 0.25);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.faq-item details {
+  cursor: pointer;
+}
+
+.faq-item summary {
+  padding: 16px 20px;
+  font-family: var(--sn);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--t);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  user-select: none;
+  transition: color 0.3s;
+}
+
+.faq-item summary::marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: '▶';
+  font-size: 12px;
+  color: var(--ts);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.faq-item details[open] summary::after {
+  transform: rotate(90deg);
+}
+
+.faq-item details[open] summary {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  color: var(--b);
+}
+
+.faq-content {
+  padding: 20px;
+  padding-top: 0;
+  font-family: var(--sn);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ts);
+}
+
+/* RELATED RESEARCH */
+.related-research {
+  margin-top: 80px;
+  padding-top: 60px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.related-research-title {
+  font-family: var(--sf);
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: 32px;
+  color: var(--t);
+}
+
+.related-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-bottom: 80px;
+}
+
+.related-card {
+  padding: 24px;
+  background: var(--bg2);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+}
+
+.related-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(70, 165, 252, 0.25);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.related-card-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 100px;
+  white-space: nowrap;
+  background: var(--bl);
+  color: var(--b);
+  margin-bottom: 12px;
+}
+
+.related-card-title {
+  font-family: var(--sn);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 8px;
+  color: var(--t);
+}
+
+.related-card-source {
+  font-family: var(--sn);
+  font-size: 12px;
+  color: var(--ts);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+/* NEWSLETTER CTA */
+.newsletter-cta {
+  padding: 60px 40px;
+  background: var(--bg2);
+  border-radius: 16px;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.newsletter-cta-title {
+  font-family: var(--sf);
+  font-size: 24px;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  color: var(--t);
+}
+
+.newsletter-cta-subtitle {
+  font-family: var(--sn);
+  font-size: 16px;
+  color: var(--ts);
+  margin-bottom: 24px;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 12px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: var(--sn);
+  background: var(--bg);
+  transition: border-color 0.2s;
+}
+
+.newsletter-form input:focus {
+  outline: none;
+  border-color: var(--b);
+  box-shadow: 0 0 0 3px rgba(70, 165, 252, 0.1);
+}
+
+.newsletter-form button {
+  padding: 12px 24px;
+  background: var(--b);
+  color: #fff;
+  border: none;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s;
+  white-space: nowrap;
+  font-family: var(--sn);
+}
+
+.newsletter-form button:hover {
+  background: var(--b2);
+}
+
+/* CITATION BLOCK */
+.citation-block {
+  padding: 24px 20px;
+  background: var(--bg2);
+  border-left: 3px solid var(--b);
+  border-radius: 12px;
+  margin-bottom: 80px;
+}
+
+.citation-block-label {
+  font-family: var(--sn);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--ts);
+  margin-bottom: 8px;
+}
+
+.citation-block-text {
+  font-family: var(--sn);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--t);
+  margin-bottom: 8px;
+}
+
+.citation-block-url {
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 12px;
+  color: var(--b);
+  word-break: break-all;
+}
+
+/* FOOTER */
+footer {
+  background: var(--bg);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 80px 48px;
+}
+
+footer .footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 60px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer .footer-col h3 {
+  font-family: var(--sn);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--t);
+  margin-bottom: 16px;
+}
+
+footer .footer-col p {
+  font-family: var(--sn);
+  font-size: 14px;
+  color: var(--ts);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+footer .footer-col a {
+  display: block;
+  font-family: var(--sn);
+  font-size: 14px;
+  color: var(--ts);
+  text-decoration: none;
+  margin-bottom: 12px;
+  transition: color 0.2s;
+}
+
+footer .footer-col a:hover {
+  color: var(--b);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding-top: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--ts);
+  font-family: var(--sn);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  nav { padding: 16px 24px; }
+  nav .links { margin-left: 40px; gap: 24px; }
+  article { padding: 100px 40px; padding-top: 120px; }
+  .article-body { padding: 0; }
+  footer .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
+}
+
+@media (max-width: 768px) {
+  nav { padding: 12px 16px; }
+  nav .links { display: none; }
+  nav .logo-text-1, nav .logo-text-2 { font-size: 11px; }
+  .nav-cta { padding: 8px 16px; font-size: 11px; }
+  article { padding: 80px 20px; padding-top: 100px; }
+  .article-title { font-size: 28px; }
+  .article-body { padding: 0; }
+  .newsletter-form { flex-direction: column; }
+  footer { padding: 60px 20px; }
+  footer .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- SCROLL PROGRESS BAR -->
+<div class="scroll-progress"></div>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="/" class="logo-group">
+    <span class="logo-text-1">DexaFit</span>
+    <span class="logo-text-2">Research</span>
+  </a>
+  <div class="links">
+    <a href="/">Research & Topics</a>
+    <a href="/signal">The Signal</a>
+    <a href="/work-with-us">Work With Us</a>
+    <a href="/about">About</a>
+  </div>
+  <a href="/" class="nav-cta">Explore the Data</a>
+</nav>
+
+<!-- ARTICLE -->
+<article>
+  <div class="article-container">
+    <a href="../research.html" class="back-link">← Back to all research</a>
+
+    <header class="article-header reveal">
+      <div class="article-badges">
+        <span class="article-badge">Original Research</span>
+        <span class="article-topic">Body Composition</span>
+      </div>
+
+      <h1 class="article-title">Body Fat Percentage Reference Ranges by Age and Sex</h1>
+
+      <p class="article-subtitle">The first large-scale, DXA-derived body fat percentage reference ranges by age and sex—drawn from the largest combined dataset of clinical-grade body composition scans across four continents.</p>
+
+      <div class="article-meta">
+        <time datetime="2026-03-01">March 2026</time>
+        <div class="article-meta-divider"></div>
+        <span>DexaFit Research Team</span>
+        <div class="article-meta-divider"></div>
+        <span>DexaFit Research</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+      <section class="reveal">
+      <span class="section-label">Key Finding</span>
+      <p>Hundreds of thousands of DXA scans from adults across four continents provide the first large-scale, DXA-derived body fat percentage reference ranges stratified by age decade and sex. Existing data cite outdated ACE guidelines from the 1990s or rely on studies with sample sizes under 500. Our analysis draws from over 400,000 clinical-grade DXA scans, enabling us to define precise percentile curves that reflect modern body composition across diverse populations.</p>
+      </section>
+
+      <section class="reveal">
+      <span class="section-label" style="margin-top: 48px;">Why This Matters</span>
+      <p>Body fat percentage is the single most searched DEXA metric, yet current reference ranges are decades old, grounded in outdated methods, and derived from small sample sizes. These 5th through 95th percentile curves—stratified by age decade and sex—are anchored in real DXA data, providing clinicians and researchers with modern, evidence-based benchmarks for interpreting results and counseling patients.</p>
+      </section>
+
+      <section class="reveal">
+      <span class="section-label" style="margin-top: 48px;">What You'll Find</span>
+      <ul>
+        <li>Interactive percentile tables (5th, 10th, 25th, 50th, 75th, 90th, 95th) by age decade and sex</li>
+        <li>Interpretive guide explaining what "healthy," "overfat," and "underfat" mean in clinical context</li>
+        <li>Comparison showing how these ranges differ from ACE, ACSM, and NHANES-derived estimates</li>
+        <li>Full methodology section describing data sourcing, quality control, and analytical approach</li>
+      </ul>
+      </section>
+
+      <section class="reveal">
+      <span class="section-label" style="margin-top: 48px;">Methodology</span>
+      <p><strong>Cohort:</strong> De-identified data sourced from a multi-continent clinical network of DXA scanning facilities across North America, Europe, South America, and Asia-Pacific regions.</p>
+
+      <p><strong>Scanner and Protocols:</strong> All scans performed on GE Lunar platform (Prodigy, with Primo and Advance variants), using standardized positioning and analysis protocols across all sites.</p>
+
+      <p><strong>Inclusion Criteria:</strong></p>
+      <ul>
+        <li>Adults aged 18–89 years</li>
+        <li>Complete total body composition scan with valid results</li>
+        <li>Verified demographic data (age, sex)</li>
+      </ul>
+
+      <p><strong>Exclusion Criteria:</strong></p>
+      <ul>
+        <li>Incomplete or truncated scans</li>
+        <li>Known scanner calibration issues at time of scan</li>
+        <li>Duplicate entries or multiple scans from same individual</li>
+        <li>Scans with manufacturer quality flags or analysis errors</li>
+      </ul>
+
+      <p><strong>Data Analysis:</strong> Percentiles (5th, 10th, 25th, 50th, 75th, 90th, 95th) calculated separately for males and females within each age decade. Smoothing applied to percentile curves using LOESS regression to reduce noise while preserving true population variation.</p>
+      </section>
+
+      <section class="reveal">
+      <span class="section-label" style="margin-top: 48px;">Frequently Asked Questions</span>
+      <div class="faq-items">
+        <div class="faq-item">
+          <details>
+            <summary>What is a healthy body fat percentage for my age?</summary>
+            <div class="faq-content">
+              <p>There is no single "healthy" number—it depends on your age, sex, activity level, and personal health goals. Our reference ranges show where you fall relative to others your age and sex. Generally, a body fat percentage in the 10th–75th percentile is considered normal for healthy adults, though some individuals thrive at 5th–10th percentile (very lean) or 75th–90th percentile (higher body fat). Consult with your healthcare provider to determine what range is right for you.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="faq-item">
+          <details>
+            <summary>Is DEXA more accurate than BIA?</summary>
+            <div class="faq-content">
+              <p>Yes, DEXA (dual-energy X-ray absorptiometry) is significantly more accurate than BIA (bioelectrical impedance analysis) for measuring body composition. DEXA provides direct measurement of bone, fat, and lean mass with precision error around 1–3%. BIA estimates composition based on electrical conductivity, making it susceptible to hydration status, food intake, and measurement conditions. For clinical or research-grade body composition assessment, DEXA is the gold standard.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="faq-item">
+          <details>
+            <summary>How often should I retest?</summary>
+            <div class="faq-content">
+              <p>For most health and fitness purposes, annual or biannual testing is appropriate. Changes in body composition typically occur over months, not weeks. If you are actively working toward a specific body composition goal (e.g., weight loss, muscle gain), testing every 2–4 months can help track progress. For clinical monitoring (e.g., osteoporosis screening), your physician will recommend an appropriate interval, often 1–2 years.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+      </section>
+
+      <section class="related-research reveal">
+        <h2 class="related-research-title">Related Research</h2>
+        <div class="related-cards">
+          <a href="../research/how-to-read-dexa-report.html" class="related-card">
+            <span class="related-card-badge">Reference Guide</span>
+            <div class="related-card-title">How to Read a DEXA Scan Report</div>
+            <div class="related-card-source">DexaFit Research</div>
+          </a>
+
+          <a href="../research/visceral-fat-ranges.html" class="related-card">
+            <span class="related-card-badge">Original Research</span>
+            <div class="related-card-title">Visceral Fat—Normal, Elevated, and High-Risk Ranges</div>
+            <div class="related-card-source">DexaFit Research</div>
+          </a>
+
+          <a href="../research/tofi-metabolically-obese.html" class="related-card">
+            <span class="related-card-badge">Data Note</span>
+            <div class="related-card-title">TOFI—Why 'Normal Weight' Adults Can Be Metabolically Obese</div>
+            <div class="related-card-source">DexaFit Research</div>
+          </a>
+        </div>
+      </section>
+
+      <section class="newsletter-cta reveal">
+        <h2 class="newsletter-cta-title">Get findings like this quarterly.</h2>
+        <p class="newsletter-cta-subtitle">Subscribe to The DexaFit Signal—free.</p>
+        <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+          <input type="email" placeholder="Your email" required aria-label="Email address">
+          <button type="submit">Subscribe</button>
+        </form>
+      </section>
+
+      <div class="citation-block reveal">
+        <div class="citation-block-label">How to cite</div>
+        <div class="citation-block-text">DexaFit Research Team. (2026). Body Fat Percentage Reference Ranges by Age and Sex. <em>DexaFit Research</em>.</div>
+        <div class="citation-block-url">https://research.dexafit.com/research/body-fat-percentage-reference-ranges</div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h3>DexaFit Research</h3>
+      <p>The largest clinical body composition database of its kind. Clinical-grade reference data from hundreds of thousands of DXA, VO₂ Max, and RMR scans.</p>
+    </div>
+    <div class="footer-col">
+      <h3>Explore</h3>
+      <a href="/research">All Research</a>
+      <a href="/research/original">Original Research</a>
+      <a href="/research/guides">Guides</a>
+      <a href="/research/data-notes">Data Notes</a>
+    </div>
+    <div class="footer-col">
+      <h3>The Signal</h3>
+      <a href="/signal">Quarterly Publication</a>
+      <a href="/signal/archive">Archive</a>
+    </div>
+    <div class="footer-col">
+      <h3>About</h3>
+      <a href="/work-with-us">Work With Us</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 DexaFit, Inc. All rights reserved.</span>
+  </div>
+</footer>
+
+<!-- JSON-LD STRUCTURED DATA -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Body Fat Percentage Reference Ranges by Age and Sex",
+  "description": "The first large-scale, DXA-derived body fat percentage reference ranges by age and sex, drawn from the largest combined dataset of clinical-grade body composition scans across four continents.",
+  "datePublished": "2026-03-01T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "DexaFit Research Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DexaFit Research",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://research.dexafit.com/logo.png"
+    }
+  },
+  "articleSection": "Body Composition",
+  "url": "https://research.dexafit.com/research/body-fat-percentage-reference-ranges",
+  "isPartOf": {
+    "@type": "Website",
+    "url": "https://research.dexafit.com",
+    "name": "DexaFit Research"
+  },
+  "keywords": "body fat percentage, DEXA, body composition, reference ranges, clinical data"
+}
+</script>
+
+<script>
+// Scroll Progress Bar
+function updateScrollProgress() {
+  const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrolled = window.scrollY;
+  const progress = scrollHeight > 0 ? (scrolled / scrollHeight) * 100 : 0;
+  document.querySelector('.scroll-progress').style.width = progress + '%';
+}
+
+window.addEventListener('scroll', updateScrollProgress);
+
+// Scroll Reveal
+const revealElements = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+});
+
+revealElements.forEach((element) => {
+  revealObserver.observe(element);
+});
+
+// Newsletter Form
+function handleNewsletterSubmit(event) {
+  event.preventDefault();
+  const form = event.target;
+  const email = form.querySelector('input[type="email"]').value;
+  console.log('Newsletter signup:', email);
+  form.reset();
+  alert('Thank you for subscribing! Check your email for confirmation.');
+}
+</script>
+
+</body>
+</html>

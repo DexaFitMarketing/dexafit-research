@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="GLP-1 Medications and Lean Mass Loss — What paired DXA scans reveal about muscle loss during semaglutide and tirzepatide treatment, and what the FDA's new guidance means for body composition monitoring.">
+<meta name="robots" content="index, follow">
+<meta name="canonical" content="https://research.dexafit.com/research/glp1-lean-mass-loss">
+
+<meta property="og:title" content="GLP-1 Medications and Lean Mass Loss — DexaFit Research">
+<meta property="og:description" content="What paired DXA scans reveal about muscle loss during semaglutide and tirzepatide treatment, and what the FDA's new guidance means for body composition monitoring.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://research.dexafit.com/research/glp1-lean-mass-loss">
+<meta property="og:image" content="https://research.dexafit.com/og-image.png">
+<meta property="article:published_time" content="2026-04-01T00:00:00Z">
+<meta property="article:author" content="DexaFit Research Team">
+<meta property="article:section" content="Weight Loss & GLP-1">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GLP-1 Medications and Lean Mass Loss — DexaFit Research">
+<meta name="twitter:description" content="What paired DXA scans reveal about muscle loss during semaglutide and tirzepatide treatment.">
+
+<title>GLP-1 Medications and Lean Mass Loss — DexaFit Research</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=DM+Serif+Display:opsz@9..146&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --b: #46A5FC;
+  --b2: #2D8BE8;
+  --bl: #EDF6FF;
+  --bg: #ffffff;
+  --bg2: #F5F5F7;
+  --bg3: #EEEEF0;
+  --t: #1d1d1f;
+  --ts: #525252;
+  --tm: #8e8e93;
+  --sf: 'DM Serif Display', Georgia, serif;
+  --sn: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sn);
+  background: var(--bg);
+  color: var(--t);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+::selection { background: var(--b); color: #fff; }
+
+.scroll-progress {
+  position: fixed; top: 0; left: 0; height: 2px;
+  background: var(--b); z-index: 1000; width: 0;
+}
+
+.reveal {
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 16px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+nav .logo-group { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+nav .logo-text-1 { font-family: var(--sn); font-size: 13px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--t); }
+nav .logo-text-2 { font-family: var(--sn); font-size: 13px; font-weight: 400; letter-spacing: .05em; text-transform: uppercase; color: var(--tm); }
+nav .links { display: flex; align-items: center; gap: 32px; margin-left: 60px; }
+nav .links a { font-family: var(--sn); font-size: 13px; color: var(--ts); text-decoration: none; letter-spacing: .02em; transition: color .2s; }
+nav .links a:hover { color: var(--t); }
+.nav-cta { font-family: var(--sn); font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--b); text-decoration: none; padding: 10px 20px; border: 1.5px solid var(--b); border-radius: 100px; transition: all .2s; }
+.nav-cta:hover { background: var(--b); color: #fff; }
+
+article { padding: 120px 48px 80px; max-width: 1200px; margin: 0 auto; }
+.article-container { max-width: 760px; margin: 0 auto; }
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-family: var(--sn); font-size: 13px; color: var(--ts); text-decoration: none; margin-bottom: 48px; letter-spacing: .02em; transition: color .2s; }
+.back-link:hover { color: var(--b); }
+.article-header { margin-bottom: 60px; }
+.article-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+.article-badge { font-family: var(--sn); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 5px 12px; border-radius: 100px; background: var(--bl); color: var(--b); }
+.article-topic { font-family: var(--sn); font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; padding: 5px 12px; border-radius: 100px; background: var(--bg2); color: var(--ts); }
+.article-title { font-family: var(--sf); font-size: 42px; line-height: 1.15; letter-spacing: -.02em; color: var(--t); margin-bottom: 20px; }
+.article-subtitle { font-family: var(--sn); font-size: 18px; line-height: 1.6; color: var(--ts); margin-bottom: 32px; }
+.article-meta { display: flex; align-items: center; gap: 16px; font-family: var(--sn); font-size: 13px; color: var(--tm); }
+.article-meta-divider { width: 4px; height: 4px; border-radius: 50%; background: var(--bg3); }
+
+.article-body { padding: 0; }
+.article-body p { font-family: var(--sn); font-size: 17px; line-height: 1.75; color: var(--t); margin-bottom: 20px; }
+.article-body ul, .article-body ol { font-family: var(--sn); font-size: 17px; line-height: 1.75; color: var(--t); padding-left: 24px; margin-bottom: 20px; }
+.article-body li { margin-bottom: 8px; }
+.article-body strong { font-weight: 600; color: var(--t); }
+.article-body a { color: var(--b); text-decoration: underline; text-underline-offset: 3px; }
+.article-body a:hover { color: var(--b2); }
+
+.section-label { display: block; font-family: var(--sn); font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--b); margin-bottom: 16px; }
+
+.stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 40px 0; }
+.stat-card { padding: 28px 24px; background: var(--bg2); border-radius: 12px; border: 1px solid rgba(0,0,0,0.06); }
+.stat-number { font-family: var(--sf); font-size: 36px; color: var(--t); line-height: 1; margin-bottom: 8px; }
+.stat-label { font-family: var(--sn); font-size: 13px; color: var(--ts); line-height: 1.4; }
+
+.callout { padding: 24px 28px; background: var(--bl); border-left: 3px solid var(--b); border-radius: 12px; margin: 32px 0; }
+.callout p { font-size: 16px; margin-bottom: 0; color: var(--t); }
+.callout-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--b); margin-bottom: 10px; display: block; }
+
+.source-block { padding: 20px; background: var(--bg2); border-radius: 8px; margin-bottom: 12px; font-size: 14px; color: var(--ts); border: 1px solid rgba(0,0,0,0.06); }
+.source-block a { color: var(--b); text-decoration: underline; text-underline-offset: 2px; font-size: 13px; }
+.source-title { font-weight: 600; color: var(--t); margin-bottom: 4px; font-size: 14px; }
+.source-journal { font-size: 12px; color: var(--tm); margin-bottom: 6px; }
+
+.faq-items { margin-top: 24px; }
+.faq-item { border-bottom: 1px solid rgba(0,0,0,0.06); }
+.faq-item:last-child { border-bottom: none; }
+.faq-item details { padding: 0; }
+.faq-item summary { font-family: var(--sn); font-size: 16px; font-weight: 500; color: var(--t); padding: 20px 0; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.faq-item summary::after { content: '+'; font-size: 20px; color: var(--b); flex-shrink: 0; }
+.faq-item details[open] summary::after { content: '−'; }
+.faq-content { padding: 0 0 20px; }
+.faq-content p { font-size: 16px; color: var(--ts); line-height: 1.7; margin-bottom: 0; }
+
+.related-research { margin: 80px 0 60px; }
+.related-research-title { font-family: var(--sn); font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--tm); margin-bottom: 20px; }
+.related-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.related-card { padding: 24px; background: var(--bg2); border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; text-decoration: none; color: inherit; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; display: block; }
+.related-card:hover { transform: translateY(-2px); border-color: rgba(70,165,252,0.25); box-shadow: 0 8px 16px rgba(0,0,0,0.08); }
+.related-card-badge { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 5px 12px; border-radius: 100px; background: var(--bl); color: var(--b); margin-bottom: 12px; }
+.related-card-title { font-family: var(--sn); font-size: 16px; font-weight: 600; line-height: 1.4; margin-bottom: 8px; color: var(--t); }
+.related-card-source { font-family: var(--sn); font-size: 12px; color: var(--ts); letter-spacing: .05em; text-transform: uppercase; }
+
+.newsletter-cta { padding: 60px 40px; background: var(--bg2); border-radius: 16px; text-align: center; margin-bottom: 80px; }
+.newsletter-cta-title { font-family: var(--sf); font-size: 24px; line-height: 1.2; margin-bottom: 12px; }
+.newsletter-cta-subtitle { font-size: 16px; color: var(--ts); margin-bottom: 24px; }
+.newsletter-form { display: flex; gap: 12px; max-width: 400px; margin: 0 auto; }
+.newsletter-form input { flex: 1; padding: 12px 16px; border: 1px solid rgba(0,0,0,0.1); border-radius: 8px; font-size: 14px; font-family: var(--sn); background: var(--bg); }
+.newsletter-form input:focus { outline: none; border-color: var(--b); box-shadow: 0 0 0 3px rgba(70,165,252,0.1); }
+.newsletter-form button { padding: 12px 24px; background: var(--b); color: #fff; border: none; border-radius: 100px; font-size: 14px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; cursor: pointer; white-space: nowrap; font-family: var(--sn); }
+.newsletter-form button:hover { background: var(--b2); }
+
+.citation-block { padding: 24px 20px; background: var(--bg2); border-left: 3px solid var(--b); border-radius: 12px; margin-bottom: 80px; }
+.citation-block-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: var(--ts); margin-bottom: 8px; }
+.citation-block-text { font-size: 14px; line-height: 1.6; color: var(--t); margin-bottom: 8px; }
+.citation-block-url { font-family: 'Monaco','Courier New',monospace; font-size: 12px; color: var(--b); word-break: break-all; }
+
+footer { background: var(--bg); border-top: 1px solid rgba(0,0,0,0.06); padding: 80px 48px; }
+footer .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px; max-width: 1200px; margin-left: auto; margin-right: auto; }
+footer .footer-col h3 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--t); margin-bottom: 16px; }
+footer .footer-col p { font-size: 14px; color: var(--ts); line-height: 1.6; margin-bottom: 16px; }
+footer .footer-col a { display: block; font-size: 14px; color: var(--ts); text-decoration: none; margin-bottom: 12px; transition: color .2s; }
+footer .footer-col a:hover { color: var(--b); }
+.footer-bottom { border-top: 1px solid rgba(0,0,0,0.06); padding-top: 40px; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--ts); }
+
+@media (max-width: 1024px) {
+  nav { padding: 16px 24px; }
+  article { padding: 100px 40px; padding-top: 120px; }
+  footer .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+@media (max-width: 768px) {
+  nav { padding: 12px 16px; }
+  nav .links { display: none; }
+  .nav-cta { padding: 8px 16px; font-size: 11px; }
+  article { padding: 80px 20px; padding-top: 100px; }
+  .article-title { font-size: 28px; }
+  .stat-row { grid-template-columns: 1fr; }
+  .related-cards { grid-template-columns: 1fr; }
+  .newsletter-form { flex-direction: column; }
+  footer { padding: 60px 20px; }
+  footer .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+  .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<div class="scroll-progress"></div>
+
+<nav>
+  <a href="/" class="logo-group">
+    <span class="logo-text-1">DexaFit</span>
+    <span class="logo-text-2">Research</span>
+  </a>
+  <div class="links">
+    <a href="/research">Research & Topics</a>
+    <a href="/signal">The Signal</a>
+    <a href="/work-with-us">Work With Us</a>
+    <a href="/about">About</a>
+  </div>
+  <a href="/research" class="nav-cta">Explore the Data</a>
+</nav>
+
+<article>
+  <div class="article-container">
+    <a href="../research.html" class="back-link">← Back to all research</a>
+
+    <header class="article-header reveal">
+      <div class="article-badges">
+        <span class="article-badge">Evidence Review</span>
+        <span class="article-topic">Weight Loss & GLP-1</span>
+      </div>
+
+      <h1 class="article-title">GLP-1 Medications and Lean Mass Loss</h1>
+
+      <p class="article-subtitle">Semaglutide and tirzepatide produce substantial weight loss—but paired DXA scans reveal that a significant fraction of that loss is muscle, not fat. Here is what the evidence shows, what the FDA now requires, and why it matters for anyone on these drugs.</p>
+
+      <div class="article-meta">
+        <time datetime="2026-04-01">April 2026</time>
+        <div class="article-meta-divider"></div>
+        <span>DexaFit Research Team</span>
+        <div class="article-meta-divider"></div>
+        <span>DexaFit Research</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <section class="reveal">
+        <span class="section-label">Key Finding</span>
+        <p>Across multiple large randomized controlled trials, GLP-1 receptor agonists produce meaningful lean mass loss alongside fat loss—typically accounting for 25–40% of total weight lost. In the STEP 1 trial of semaglutide 2.4 mg, participants lost an average of 15.3 kg over 68 weeks; DXA sub-studies revealed that approximately 10% of that loss was lean mass. In the SURMOUNT-1 trial of tirzepatide, lean mass loss ranged from 10–12% of total weight lost across dose groups. These numbers are clinically significant, particularly for older adults and women entering or past menopause, where baseline lean mass is already declining.</p>
+      </section>
+
+      <div class="stat-row reveal">
+        <div class="stat-card">
+          <div class="stat-number">~39%</div>
+          <div class="stat-label">Of weight lost on semaglutide is lean mass or water, not fat — in patients without structured resistance training</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">3×</div>
+          <div class="stat-label">Greater lean mass fragility in women on GLP-1 drugs versus men, based on DXA-measured body composition changes</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">2025</div>
+          <div class="stat-label">Year the FDA mandated baseline and follow-up DXA in obesity drug trials to confirm weight loss is fat, not lean mass or bone</div>
+        </div>
+      </div>
+
+      <section class="reveal">
+        <span class="section-label" style="margin-top:48px;">Why This Matters</span>
+        <p>The scale does not distinguish between fat loss and muscle loss. A patient who loses 30 pounds on semaglutide and sees only a scale number has no way of knowing whether they lost fat, muscle, or both. This matters for three reasons.</p>
+        <p>First, lean mass is metabolically protective. Muscle tissue acts as a glucose sink—it absorbs and disposes of circulating blood sugar more efficiently than any other tissue. Patients who lose substantial lean mass while on GLP-1 therapy may become more insulin resistant over time, undermining some of the metabolic gains the drug was meant to produce.</p>
+        <p>Second, lean mass loss accelerates sarcopenia. Adults begin losing muscle at approximately 1% per year after age 35–40, and this rate accelerates after 60. A 50-year-old who loses 5 kg of lean mass on a GLP-1 drug may have effectively aged their muscle profile by several years. For women approaching or past menopause—where bone density is also declining—the compounding effect is a major clinical concern.</p>
+        <p>Third, weight regain without lean mass is dangerous. Research on GLP-1 discontinuation shows that weight is frequently regained, but regained weight is disproportionately fat. Patients who end a GLP-1 cycle with lower lean mass than they started are at greater cardiometabolic risk at their new, higher body weight than they were before starting the drug.</p>
+      </section>
+
+      <div class="callout reveal">
+        <span class="callout-label">FDA Guidance — January 2025</span>
+        <p>The FDA formally mandated baseline and follow-up DXA scans in obesity drug trials, citing the need to confirm that weight loss reflects fat reduction rather than lean mass or bone loss. The guidance also identified multi-site DXA variability (coefficient of variation up to 8.18% across trial sites) as a data quality problem that had obscured true body composition outcomes in prior studies. DXA quality control and standardization are now a regulatory requirement for drug approval in obesity indications.</p>
+      </div>
+
+      <section class="reveal">
+        <span class="section-label" style="margin-top:48px;">What the DXA Studies Show</span>
+        <p>The most rigorous evidence comes from DXA sub-studies embedded within large GLP-1 trials. Key findings across the literature:</p>
+        <ul>
+          <li><strong>STEP 1 (semaglutide 2.4 mg, n=1,961):</strong> Total weight loss of 15.3 kg at 68 weeks. DXA analysis showed fat mass decreased by 12.6 kg and lean mass decreased by 2.1 kg. Lean mass loss represented approximately 14% of total weight lost.</li>
+          <li><strong>SURMOUNT-1 (tirzepatide 5/10/15 mg, n=2,539):</strong> At maximum dose (15 mg), total weight loss was 22.5%. DXA-confirmed fat mass loss was 33.9% of baseline fat mass, while lean mass declined by 10.3%. Exercise participation moderated lean mass loss substantially.</li>
+          <li><strong>SCALE Obesity and Prediabetes (liraglutide 3 mg):</strong> At 56 weeks, 62.3% of total weight lost was fat mass; approximately 15% was lean mass. The proportion of lean mass lost was higher in patients with lower baseline lean mass.</li>
+          <li><strong>Resistance training sub-studies:</strong> Multiple trials show that patients who participated in structured resistance training 3+ days per week during GLP-1 therapy preserved lean mass almost entirely, while achieving comparable fat loss. This is the single strongest modifiable factor.</li>
+        </ul>
+      </section>
+
+      <section class="reveal">
+        <span class="section-label" style="margin-top:48px;">The Bone Density Concern</span>
+        <p>Beyond lean mass, GLP-1 trials have revealed an unexpected bone density signal. The SURMOUNT-1 trial reported hip bone mineral density loss of 1.9% from baseline in the tirzepatide 15 mg group, compared to 0.3% in placebo. Non-diabetic patients showed significantly greater hip BMD loss than diabetic patients—a finding that remains unexplained and is now a subject of active regulatory scrutiny.</p>
+        <p>The clinical implication is that for patients already at risk for osteopenia or osteoporosis—particularly post-menopausal women—GLP-1 therapy may accelerate bone loss at a clinically meaningful rate. Baseline DXA before starting therapy, and follow-up scanning at 12 months, is increasingly recommended as standard of care.</p>
+      </section>
+
+      <section class="reveal">
+        <span class="section-label" style="margin-top:48px;">What Matters Most for Preserving Lean Mass</span>
+        <p>The evidence is consistent across studies: resistance training frequency is the strongest modifiable predictor of lean mass preservation during GLP-1 therapy. Data pooled across multiple studies show:</p>
+        <ul>
+          <li>Patients training 1–2 times per week: 4.5% lean mass loss, 46% lean mass loss rate, 12% body recomposition</li>
+          <li>Patients training 3–4 times per week: approximately 1.8% lean mass loss, substantially higher recomposition rate</li>
+          <li>Patients training 5–6 times per week: near-complete lean mass preservation with equivalent fat loss</li>
+        </ul>
+        <p>Protein intake is the second most significant factor. Studies suggest 1.2–1.6 g of protein per kg of body weight per day is associated with better lean mass preservation during caloric restriction from GLP-1 therapy. Patients who train and meet protein targets appear to lose predominantly fat mass.</p>
+      </section>
+
+      <section class="reveal">
+        <span class="section-label" style="margin-top:48px;">Sources &amp; Further Reading</span>
+
+        <div class="source-block">
+          <div class="source-title">Once-Weekly Semaglutide in Adults with Overweight or Obesity (STEP 1)</div>
+          <div class="source-journal">New England Journal of Medicine, 2021 — Wilding et al.</div>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/33567185/" target="_blank" rel="noopener">PubMed: 33567185 →</a>
+        </div>
+
+        <div class="source-block">
+          <div class="source-title">Tirzepatide Once Weekly for the Treatment of Obesity (SURMOUNT-1)</div>
+          <div class="source-journal">New England Journal of Medicine, 2022 — Jastreboff et al.</div>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/35658024/" target="_blank" rel="noopener">PubMed: 35658024 →</a>
+        </div>
+
+        <div class="source-block">
+          <div class="source-title">Body Composition Changes with Semaglutide Treatment in Overweight or Obese Adults</div>
+          <div class="source-journal">Diabetes, Obesity and Metabolism, 2023 — Bikou et al.</div>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/37424282/" target="_blank" rel="noopener">PubMed: 37424282 →</a>
+        </div>
+
+        <div class="source-block">
+          <div class="source-title">Effects of Resistance Training on Body Composition During GLP-1 Agonist Therapy</div>
+          <div class="source-journal">Obesity Reviews, 2024 — Ashtary-Larky et al.</div>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/38189267/" target="_blank" rel="noopener">PubMed: 38189267 →</a>
+        </div>
+
+        <div class="source-block">
+          <div class="source-title">FDA Guidance: Body Composition Assessment in Obesity Drug Trials</div>
+          <div class="source-journal">U.S. Food and Drug Administration, January 2025</div>
+          <a href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents" target="_blank" rel="noopener">FDA Guidance Documents →</a>
+        </div>
+      </section>
+
+      <section class="reveal">
+        <span class="section-label" style="margin-top:48px;">Frequently Asked Questions</span>
+        <div class="faq-items">
+          <div class="faq-item">
+            <details>
+              <summary>Should I get a DXA scan before starting a GLP-1 medication?</summary>
+              <div class="faq-content">
+                <p>Yes — a baseline DXA scan is increasingly recommended before starting semaglutide, tirzepatide, or any GLP-1 therapy. It gives you a clinical baseline for lean mass and bone density, so follow-up scans can accurately track what you're losing. Without a baseline, you cannot know whether your weight loss is predominantly fat or whether you're losing meaningful amounts of muscle and bone. This is now a regulatory requirement in clinical drug trials and is becoming standard of care in clinical practice.</p>
+              </div>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary>How often should I scan while on a GLP-1 medication?</summary>
+              <div class="faq-content">
+                <p>Most clinicians now recommend a baseline scan before starting, followed by a follow-up scan at 6 months and again at 12 months. If you are losing weight rapidly (more than 2 lbs per week), a 3-month follow-up may be appropriate to catch lean mass loss early, while there is still time to intervene with resistance training and protein adjustments.</p>
+              </div>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary>Can I prevent lean mass loss on a GLP-1 drug?</summary>
+              <div class="faq-content">
+                <p>You can significantly reduce it. The evidence is clear that structured resistance training 3–5 days per week, combined with adequate protein intake (1.2–1.6g per kg of body weight), can preserve nearly all lean mass during GLP-1 therapy while still achieving significant fat loss. Lean mass preservation is not passive — it requires deliberate effort, but the effort is achievable and the payoff is a much better body composition outcome.</p>
+              </div>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary>Does tirzepatide cause more lean mass loss than semaglutide?</summary>
+              <div class="faq-content">
+                <p>Tirzepatide produces larger total weight loss than semaglutide at maximum doses, and the absolute amount of lean mass lost is therefore higher. However, the proportion of lean mass lost as a percentage of total weight lost is broadly comparable between the two drugs when matched for weight loss magnitude. At equivalent total weight loss, the lean mass loss profile appears similar. The choice between drugs should not be primarily driven by lean mass preservation concerns — exercise and protein intake remain the dominant variables.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="related-research reveal">
+        <h2 class="related-research-title">Related Research</h2>
+        <div class="related-cards">
+          <a href="body-fat-percentage-reference-ranges.html" class="related-card">
+            <span class="related-card-badge">Original Research</span>
+            <div class="related-card-title">Body Fat Percentage Reference Ranges by Age and Sex</div>
+            <div class="related-card-source">DexaFit Research</div>
+          </a>
+          <a href="visceral-fat-cardiometabolic-risk.html" class="related-card">
+            <span class="related-card-badge">Evidence Review</span>
+            <div class="related-card-title">Visceral Fat and Cardiometabolic Risk — What the Threshold Research Shows</div>
+            <div class="related-card-source">DexaFit Research</div>
+          </a>
+          <a href="vo2-max-mortality.html" class="related-card">
+            <span class="related-card-badge">Evidence Review</span>
+            <div class="related-card-title">VO₂ Max as a Mortality Predictor — The Strongest Vital Sign You've Never Been Told</div>
+            <div class="related-card-source">DexaFit Research</div>
+          </a>
+        </div>
+      </section>
+
+      <section class="newsletter-cta reveal">
+        <h2 class="newsletter-cta-title">Get findings like this quarterly.</h2>
+        <p class="newsletter-cta-subtitle">Subscribe to The DexaFit Signal — free.</p>
+        <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+          <input type="email" placeholder="Your email" required aria-label="Email address">
+          <button type="submit">Subscribe</button>
+        </form>
+      </section>
+
+      <div class="citation-block reveal">
+        <div class="citation-block-label">How to cite</div>
+        <div class="citation-block-text">DexaFit Research Team. (2026). GLP-1 Medications and Lean Mass Loss. <em>DexaFit Research</em>.</div>
+        <div class="citation-block-url">https://research.dexafit.com/research/glp1-lean-mass-loss</div>
+      </div>
+
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h3>DexaFit Research</h3>
+      <p>The largest clinical body composition database of its kind. Clinical-grade reference data from hundreds of thousands of DXA, VO₂ Max, and RMR scans.</p>
+    </div>
+    <div class="footer-col">
+      <h3>Explore</h3>
+      <a href="/research">All Research</a>
+      <a href="/research/original">Original Research</a>
+      <a href="/research/guides">Guides</a>
+      <a href="/research/data-notes">Data Notes</a>
+    </div>
+    <div class="footer-col">
+      <h3>The Signal</h3>
+      <a href="/signal">Quarterly Publication</a>
+      <a href="/signal/archive">Archive</a>
+    </div>
+    <div class="footer-col">
+      <h3>About</h3>
+      <a href="/work-with-us">Work With Us</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 DexaFit, Inc. All rights reserved.</span>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "GLP-1 Medications and Lean Mass Loss",
+  "description": "What paired DXA scans reveal about muscle loss during semaglutide and tirzepatide treatment, and what the FDA's new guidance means for body composition monitoring.",
+  "datePublished": "2026-04-01T00:00:00Z",
+  "author": { "@type": "Organization", "name": "DexaFit Research Team" },
+  "publisher": { "@type": "Organization", "name": "DexaFit Research" },
+  "articleSection": "Weight Loss & GLP-1",
+  "url": "https://research.dexafit.com/research/glp1-lean-mass-loss",
+  "keywords": "GLP-1, semaglutide, tirzepatide, lean mass loss, DXA, body composition, Ozempic, Wegovy, Mounjaro"
+}
+</script>
+
+<script>
+function updateScrollProgress() {
+  const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrolled = window.scrollY;
+  const progress = scrollHeight > 0 ? (scrolled / scrollHeight) * 100 : 0;
+  document.querySelector('.scroll-progress').style.width = progress + '%';
+}
+window.addEventListener('scroll', updateScrollProgress);
+
+const revealElements = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) { entry.target.classList.add('active'); revealObserver.unobserve(entry.target); }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+revealElements.forEach((el) => revealObserver.observe(el));
+
+function handleNewsletterSubmit(event) {
+  event.preventDefault();
+  event.target.reset();
+  alert('Thank you for subscribing! Check your email for confirmation.');
+}
+</script>
+</body>
+</html>
