@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="About DexaFit Research — Editorial standards, data governance, methodology, and mission. Built on the largest clinical-grade body composition dataset in the world.">
+<meta name="robots" content="index, follow">
+<meta name="canonical" content="https://research.dexafit.com/about">
+
+<!-- Open Graph -->
+<meta property="og:title" content="About — DexaFit Research">
+<meta property="og:description" content="The depth of a scholarly site. The usability of a modern reference product. Built on the largest clinical-grade body composition and metabolic dataset in the world.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://research.dexafit.com/about">
+<meta property="og:image" content="https://research.dexafit.com/og-image.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About — DexaFit Research">
+<meta name="twitter:description" content="Editorial standards, data governance, and mission of DexaFit Research.">
+
+<title>About — DexaFit Research</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --b: #46A5FC;
+  --b2: #2D8BE8;
+  --bl: #EDF6FF;
+  --bg: #ffffff;
+  --bg2: #F5F5F7;
+  --bg3: #EEEEF0;
+  --t: #1d1d1f;
+  --ts: #525252;
+  --tm: #8e8e93;
+  --sf: 'DM Serif Display', Georgia, serif;
+  --sn: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sn);
+  background: var(--bg);
+  color: var(--t);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+::selection { background: var(--b); color: #fff; }
+
+/* SCROLL PROGRESS BAR */
+.scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; background: var(--b); transform: scaleX(0); transform-origin: left; z-index: 200; }
+
+/* NAVIGATION */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 16px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(255,255,255,.9); backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+nav .logo-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+nav .logo-text-1 {
+  font-family: var(--sn);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #000;
+}
+nav .logo-text-2 {
+  font-family: var(--sn);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--b);
+}
+nav .links {
+  display: flex;
+  gap: 32px;
+  flex: 1;
+  margin-left: 80px;
+}
+nav .links a {
+  font-size: 13px;
+  color: var(--ts);
+  text-decoration: none;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  transition: color .3s;
+}
+nav .links a:hover { color: var(--t); }
+nav .links a.nav-active { color: var(--b); }
+
+.nav-cta {
+  background: var(--b);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  transition: background .3s;
+}
+.nav-cta:hover { background: var(--b2); }
+
+/* HERO SECTION */
+.hero {
+  padding: 120px 48px;
+  padding-top: 160px;
+  text-align: center;
+  max-width: 1080px;
+  margin: 0 auto;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-title {
+  font-family: var(--sf);
+  font-size: 48px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+  color: var(--t);
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  color: var(--ts);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* CONTENT SECTION */
+.content-section {
+  padding: 80px 48px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.article-content {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.article-section {
+  margin-bottom: 60px;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.article-section:nth-child(1) { animation-delay: 0.1s; }
+.article-section:nth-child(2) { animation-delay: 0.2s; }
+.article-section:nth-child(3) { animation-delay: 0.3s; }
+.article-section:nth-child(4) { animation-delay: 0.4s; }
+.article-section:nth-child(5) { animation-delay: 0.5s; }
+.article-section:nth-child(6) { animation-delay: 0.6s; }
+
+.section-label {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--b);
+  margin-bottom: 16px;
+  display: block;
+}
+
+.section-title {
+  font-family: var(--sf);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  color: var(--t);
+}
+
+.section-text {
+  font-family: var(--sn);
+  font-size: 17px;
+  color: var(--t);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.section-text:last-child {
+  margin-bottom: 0;
+}
+
+.section-text em {
+  font-style: italic;
+}
+
+/* CTA BOX */
+.cta-box {
+  padding: 48px 40px;
+  background: var(--bl);
+  border-radius: 16px;
+  border: 1px solid rgba(70,165,252,.2);
+  text-align: center;
+  margin: 80px auto;
+  max-width: 680px;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.cta-box-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--t);
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.cta-btn {
+  display: inline-block;
+  background: var(--b);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background .3s;
+}
+
+.cta-btn:hover {
+  background: var(--b2);
+}
+
+/* FOOTER */
+footer {
+  background: var(--bg);
+  border-top: 1px solid rgba(0,0,0,.06);
+  padding: 80px 48px;
+}
+
+footer .footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 60px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer .footer-col h3 {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--t);
+  margin-bottom: 16px;
+}
+
+footer .footer-col p {
+  font-size: 14px;
+  color: var(--ts);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+footer .footer-col a {
+  display: block;
+  font-size: 14px;
+  color: var(--ts);
+  text-decoration: none;
+  margin-bottom: 12px;
+  transition: color .2s;
+}
+
+footer .footer-col a:hover {
+  color: var(--b);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(0,0,0,.06);
+  padding-top: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--ts);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  nav { padding: 16px 24px; }
+  nav .links { margin-left: 40px; gap: 24px; }
+  .hero { padding: 100px 40px; padding-top: 120px; }
+  .content-section { padding: 80px 40px; }
+  footer .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
+}
+
+@media (max-width: 768px) {
+  nav { padding: 12px 16px; }
+  nav .links { display: none; }
+  nav .logo-text-1, nav .logo-text-2 { font-size: 11px; }
+  .nav-cta { padding: 8px 16px; font-size: 11px; }
+  .hero { padding: 80px 20px; padding-top: 100px; }
+  .hero-title { font-size: 32px; }
+  .content-section { padding: 60px 20px; }
+  .cta-box { padding: 32px 20px; }
+  footer { padding: 60px 20px; }
+  footer .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- SCROLL PROGRESS BAR -->
+<div class="scroll-progress"></div>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="/" class="logo-group">
+    <span class="logo-text-1">DexaFit</span>
+    <span class="logo-text-2">Research</span>
+  </a>
+  <div class="links">
+    <a href="/">Research & Topics</a>
+    <a href="/signal">The Signal</a>
+    <a href="/work-with-us">Work With Us</a>
+    <a href="/about" class="nav-active">About</a>
+  </div>
+  <a href="/" class="nav-cta">Explore the Data</a>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <h1 class="hero-title">About DexaFit Research</h1>
+  <p class="hero-subtitle">The depth of a scholarly site. The usability of a modern reference product. Built on the largest clinical-grade body composition and metabolic dataset in the world.</p>
+</section>
+
+<!-- CONTENT SECTION -->
+<section class="content-section">
+  <div class="article-content">
+
+    <!-- What DexaFit Research Is -->
+    <div class="article-section">
+      <span class="section-label">What DexaFit Research Is</span>
+      <p class="section-text">DexaFit Research is the research and publishing arm of DexaFit. We publish original research and curate findings from leading journals in the fields of body composition, metabolic health, and longevity science. We make data available to researchers, clinicians, and product teams. We provide real-world evidence at a scale published cohorts can't match.</p>
+    </div>
+
+    <!-- Why This Exists -->
+    <div class="article-section">
+      <span class="section-label">Why This Exists</span>
+      <p class="section-text">Most body composition reference data is decades old, based on small samples, or measured with imprecise methods. DexaFit's clinical network generates hundreds of thousands of DXA, VO₂ Max, and RMR scans with high-fidelity labels and demographic context.</p>
+    </div>
+
+    <!-- Editorial Standards -->
+    <div class="article-section">
+      <span class="section-label">Editorial Standards</span>
+      <p class="section-text">Every original research article is reviewed by at least one domain expert. We use the term "expert-reviewed" rather than "peer-reviewed" to acknowledge that our review process is rigorous but distinct from traditional journal peer review.</p>
+      <p class="section-text">Methodology, limitations, and conflicts of interest are disclosed on every page. Curated content from outside sources is annotated with DexaFit context, caveats, or opposing viewpoints when appropriate.</p>
+    </div>
+
+    <!-- Data Governance -->
+    <div class="article-section">
+      <span class="section-label">Data Governance</span>
+      <p class="section-text">All data is de-identified per HIPAA Safe Harbor standards. No individually identifiable health information is published. We perform automated quality checks on all measurements, validate scanner calibration regularly, and stratify results by demographic variables to identify potential biases.</p>
+      <p class="section-text">Known biases, limitations, and sources of error are disclosed alongside our findings.</p>
+    </div>
+
+    <!-- How to Cite -->
+    <div class="article-section">
+      <span class="section-label">How to Cite</span>
+      <p class="section-text">If you use DexaFit Research in your work, please cite us as follows:</p>
+      <p class="section-text"><em>DexaFit Research Team. (2026). Body Fat Percentage Reference Ranges by Age and Sex. DexaFit Research. https://research.dexafit.com/research/body-fat-percentage-reference-ranges</em></p>
+    </div>
+
+    <!-- Conflicts of Interest -->
+    <div class="article-section" style="margin-bottom: 0;">
+      <span class="section-label">Conflicts of Interest</span>
+      <p class="section-text">DexaFit Research is funded by DexaFit, a commercial testing company. Research is produced by the same organization that operates the clinical testing network. This creates inherent conflicts of interest.</p>
+      <p class="section-text">We do not suppress unfavorable findings. All methodology and limitations are disclosed transparently. Our commitment is to advancing the science of body composition measurement and interpretation, not to promoting DexaFit's testing services.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="content-section">
+  <div class="cta-box">
+    <h3 class="cta-box-title">Interested in working with DexaFit data? We work with CROs, pharma, biotech, and health platforms.</h3>
+    <a href="/work-with-us" class="cta-btn">Work With Us →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h3>DexaFit Research</h3>
+      <p>The largest clinical body composition database of its kind. Clinical-grade reference data from hundreds of thousands of DXA, VO₂ Max, and RMR scans.</p>
+    </div>
+    <div class="footer-col">
+      <h3>Explore</h3>
+      <a href="/research">All Research</a>
+      <a href="/research/original">Original Research</a>
+      <a href="/research/guides">Guides</a>
+      <a href="/research/data-notes">Data Notes</a>
+    </div>
+    <div class="footer-col">
+      <h3>The Signal</h3>
+      <a href="/signal">Quarterly Publication</a>
+      <a href="/signal/archive">Archive</a>
+    </div>
+    <div class="footer-col">
+      <h3>About</h3>
+      <a href="/work-with-us">Work With Us</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 DexaFit, Inc. All rights reserved.</span>
+  </div>
+</footer>
+
+<!-- JSON-LD STRUCTURED DATA -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "DexaFit Research",
+  "url": "https://research.dexafit.com/about",
+  "logo": "https://research.dexafit.com/logo.png",
+  "description": "About DexaFit Research — Editorial standards, data governance, and mission.",
+  "sameAs": [
+    "https://www.twitter.com/dexafit",
+    "https://www.instagram.com/dexafit"
+  ]
+}
+</script>
+
+<script>
+// Scroll progress bar
+window.addEventListener('scroll', () => {
+  const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+  document.querySelector('.scroll-progress').style.transform = `scaleX(${scrollPercentage / 100})`;
+});
+</script>
+
+</body>
+</html>
