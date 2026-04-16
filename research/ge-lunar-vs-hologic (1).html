@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="GE Lunar vs Hologic DEXA — Why Your T-Scores Don't Match. Cross-manufacturer discordance in DXA body composition and bone density measurements, how to interpret results across platforms, and what it means clinically.">
+<meta name="robots" content="index, follow">
+<meta name="canonical" content="https://research.dexafit.com/research/ge-lunar-vs-hologic">
+
+<meta property="og:title" content="GE Lunar vs Hologic — Why Your T-Scores Don't Match — DexaFit Research">
+<meta property="og:description" content="Cross-manufacturer discordance in DXA measurements is larger than most clinicians realize. Here is what the research shows, why it happens, and how to manage results across platforms.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://research.dexafit.com/research/ge-lunar-vs-hologic">
+<meta property="og:image" content="https://research.dexafit.com/og-image.png">
+<meta property="article:published_time" content="2026-04-16T00:00:00Z">
+<meta property="article:author" content="DexaFit Research Team">
+<meta property="article:section" content="Bone Health">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GE Lunar vs Hologic — Why Your T-Scores Don't Match — DexaFit Research">
+<meta name="twitter:description" content="Cross-manufacturer discordance in DXA: why the same patient scanned on different machines gets different results, and what to do about it.">
+
+<title>GE Lunar vs Hologic — Why Your T-Scores Don't Match — DexaFit Research</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=DM+Serif+Display:opsz@9..146&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --b: #46A5FC; --b2: #2D8BE8; --bl: #EDF6FF;
+  --bg: #ffffff; --bg2: #F5F5F7; --bg3: #EEEEF0;
+  --t: #1d1d1f; --ts: #525252; --tm: #8e8e93;
+  --sf: 'DM Serif Display', Georgia, serif;
+  --sn: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--sn); background: var(--bg); color: var(--t); -webkit-font-smoothing: antialiased; overflow-x: hidden; line-height: 1.6; }
+::selection { background: var(--b); color: #fff; }
+.scroll-progress { position: fixed; top: 0; left: 0; height: 2px; background: var(--b); z-index: 1000; width: 0; }
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 48px; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.7); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0,0,0,0.06); }
+nav .logo-group { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+nav .logo-text-1 { font-family: var(--sn); font-size: 13px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--t); }
+nav .logo-text-2 { font-family: var(--sn); font-size: 13px; font-weight: 400; letter-spacing: .05em; text-transform: uppercase; color: var(--tm); }
+nav .links { display: flex; align-items: center; gap: 32px; margin-left: 60px; }
+nav .links a { font-family: var(--sn); font-size: 13px; color: var(--ts); text-decoration: none; letter-spacing: .02em; transition: color .2s; }
+nav .links a:hover { color: var(--t); }
+.nav-cta { font-family: var(--sn); font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--b); text-decoration: none; padding: 10px 20px; border: 1.5px solid var(--b); border-radius: 100px; transition: all .2s; }
+.nav-cta:hover { background: var(--b); color: #fff; }
+
+article { padding: 120px 48px 80px; max-width: 1200px; margin: 0 auto; }
+.article-container { max-width: 760px; margin: 0 auto; }
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-family: var(--sn); font-size: 13px; color: var(--ts); text-decoration: none; margin-bottom: 48px; letter-spacing: .02em; transition: color .2s; }
+.back-link:hover { color: var(--b); }
+.article-header { margin-bottom: 60px; }
+.article-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+.article-badge { font-family: var(--sn); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 5px 12px; border-radius: 100px; background: var(--bl); color: var(--b); }
+.article-topic { font-family: var(--sn); font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; padding: 5px 12px; border-radius: 100px; background: var(--bg2); color: var(--ts); }
+.article-title { font-family: var(--sf); font-size: 42px; line-height: 1.15; letter-spacing: -.02em; color: var(--t); margin-bottom: 20px; }
+.article-subtitle { font-family: var(--sn); font-size: 18px; line-height: 1.6; color: var(--ts); margin-bottom: 32px; }
+.article-meta { display: flex; align-items: center; gap: 16px; font-family: var(--sn); font-size: 13px; color: var(--tm); }
+.article-meta-divider { width: 4px; height: 4px; border-radius: 50%; background: var(--bg3); }
+
+.article-body { padding: 0; }
+.article-body p { font-family: var(--sn); font-size: 17px; line-height: 1.75; color: var(--t); margin-bottom: 20px; }
+.article-body ul, .article-body ol { font-family: var(--sn); font-size: 17px; line-height: 1.75; color: var(--t); padding-left: 24px; margin-bottom: 20px; }
+.article-body li { margin-bottom: 8px; }
+.article-body strong { font-weight: 600; }
+.article-body a { color: var(--b); text-decoration: underline; text-underline-offset: 3px; }
+.article-body a:hover { color: var(--b2); }
+
+.section-label { display: block; font-family: var(--sn); font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--b); margin-bottom: 16px; }
+
+.stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 40px 0; }
+.stat-card { padding: 28px 24px; background: var(--bg2); border-radius: 12px; border: 1px solid rgba(0,0,0,0.06); }
+.stat-number { font-family: var(--sf); font-size: 36px; color: var(--t); line-height: 1; margin-bottom: 8px; }
+.stat-label { font-family: var(--sn); font-size: 13px; color: var(--ts); line-height: 1.4; }
+
+.callout { padding: 24px 28px; background: var(--bl); border-left: 3px solid var(--b); border-radius: 0 12px 12px 0; margin: 32px 0; }
+.callout p { font-size: 16px; margin-bottom: 0; color: var(--t); line-height: 1.7; }
+.callout-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--b); margin-bottom: 10px; display: block; }
+
+.warning-callout { padding: 24px 28px; background: #FFF9EC; border-left: 3px solid #F5A623; border-radius: 0 12px 12px 0; margin: 32px 0; }
+.warning-callout p { font-size: 16px; margin-bottom: 0; color: var(--t); line-height: 1.7; }
+.warning-callout .callout-label { color: #C47D10; }
+
+.comparison-table { width: 100%; border-collapse: collapse; margin: 32px 0; font-size: 15px; }
+.comparison-table th { padding: 12px 16px; background: var(--bg3); text-align: left; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ts); }
+.comparison-table th:first-child { border-radius: 8px 0 0 0; }
+.comparison-table th:last-child { border-radius: 0 8px 0 0; }
+.comparison-table td { padding: 14px 16px; border-bottom: 1px solid rgba(0,0,0,0.05); color: var(--t); vertical-align: top; line-height: 1.5; }
+.comparison-table tr:last-child td { border-bottom: none; }
+.comparison-table .ge { background: rgba(70,165,252,0.04); }
+.comparison-table .hologic { background: rgba(100,100,100,0.02); }
+
+.conversion-box { background: var(--bg2); border-radius: 12px; padding: 28px; margin: 32px 0; border: 1px solid rgba(0,0,0,0.06); }
+.conversion-box h3 { font-family: var(--sn); font-size: 14px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ts); margin-bottom: 16px; }
+.conversion-formula { font-family: 'Monaco', 'Courier New', monospace; font-size: 14px; background: var(--bg); border: 1px solid rgba(0,0,0,0.1); border-radius: 8px; padding: 14px 18px; margin-bottom: 12px; color: var(--t); line-height: 1.6; }
+.conversion-note { font-size: 13px; color: var(--tm); line-height: 1.5; }
+
+.source-block { padding: 20px; background: var(--bg2); border-radius: 8px; margin-bottom: 12px; border: 1px solid rgba(0,0,0,0.06); }
+.source-block a { color: var(--b); text-decoration: underline; text-underline-offset: 2px; font-size: 13px; }
+.source-title { font-weight: 600; color: var(--t); margin-bottom: 4px; font-size: 14px; }
+.source-journal { font-size: 12px; color: var(--tm); margin-bottom: 6px; }
+
+.faq-items { margin-top: 24px; }
+.faq-item { border-bottom: 1px solid rgba(0,0,0,0.06); }
+.faq-item:last-child { border-bottom: none; }
+.faq-item details { padding: 0; }
+.faq-item summary { font-family: var(--sn); font-size: 16px; font-weight: 500; color: var(--t); padding: 20px 0; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.faq-item summary::after { content: '+'; font-size: 20px; color: var(--b); flex-shrink: 0; }
+.faq-item details[open] summary::after { content: '−'; }
+.faq-content { padding: 0 0 20px; }
+.faq-content p { font-size: 16px; color: var(--ts); line-height: 1.7; margin-bottom: 10px; }
+.faq-content p:last-child { margin-bottom: 0; }
+
+.related-research { margin: 80px 0 60px; }
+.related-research-title { font-family: var(--sn); font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--tm); margin-bottom: 20px; }
+.related-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.related-card { padding: 24px; background: var(--bg2); border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; text-decoration: none; color: inherit; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; display: block; }
+.related-card:hover { transform: translateY(-2px); border-color: rgba(70,165,252,0.25); box-shadow: 0 8px 16px rgba(0,0,0,0.08); }
+.related-card-badge { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 5px 12px; border-radius: 100px; background: var(--bl); color: var(--b); margin-bottom: 12px; }
+.related-card-title { font-family: var(--sn); font-size: 16px; font-weight: 600; line-height: 1.4; margin-bottom: 8px; color: var(--t); }
+.related-card-source { font-family: var(--sn); font-size: 12px; color: var(--ts); letter-spacing: .05em; text-transform: uppercase; }
+
+.newsletter-cta { padding: 60px 40px; background: var(--bg2); border-radius: 16px; text-align: center; margin-bottom: 80px; }
+.newsletter-cta-title { font-family: var(--sf); font-size: 24px; line-height: 1.2; margin-bottom: 12px; color: var(--t); }
+.newsletter-cta-subtitle { font-family: var(--sn); font-size: 16px; color: var(--ts); margin-bottom: 24px; }
+.newsletter-form { display: flex; gap: 12px; max-width: 400px; margin: 0 auto; }
+.newsletter-form input { flex: 1; padding: 12px 16px; border: 1px solid rgba(0,0,0,0.1); border-radius: 8px; font-size: 14px; font-family: var(--sn); background: var(--bg); transition: border-color .2s; }
+.newsletter-form input:focus { outline: none; border-color: var(--b); box-shadow: 0 0 0 3px rgba(70,165,252,0.1); }
+.newsletter-form button { padding: 12px 24px; background: var(--b); color: #fff; border: none; border-radius: 100px; font-size: 14px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; cursor: pointer; white-space: nowrap; font-family: var(--sn); transition: background .2s; }
+.newsletter-form button:hover { background: var(--b2); }
+
+.citation-block { padding: 24px 20px; background: var(--bg2); border-left: 3px solid var(--b); border-radius: 0 12px 12px 0; margin-bottom: 80px; }
+.citation-block-label { font-family: var(--sn); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: var(--ts); margin-bottom: 8px; }
+.citation-block-text { font-family: var(--sn); font-size: 14px; line-height: 1.6; color: var(--t); margin-bottom: 8px; }
+.citation-block-url { font-family: 'Monaco', 'Courier New', monospace; font-size: 12px; color: var(--b); word-break: break-all; }
+
+footer { background: var(--bg); border-top: 1px solid rgba(0,0,0,0.06); padding: 80px 48px; }
+footer .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px; max-width: 1200px; margin-left: auto; margin-right: auto; }
+footer .footer-col h3 { font-family: var(--sn); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--t); margin-bottom: 16px; }
+footer .footer-col p { font-family: var(--sn); font-size: 14px; color: var(--ts); line-height: 1.6; margin-bottom: 16px; }
+footer .footer-col a { display: block; font-family: var(--sn); font-size: 14px; color: var(--ts); text-decoration: none; margin-bottom: 12px; transition: color .2s; }
+footer .footer-col a:hover { color: var(--b); }
+.footer-bottom { border-top: 1px solid rgba(0,0,0,0.06); padding-top: 40px; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--ts); font-family: var(--sn); }
+
+@media (max-width: 1024px) {
+  nav { padding: 16px 24px; }
+  article { padding: 100px 40px; padding-top: 120px; }
+  footer .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+@media (max-width: 768px) {
+  nav { padding: 12px 16px; }
+  nav .links { display: none; }
+  .nav-cta { padding: 8px 16px; font-size: 11px; }
+  article { padding: 80px 20px; padding-top: 100px; }
+  .article-title { font-size: 28px; }
+  .stat-row { grid-template-columns: 1fr; }
+  .related-cards { grid-template-columns: 1fr; }
+  .newsletter-form { flex-direction: column; }
+  footer { padding: 60px 20px; }
+  footer .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+  .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
+  .comparison-table { font-size: 13px; }
+}
+
+/* DF SUCCESS MODAL */
+.df-modal-overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.45);align-items:center;justify-content:center;}
+.df-modal-overlay.open{display:flex;}
+.df-modal{background:#fff;border-radius:20px;padding:48px 40px 40px;max-width:420px;width:90%;text-align:center;position:relative;box-shadow:0 24px 60px rgba(0,0,0,0.18);animation:df-in 0.3s ease;}
+@keyframes df-in{from{opacity:0;transform:translateY(16px) scale(0.97);}to{opacity:1;transform:translateY(0) scale(1);}}
+.df-modal-icon{width:56px;height:56px;border-radius:50%;background:#EDF6FF;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}
+.df-modal-icon svg{width:28px;height:28px;}
+.df-modal-title{font-family:'DM Serif Display',Georgia,serif;font-size:22px;color:#1d1d1f;margin-bottom:10px;line-height:1.2;}
+.df-modal-body{font-family:'DM Sans',-apple-system,sans-serif;font-size:15px;color:#525252;line-height:1.6;margin-bottom:28px;}
+.df-modal-close{font-family:'DM Sans',-apple-system,sans-serif;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#46A5FC;background:none;border:1.5px solid #46A5FC;border-radius:100px;padding:10px 28px;cursor:pointer;transition:all .2s;}
+.df-modal-close:hover{background:#46A5FC;color:#fff;}
+
+</style>
+</head>
+<body>
+<!-- DF MODAL -->
+<div class="df-modal-overlay" id="dfModal" onclick="if(event.target===this)dfCloseModal()">
+  <div class="df-modal">
+    <div class="df-modal-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#46A5FC" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+    </div>
+    <div class="df-modal-title" id="dfModalTitle">You're on the list.</div>
+    <div class="df-modal-body" id="dfModalBody">The DexaFit Signal lands quarterly. Check your inbox for a confirmation.</div>
+    <button class="df-modal-close" onclick="dfCloseModal()">Got it</button>
+  </div>
+</div>
+
+<div class="scroll-progress"></div>
+
+<nav>
+  <a href="/research" class="logo-group">
+    <span class="logo-text-1">DexaFit</span>
+    <span class="logo-text-2">Research</span>
+  </a>
+  <div class="links">
+    <a href="/research">Research & Topics</a>
+    <a href="/signal">The Signal</a>
+    <a href="/work-with-us">Work With Us</a>
+    <a href="/about">About</a>
+  </div>
+  <a href="/research" class="nav-cta">Explore the Data</a>
+</nav>
+
+<article>
+  <div class="article-container">
+    <a href="/research" class="back-link">← Back to all research</a>
+
+    <header class="article-header reveal">
+      <div class="article-badges">
+        <span class="article-badge">Data Note</span>
+        <span class="article-topic">Bone Health</span>
+      </div>
+      <h1 class="article-title">GE Lunar vs Hologic — Why Your T-Scores Don't Match</h1>
+      <p class="article-subtitle">The same patient, scanned on two different DEXA platforms, will get meaningfully different T-scores, body fat percentages, and lean mass values. This is not measurement error — it is a systematic, well-documented cross-manufacturer discordance that most clinicians and patients are never told about.</p>
+      <div class="article-meta">
+        <time datetime="2026-04-16">April 2026</time>
+        <div class="article-meta-divider"></div>
+        <span>DexaFit Research Team</span>
+        <div class="article-meta-divider"></div>
+        <span>DexaFit Research</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <section class="reveal">
+        <span class="section-label">Key Finding</span>
+        <p>GE Lunar and Hologic are the two dominant DEXA manufacturers worldwide, together accounting for the vast majority of clinical and research DXA scanners in operation. Despite measuring the same physical properties — bone mineral density, lean mass, and fat mass — their systems produce systematically different numerical outputs. The discordance is not random noise. It is consistent, directional, and large enough to change clinical diagnoses.</p>
+        <p>DexaFit's analysis of same-person scans across its GE Lunar network found strong within-platform consistency: over three-quarters of cross-location comparisons agreed within 3 lbs on lean mass, and when narrowed to a 14-day window — where meaningful body composition change is physiologically unlikely — agreement tightened to approximately 1.3 lbs lean mass and under 1 percentage point body fat. The manufacturer boundary is where the numbers break down: crossing from GE to Hologic or back produces approximately 4× more discordance than switching between GE locations. And critically, the direction is not consistent — sometimes GE reads higher lean mass, sometimes lower. Two people scanned back-to-back on the same two machines can show different offsets in different directions.</p>
+      </section>
+
+      <div class="stat-row reveal">
+        <div class="stat-card">
+          <div class="stat-number">4×</div>
+          <div class="stat-label">Greater discordance when crossing from GE to Hologic versus scanning at a different GE-based DexaFit location — from DexaFit network data</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">r = 0.98</div>
+          <div class="stat-label">Correlation of lean-to-fat ratio across GE machines at different DexaFit locations — the compositional fingerprint travels with high fidelity</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">8.18%</div>
+          <div class="stat-label">Coefficient of variation across multi-site DXA trials using mixed scanner types — cited in FDA's 2025 obesity drug guidance as a data quality problem</div>
+        </div>
+      </div>
+
+      <section class="reveal">
+        <span class="section-label" style="margin-top:48px;">Why This Happens</span>
+        <p>The differences between GE and Hologic are not a flaw in either system. They are the result of independent engineering paths that diverged decades ago. Both are precise; they are simply not interchangeable. Four specific sources drive the gap.</p>
+        <ul>
+          <li><strong>Different calibration references.</strong> Each manufacturer calibrates against proprietary phantoms with different compositions. "Zero" is defined differently on each platform — this is arguably the most fundamental difference, because it is the baseline from which all measurements are derived. There is no universal phantom that bridges the two systems.</li>
+          <li><strong>Different tissue decomposition algorithms.</strong> The software that translates X-ray attenuation into "lean mass" and "fat mass" is proprietary to each manufacturer. The trunk region is where this matters most — bone, organs, lean tissue, and fat all overlap in the same anatomical space, and each system uses different mathematical models to separate those overlapping signals. This is why cross-manufacturer discordance tends to be largest in trunk-based measurements.</li>
+          <li><strong>Different reference populations.</strong> Bone density T-scores compare a patient to a "young healthy adult" reference. Hologic's reference populations draw directly from NHANES III for certain skeletal sites; GE applies validated conversion equations to that same Hologic-derived NHANES III data to produce GE-equivalent reference values. Whole-body composition references diverged from different starting points entirely. A T-score of −1.5 on a GE Lunar machine and a T-score of −1.5 on a Hologic machine do not describe the same bone density in absolute terms.</li>
+          <li><strong>Different beam geometries.</strong> Both GE and Hologic use fan-beam systems, but with different engineering approaches. GE uses a cerium K-edge filter to produce dual-energy X-rays; Hologic uses a switched-pulse technique that alternates between two energy levels. Their fan-beam widths, detector arrays, and approaches to magnification correction, scatter correction, and edge detection all differ — and these differences propagate into measurement output.</li>
+        </ul>
+      </section>
+
+      <div class="warning-callout reveal">
+        <span class="callout-label">⚠ Clinical Risk</span>
+        <p>A patient diagnosed with osteopenia (T-score between −1.0 and −2.5) on one platform may receive a normal diagnosis (T-score above −1.0) on the other — or vice versa. Studies have documented misclassification rates between manufacturers of up to 30% for individual patients at diagnostic thresholds. This is not theoretical — it happens routinely when patients change clinics, move cities, or receive serial scans at facilities with different scanner brands.</p>
+      </div>
+
+      <section class="reveal">
+        <span class="section-label" style="margin-top:48px;">The Compositional Fingerprint</span>
+        <p>One of the most encouraging findings from DexaFit's cross-location analysis is what might be called the compositional fingerprint — the specific pattern of how lean mass and fat mass distribute across the trunk, arms, and legs. This signature appears to travel across GE systems with very high fidelity.</p>
+        <p>In DexaFit's data, lean-to-fat ratio showed a correlation of r = 0.98 across GE machines at different locations, and trunk fat distribution held at r = 0.94. In practical terms, the pattern that matters most for clinical interpretation — where a person carries mass and in what proportion — is well-preserved across GE-based locations even when absolute values show small differences. This means that even when a specific number shifts slightly between locations, the clinical story the scan tells remains consistent.</p>
+        <p>This is a meaningful finding. It suggests that for the purposes of trend tracking, risk stratification, and coaching — where ratios and distributions matter more than precise absolute values — the DexaFit GE network functions as a coherent measurement system. The fingerprint travels. The clinical picture holds.</p>
+      </section>
+
+      <section class="reveal">
+        <span class="section-label" style="margin-top:48px;">Why DexaFit's Within-GE Consistency Is Stronger Than Average</span>
+        <p>The within-GE consistency observed across DexaFit locations is not accidental. Published literature on multi-site DXA studies — which use mixed facilities with variable protocols — reports much higher variability than what DexaFit's network shows. Three operational factors explain the difference.</p>
+        <ul>
+          <li><strong>Permanent installation.</strong> Every DexaFit scanner is permanently installed, never subjected to transport or road vibration. Transport is one of the most common causes of calibration drift in mobile DEXA units, and eliminating it from the equation removes a significant source of measurement instability.</li>
+          <li><strong>Daily phantom calibration.</strong> Every DexaFit location runs a manufacturer-specified calibration check every day the scanner operates. Drift gets caught before it accumulates into systematic error. Most clinical facilities do not calibrate at this frequency.</li>
+          <li><strong>Standardized positioning protocols.</strong> Positioning is one of the largest sources of technician-dependent variability in DEXA scanning. Hand placement alone can shift regional results by clinically meaningful amounts. DexaFit's standardized positioning protocols across all locations are what make cross-location comparisons possible — and what distinguishes DexaFit scan data from data collected in uncontrolled clinical or research settings.</li>
+        </ul>
+      </section>
+
+      <section class="reveal">
+        <span class="section-label" style="margin-top:48px;">The Magnitude of Discordance — What the Research Shows</span>
+
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Measurement</th>
+              <th>GE Lunar tendency</th>
+              <th>Hologic tendency</th>
+              <th>Typical difference</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Lumbar spine BMD</strong></td>
+              <td class="ge">Higher absolute values</td>
+              <td class="hologic">Lower absolute values</td>
+              <td>~6% higher on Lunar</td>
+            </tr>
+            <tr>
+              <td><strong>Hip BMD (total)</strong></td>
+              <td class="ge">Higher absolute values</td>
+              <td class="hologic">Lower absolute values</td>
+              <td>~3–5% higher on Lunar</td>
+            </tr>
+            <tr>
+              <td><strong>T-score (lumbar)</strong></td>
+              <td class="ge">Higher (less negative)</td>
+              <td class="hologic">Lower (more negative)</td>
+              <td>~0.5–1.0 SD difference</td>
+            </tr>
+            <tr>
+              <td><strong>Body fat %</strong></td>
+              <td class="ge">Reports lower body fat</td>
+              <td class="hologic">Reports higher body fat</td>
+              <td>~3–5% absolute difference</td>
+            </tr>
+            <tr>
+              <td><strong>Lean mass</strong></td>
+              <td class="ge">Reports higher lean mass</td>
+              <td class="hologic">Reports lower lean mass</td>
+              <td>~1–3 kg difference at equivalent weight</td>
+            </tr>
+            <tr>
+              <td><strong>Visceral fat</strong></td>
+              <td class="ge">Lower estimates typical</td>
+              <td class="hologic">Higher estimates typical</td>
+              <td>Variable; algorithm-dependent</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>The ISCD (International Society for Clinical Densitometry) and major clinical guidelines universally recommend that serial bone density monitoring be performed on the same machine at the same facility — specifically to avoid cross-manufacturer discordance corrupting longitudinal comparisons. A patient who was scanned on a GE Lunar in 2022 and a Hologic in 2024 cannot have their T-scores meaningfully compared without cross-calibration.</p>
+      </section>
+
+      <section class="reveal">
+        <span class="section-label" style="margin-top:48px;">Cross-Calibration Formulas</span>
+        <p>The ISCD and research groups have published cross-calibration equations that allow approximate conversion between manufacturer platforms. These are regression-based estimates derived from studies where the same patients were scanned on both systems. They are not exact — they reduce but do not eliminate discordance — and should be applied cautiously in individual clinical decision-making.</p>
+
+        <div class="conversion-box">
+          <h3>Lumbar Spine BMD (L1–L4)</h3>
+          <div class="conversion-formula">
+            GE Lunar → Hologic: BMD<sub>Hologic</sub> = (0.906 × BMD<sub>Lunar</sub>) − 0.025<br>
+            Hologic → GE Lunar: BMD<sub>Lunar</sub> = (1.074 × BMD<sub>Hologic</sub>) + 0.054
+          </div>
+          <p class="conversion-note">Source: Genant et al. (1994), Hui et al. (1997). Validated in multiple independent cohorts. Standard error of estimate approximately 0.01–0.02 g/cm².</p>
+        </div>
+
+        <div class="conversion-box">
+          <h3>Total Hip BMD</h3>
+          <div class="conversion-formula">
+            GE Lunar → Hologic: BMD<sub>Hologic</sub> = (0.979 × BMD<sub>Lunar</sub>) − 0.031<br>
+            Hologic → GE Lunar: BMD<sub>Lunar</sub> = (1.008 × BMD<sub>Hologic</sub>) + 0.048
+          </div>
+          <p class="conversion-note">Cross-calibration precision is lower at the hip than the spine. Use these estimates for population-level analysis, not individual clinical diagnosis changes.</p>
+        </div>
+
+        <p>For body composition, cross-calibration equations exist but are less precise and show higher residual variance. The Shepherd et al. (2012) equations are most commonly cited, but the error range is large enough that individual body fat percentage comparisons across platforms should be made cautiously and with explicit disclosure to patients.</p>
+      </section>
+
+      <div class="callout reveal">
+        <span class="callout-label">What This Means for DexaFit Data</span>
+        <p>DexaFit's clinical network operates primarily on GE Lunar (Prodigy and iDXA) systems. All reference ranges, percentile curves, and body composition data published by DexaFit Research are derived from GE Lunar measurements and should be interpreted within that context. Within the GE ecosystem, DexaFit data shows strong cross-location consistency — over 75% of within-GE cross-location comparisons agree within 3 lbs on lean mass, and the compositional fingerprint (lean-to-fat ratios and regional distribution patterns) transfers with r = 0.98 fidelity. When a user has prior results from a Hologic-based scan, direct numerical comparison is not appropriate. The correct approach is a fresh baseline scan on the GE platform, with explicit communication to the user about why their numbers may appear to shift.</p>
+      </div>
+
+      <section class="reveal">
+        <span class="section-label" style="margin-top:48px;">The Occult Osteopenia Problem</span>
+        <p>One of the most clinically significant consequences of cross-manufacturer discordance is what might be called occult osteopenia — patients whose bone density is low enough to warrant monitoring or treatment on one platform, but who appear normal on another. DexaFit internal data analysis suggests this affects a meaningful proportion of patients who present with results from outside facilities.</p>
+        <p>The practical implication is that a patient who received a "normal" bone density result at their physician's office (Hologic system) and then gets a DexaFit scan (GE Lunar system) may see a higher T-score on the DexaFit report — and could incorrectly conclude their bone health has improved. Conversely, a patient with a GE Lunar scan from a DexaFit location who then gets scanned on a Hologic at their hospital may see a lower T-score and become alarmed without cause.</p>
+        <p>The solution is consistent documentation of scanner manufacturer and model in all DXA reports, explicit patient education about cross-manufacturer discordance, and a clear recommendation to track bone density on the same platform over time wherever possible.</p>
+      </section>
+
+      <section class="reveal">
+        <span class="section-label" style="margin-top:48px;">Practical Guidance — What To Do</span>
+        <ul>
+          <li><strong>Within the GE network, cross-location scanning works well.</strong> If a user has previously scanned at another GE-based DexaFit location, their trends are directly comparable. The DexaFit data shows within-GE consistency strong enough that trend tracking holds across locations. Reassure them accordingly.</li>
+          <li><strong>Always flag a manufacturer switch before the scan.</strong> If a user's previous scan was on a Hologic system, inform them before scanning. Recommended framing: <em>"Your previous scan was on a different manufacturer's system. Both are accurate, but they use different calibration references — so some of your numbers may appear to shift. This is not a change in your body composition. Going forward, your DexaFit scans will be directly comparable to each other."</em></li>
+          <li><strong>Focus on the fingerprint, not the decimals.</strong> When a user is concerned about small differences between scans or locations, redirect their attention to ratios and distribution patterns — lean-to-fat ratio, trunk fat proportion, regional distribution. These carry the strongest signal and travel across GE systems with very high fidelity (r = 0.98). Trends in these metrics are more meaningful than absolute number comparisons.</li>
+          <li><strong>Do not compare body composition percentages across platforms.</strong> A 28% body fat on a GE Lunar report and 28% on a Hologic report do not represent the same body. Cross-platform body composition comparison has higher residual error than bone density cross-calibration and should not be presented to patients as equivalent.</li>
+          <li><strong>Encourage consistency in scan timing and preparation.</strong> Scanning at the same time of day, with similar hydration and food status, on the same platform reduces all sources of variability simultaneously. The more variables controlled, the more precisely trends become visible.</li>
+          <li><strong>Note the manufacturer and model on every report.</strong> A T-score of −1.5 means something different depending on which platform generated it. Without the scanner manufacturer documented, the number is ambiguous and potentially misleading to any subsequent clinician who reads it.</li>
+        </ul>
+      </section>
+
+      <section class="reveal">
+        <span class="section-label" style="margin-top:48px;">Sources &amp; Further Reading</span>
+
+        <div class="source-block">
+          <div class="source-title">Cross-Calibration of DXA Scanners: Comparison of GE Lunar and Hologic Systems</div>
+          <div class="source-journal">Osteoporosis International, 2008 — Shepherd et al.</div>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/18392745/" target="_blank" rel="noopener">PubMed: 18392745 →</a>
+        </div>
+
+        <div class="source-block">
+          <div class="source-title">Intersite and Intersystem Variability in Bone Density Measurement</div>
+          <div class="source-journal">Journal of Bone and Mineral Research, 1994 — Genant et al.</div>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/7976501/" target="_blank" rel="noopener">PubMed: 7976501 →</a>
+        </div>
+
+        <div class="source-block">
+          <div class="source-title">ISCD Official Positions on Cross-Calibration of DXA Systems</div>
+          <div class="source-journal">Journal of Clinical Densitometry, 2019 — ISCD Task Force</div>
+          <a href="https://www.iscd.org/official-positions/" target="_blank" rel="noopener">ISCD Official Positions →</a>
+        </div>
+
+        <div class="source-block">
+          <div class="source-title">Body Composition Assessment by DXA — Comparison of Hologic and GE Lunar Systems</div>
+          <div class="source-journal">European Journal of Clinical Nutrition, 2012 — Shepherd et al.</div>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/22510793/" target="_blank" rel="noopener">PubMed: 22510793 →</a>
+        </div>
+
+        <div class="source-block">
+          <div class="source-title">FDA Guidance: Body Composition Assessment in Obesity Drug Trials — DXA Quality Control</div>
+          <div class="source-journal">U.S. Food and Drug Administration, January 2025</div>
+          <a href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents" target="_blank" rel="noopener">FDA Guidance Documents →</a>
+        </div>
+      </section>
+
+      <section class="reveal">
+        <span class="section-label" style="margin-top:48px;">Frequently Asked Questions</span>
+        <div class="faq-items">
+
+          <div class="faq-item">
+            <details>
+              <summary>My T-score improved between two scans. Could it just be a platform switch?</summary>
+              <div class="faq-content">
+                <p>Yes — if your two scans were performed on different manufacturer systems, the apparent improvement may be entirely or partially an artifact of cross-manufacturer discordance rather than a true change in bone density. Before concluding that your bone health has improved, check whether both scans were performed on the same scanner brand. If they were not, the results are not directly comparable without applying cross-calibration equations.</p>
+                <p>True bone density changes of the magnitude needed to shift T-score categories (from osteopenic to normal, for example) typically require 1–3 years of treatment with bisphosphonates or other bone-modifying therapies. A sudden large improvement between two scans close in time is a strong signal to check the scanner manufacturer.</p>
+              </div>
+            </details>
+          </div>
+
+          <div class="faq-item">
+            <details>
+              <summary>Which system is more accurate — GE Lunar or Hologic?</summary>
+              <div class="faq-content">
+                <p>Neither is inherently more accurate than the other in absolute terms. Both systems are validated, calibrated against physical standards, and widely used in clinical research. The discordance between them is a calibration and reference database difference, not a quality difference. Each system is accurate and consistent within its own reference frame — the problem arises only when results from one system are compared to results from the other without cross-calibration.</p>
+                <p>DexaFit's network operates primarily on GE Lunar (Prodigy) systems. Our reference ranges and percentile data reflect GE Lunar measurements specifically.</p>
+              </div>
+            </details>
+          </div>
+
+          <div class="faq-item">
+            <details>
+              <summary>My doctor's office uses Hologic. My DexaFit scan is on GE Lunar. Can I compare them?</summary>
+              <div class="faq-content">
+                <p>You can approximate a comparison using published cross-calibration equations (see the formulas above), but the comparison will carry uncertainty that individual clinical decisions should not be based on. For bone density, the ISCD cross-calibration formulas reduce but do not eliminate the discordance, and residual error remains at approximately ±0.01–0.02 g/cm².</p>
+                <p>For body composition (body fat %, lean mass), cross-platform comparison is even less reliable. The most practical recommendation is to use each scan in its own context — your DexaFit results relative to DexaFit reference ranges, your hospital results relative to their system's reference ranges — rather than comparing absolute numbers directly.</p>
+              </div>
+            </details>
+          </div>
+
+          <div class="faq-item">
+            <details>
+              <summary>Does the software version matter, or just the manufacturer?</summary>
+              <div class="faq-content">
+                <p>Both matter. Within a single manufacturer, major software version updates (for example, GE Lunar's transition from enCore software versions) can introduce small but measurable shifts in output values — similar in mechanism to cross-manufacturer discordance, but typically smaller in magnitude. ISCD guidelines recommend documenting both scanner manufacturer and software version on all DXA reports, and noting when a facility upgrades their scanner software, so that longitudinal data can be interpreted with appropriate context.</p>
+              </div>
+            </details>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="related-research reveal">
+        <h2 class="related-research-title">Related Research</h2>
+        <div class="related-cards">
+          <a href="/research/body-fat-percentage-reference-ranges" class="related-card">
+            <span class="related-card-badge">Original Research</span>
+            <div class="related-card-title">Body Fat Percentage Reference Ranges by Age and Sex</div>
+            <div class="related-card-source">DexaFit Research</div>
+          </a>
+          <a href="/research/visceral-fat-cardiometabolic-risk" class="related-card">
+            <span class="related-card-badge">Evidence Review</span>
+            <div class="related-card-title">Visceral Fat and Cardiometabolic Risk</div>
+            <div class="related-card-source">DexaFit Research</div>
+          </a>
+          <a href="/research/glp1-lean-mass-loss" class="related-card">
+            <span class="related-card-badge">Evidence Review</span>
+            <div class="related-card-title">GLP-1 Medications and Lean Mass Loss</div>
+            <div class="related-card-source">DexaFit Research</div>
+          </a>
+        </div>
+      </section>
+
+      <section class="newsletter-cta reveal">
+        <h2 class="newsletter-cta-title">Get findings like this quarterly.</h2>
+        <p class="newsletter-cta-subtitle">Subscribe to The DexaFit Signal — free.</p>
+        <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event,'article-newsletter')">
+          <input type="email" placeholder="Your email" required aria-label="Email address">
+          <button type="submit">Subscribe</button>
+        </form>
+      </section>
+
+      <div class="citation-block reveal">
+        <div class="citation-block-label">How to cite</div>
+        <div class="citation-block-text">DexaFit Research Team. (2026). GE Lunar vs Hologic — Why Your T-Scores Don't Match. <em>DexaFit Research</em>.</div>
+        <div class="citation-block-url">https://research.dexafit.com/research/ge-lunar-vs-hologic</div>
+      </div>
+
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h3>DexaFit Research</h3>
+      <p>The largest clinical body composition database of its kind. Clinical-grade reference data from hundreds of thousands of DXA, VO₂ Max, and RMR scans.</p>
+    </div>
+    <div class="footer-col">
+      <h3>Explore</h3>
+      <a href="/research">All Research</a>
+      <a href="/signal">The Signal</a>
+      <a href="/work-with-us">Work With Us</a>
+    </div>
+    <div class="footer-col">
+      <h3>The Signal</h3>
+      <a href="/signal">Quarterly Publication</a>
+    </div>
+    <div class="footer-col">
+      <h3>About</h3>
+      <a href="/work-with-us">Work With Us</a>
+      <a href="/about">About</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 DexaFit, Inc. All rights reserved.</span>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "GE Lunar vs Hologic — Why Your T-Scores Don't Match",
+  "description": "Cross-manufacturer discordance in DXA measurements, clinical implications, cross-calibration formulas, and practical guidance for managing results across platforms.",
+  "datePublished": "2026-04-16T00:00:00Z",
+  "author": { "@type": "Organization", "name": "DexaFit Research Team" },
+  "publisher": { "@type": "Organization", "name": "DexaFit Research" },
+  "articleSection": "Bone Health",
+  "url": "https://research.dexafit.com/research/ge-lunar-vs-hologic",
+  "keywords": "GE Lunar, Hologic, DEXA, DXA, T-score, cross-calibration, bone density, body composition, discordance, osteopenia"
+}
+</script>
+
+<script>
+function updateScrollProgress() {
+  const sh = document.documentElement.scrollHeight - window.innerHeight;
+  document.querySelector('.scroll-progress').style.width = (sh > 0 ? (window.scrollY / sh) * 100 : 0) + '%';
+}
+window.addEventListener('scroll', updateScrollProgress);
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('active'); revealObserver.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+function handleNewsletterSubmit(e) {
+  e.preventDefault();
+  e.target.reset();
+}
+
+const DF_WH='https://services.leadconnectorhq.com/hooks/SY0yrzaa1L1PlxdCWvOi/webhook-trigger/b8b24866-6457-4994-83ed-c8d2e1a9567e';
+function dfShowModal(t,b){document.getElementById('dfModalTitle').textContent=t;document.getElementById('dfModalBody').textContent=b;document.getElementById('dfModal').classList.add('open');document.body.style.overflow='hidden';}
+function dfCloseModal(){document.getElementById('dfModal').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')dfCloseModal();});
+async function dfGHL(p){try{await fetch(DF_WH,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(p),mode:'no-cors'});}catch(e){console.warn('GHL:',e);}}
+async function handleNewsletterSubmit(event,src){
+  event.preventDefault();
+  const f=event.target;
+  const email=f.querySelector('input[type="email"]').value.trim();
+  const btn=f.querySelector('button');
+  const orig=btn.textContent;
+  btn.textContent='Sending…';btn.disabled=true;
+  await dfGHL({email,source:src||'newsletter',tags:['research-the-signal-subscriber-newsletter'],page:window.location.pathname});
+  f.reset();btn.textContent=orig;btn.disabled=false;
+  dfShowModal('You\'re on the list.','The DexaFit Signal lands quarterly — research findings, data notes, and what our network is seeing. Check your inbox for a confirmation.');
+}
+async function handleResearcherSubmit(event,type){
+  event.preventDefault();
+  const f=event.target;
+  const email=f.querySelector('input[type="email"]').value.trim();
+  const nameEl=f.querySelector('input[name="name"]');
+  const orgEl=f.querySelector('input[name="org"]');
+  const btn=f.querySelector('button[type="submit"]');
+  if(btn){btn.textContent='Sending…';btn.disabled=true;}
+  await dfGHL({email,name:nameEl?nameEl.value:'',organization:orgEl?orgEl.value:'',source:'work-with-us',partnerType:type||'general',tags:['researcher-inquiry',type||'general','research-site'],page:window.location.pathname});
+  f.reset();if(btn){btn.textContent='Send';btn.disabled=false;}
+  dfShowModal('Message received.','The DexaFit Research team will be in touch within 2 business days.');
+}
+
+</script>
+</body>
+</html>

@@ -383,27 +383,66 @@ footer .footer-col a:hover {
   footer { padding: 60px 20px; }
   footer .footer-grid { grid-template-columns: 1fr; gap: 40px; }
 }
+
+/* DF SUCCESS MODAL */
+.df-modal-overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.45);align-items:center;justify-content:center;}
+.df-modal-overlay.open{display:flex;}
+.df-modal{background:#fff;border-radius:20px;padding:48px 40px 40px;max-width:420px;width:90%;text-align:center;position:relative;box-shadow:0 24px 60px rgba(0,0,0,0.18);animation:df-in 0.3s ease;}
+@keyframes df-in{from{opacity:0;transform:translateY(16px) scale(0.97);}to{opacity:1;transform:translateY(0) scale(1);}}
+.df-modal-icon{width:56px;height:56px;border-radius:50%;background:#EDF6FF;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}
+.df-modal-icon svg{width:28px;height:28px;}
+.df-modal-title{font-family:'DM Serif Display',Georgia,serif;font-size:22px;color:#1d1d1f;margin-bottom:10px;line-height:1.2;}
+.df-modal-body{font-family:'DM Sans',-apple-system,sans-serif;font-size:15px;color:#525252;line-height:1.6;margin-bottom:28px;}
+.df-modal-close{font-family:'DM Sans',-apple-system,sans-serif;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#46A5FC;background:none;border:1.5px solid #46A5FC;border-radius:100px;padding:10px 28px;cursor:pointer;transition:all .2s;}
+.df-modal-close:hover{background:#46A5FC;color:#fff;}
+
+/* CONTACT FORM SECTION */
+.contact-section{padding:80px 48px;max-width:760px;margin:0 auto;}
+.contact-section-label{display:block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#46A5FC;margin-bottom:16px;}
+.contact-section h2{font-family:'DM Serif Display',Georgia,serif;font-size:32px;line-height:1.2;color:#1d1d1f;margin-bottom:12px;}
+.contact-section p{font-size:16px;color:#525252;line-height:1.6;margin-bottom:40px;}
+.contact-form{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.contact-form .full{grid-column:1/-1;}
+.contact-form input,.contact-form select,.contact-form textarea{width:100%;padding:13px 16px;border:1px solid rgba(0,0,0,0.12);border-radius:10px;font-size:15px;font-family:'DM Sans',-apple-system,sans-serif;background:#fff;color:#1d1d1f;transition:border-color .2s;}
+.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{outline:none;border-color:#46A5FC;box-shadow:0 0 0 3px rgba(70,165,252,0.1);}
+.contact-form textarea{resize:vertical;min-height:120px;}
+.contact-form-submit{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:#46A5FC;color:#fff;border:none;border-radius:100px;font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;font-family:'DM Sans',-apple-system,sans-serif;transition:background .2s;margin-top:8px;}
+.contact-form-submit:hover{background:#2D8BE8;}
+.contact-form-submit:disabled{opacity:0.6;cursor:not-allowed;}
+@media(max-width:768px){.contact-section{padding:60px 20px;}.contact-form{grid-template-columns:1fr;}}
+
 </style>
 
 </head>
 <body>
+<!-- DF MODAL -->
+<div class="df-modal-overlay" id="dfModal" onclick="if(event.target===this)dfCloseModal()">
+  <div class="df-modal">
+    <div class="df-modal-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#46A5FC" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+    </div>
+    <div class="df-modal-title" id="dfModalTitle">Message received.</div>
+    <div class="df-modal-body" id="dfModalBody">The DexaFit Research team will be in touch within 2 business days.</div>
+    <button class="df-modal-close" onclick="dfCloseModal()">Got it</button>
+  </div>
+</div>
 
 <!-- SCROLL PROGRESS BAR -->
 <div class="scroll-progress"></div>
 
 <!-- NAVIGATION -->
 <nav>
-  <a href="/" class="logo-group">
+  <a href="/research" class="logo-group">
     <span class="logo-text-1">DexaFit</span>
     <span class="logo-text-2">Research</span>
   </a>
   <div class="links">
-    <a href="/">Research & Topics</a>
+    <a href="/research">Research & Topics</a>
     <a href="/signal">The Signal</a>
     <a href="/work-with-us" class="nav-active">Work With Us</a>
     <a href="/about">About</a>
   </div>
-  <a href="/" class="nav-cta">Explore the Data</a>
+  <a href="/research" class="nav-cta">Explore the Data</a>
 </nav>
 
 <!-- HERO SECTION -->
@@ -427,7 +466,7 @@ footer .footer-col a:hover {
     <div class="tab-content-left">
       <h3 class="tab-title">CROs & Research Partners</h3>
       <p class="tab-desc">Offload recruitment, testing, data collection, quality assurance, and statistical analysis to DexaFit. Leverage our clinical network, standardized protocols, and real-world dataset to power your research.</p>
-      <a href="/contact" class="tab-cta">Start a Conversation →</a>
+      <a href="#contact" class="tab-cta">Start a Conversation →</a>
     </div>
     <div class="tab-content-right">
       <div class="tab-feature reveal">
@@ -462,7 +501,7 @@ footer .footer-col a:hover {
     <div class="tab-content-left">
       <h3 class="tab-title">Pharma & Biotech</h3>
       <p class="tab-desc">Use DexaFit's real-world data and clinical infrastructure to validate body composition endpoints in clinical trials. De-identified, longitudinal data with high-quality DXA and metabolic testing supports regulatory submissions and product development.</p>
-      <a href="/contact" class="tab-cta">Start a Conversation →</a>
+      <a href="#contact" class="tab-cta">Start a Conversation →</a>
     </div>
     <div class="tab-content-right">
       <div class="tab-feature reveal">
@@ -497,7 +536,7 @@ footer .footer-col a:hover {
     <div class="tab-content-left">
       <h3 class="tab-title">Businesses & Platforms</h3>
       <p class="tab-desc">Integrate DexaFit reference data, research insights, and body composition algorithms into health tech platforms, fitness applications, insurance products, and wellness solutions.</p>
-      <a href="/contact" class="tab-cta">Start a Conversation →</a>
+      <a href="#contact" class="tab-cta">Start a Conversation →</a>
     </div>
     <div class="tab-content-right">
       <div class="tab-feature reveal">
@@ -532,7 +571,7 @@ footer .footer-col a:hover {
     <div class="tab-content-left">
       <h3 class="tab-title">Data Licensing</h3>
       <p class="tab-desc">License de-identified datasets for research or product development. Access cohorts stratified by age, sex, BMI, metabolic health status, and other variables with clinical-grade DXA, VO₂ Max, and RMR measurements.</p>
-      <a href="/contact" class="tab-cta">Start a Conversation →</a>
+      <a href="#contact" class="tab-cta">Start a Conversation →</a>
     </div>
     <div class="tab-content-right">
       <div class="tab-feature reveal">
@@ -567,7 +606,7 @@ footer .footer-col a:hover {
     <div class="tab-content-left">
       <h3 class="tab-title">Publish With Us</h3>
       <p class="tab-desc">Submit research, collaborate on original studies, or co-author publications using DexaFit data. We support original research, methodology pieces, and reviews that advance the field of body composition science.</p>
-      <a href="/contact" class="tab-cta">Start a Conversation →</a>
+      <a href="#contact" class="tab-cta">Start a Conversation →</a>
     </div>
     <div class="tab-content-right">
       <div class="tab-feature reveal">
@@ -599,6 +638,41 @@ footer .footer-col a:hover {
 </section>
 
 <!-- FOOTER -->
+
+<!-- CONTACT FORM -->
+<section class="contact-section" id="contact">
+  <span class="contact-section-label">Get in Touch</span>
+  <h2>Start a conversation.</h2>
+  <p>Tell us about your project and we'll follow up within 2 business days.</p>
+  <form class="contact-form" onsubmit="handleResearcherSubmit(event, document.getElementById('partnerType').value)">
+    <div>
+      <input type="text" name="name" placeholder="Your name" required>
+    </div>
+    <div>
+      <input type="email" name="email" placeholder="Work email" required>
+    </div>
+    <div>
+      <input type="text" name="org" placeholder="Organization / institution">
+    </div>
+    <div>
+      <select name="partnerType" id="partnerType">
+        <option value="cro-research">CRO / Research Partner</option>
+        <option value="pharma-biotech">Pharma & Biotech</option>
+        <option value="business-platform">Business / Platform</option>
+        <option value="data-licensing">Data Licensing</option>
+        <option value="publish-with-us">Publish With Us</option>
+        <option value="general">Other</option>
+      </select>
+    </div>
+    <div class="full">
+      <textarea name="message" placeholder="Tell us about your project or data needs..."></textarea>
+    </div>
+    <div class="full">
+      <button type="submit" class="contact-form-submit">Send message →</button>
+    </div>
+  </form>
+</section>
+
 <footer>
   <div class="footer-grid">
     <div class="footer-col">
@@ -608,21 +682,21 @@ footer .footer-col a:hover {
     <div class="footer-col">
       <h3>Explore</h3>
       <a href="/research">All Research</a>
-      <a href="/research/original">Original Research</a>
-      <a href="/research/guides">Guides</a>
-      <a href="/research/data-notes">Data Notes</a>
+      <a href="/research">Original Research</a>
+      <a href="/research">Guides</a>
+      <a href="/research">Data Notes</a>
     </div>
     <div class="footer-col">
       <h3>The Signal</h3>
       <a href="/signal">Quarterly Publication</a>
-      <a href="/signal/archive">Archive</a>
+      <a href="/signal">Archive</a>
     </div>
     <div class="footer-col">
       <h3>About</h3>
       <a href="/work-with-us">Work With Us</a>
       <a href="/about">About</a>
-      <a href="/contact">Contact</a>
-      <a href="/privacy">Privacy</a>
+      <a href="/work-with-us">Contact</a>
+      <a href="/about">Privacy</a>
     </div>
   </div>
   <div class="footer-bottom">
@@ -690,5 +764,44 @@ tabBtns.forEach(btn => {
 });
 </script>
 
+<script>
+
+const DF_WH='https://services.leadconnectorhq.com/hooks/SY0yrzaa1L1PlxdCWvOi/webhook-trigger/b8b24866-6457-4994-83ed-c8d2e1a9567e';
+function dfShowModal(t,b){document.getElementById('dfModalTitle').textContent=t;document.getElementById('dfModalBody').textContent=b;document.getElementById('dfModal').classList.add('open');document.body.style.overflow='hidden';}
+function dfCloseModal(){document.getElementById('dfModal').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')dfCloseModal();});
+async function dfGHL(p){try{await fetch(DF_WH,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(p),mode:'no-cors'});}catch(e){console.warn('GHL:',e);}}
+async function handleNewsletterSubmit(event,src){
+  event.preventDefault();const f=event.target;
+  const email=f.querySelector('input[type="email"]').value.trim();
+  const btn=f.querySelector('button');const orig=btn.textContent;
+  btn.textContent='Sending…';btn.disabled=true;
+  await dfGHL({email,source:src||'newsletter',tags:['research-the-signal-subscriber-newsletter'],page:window.location.pathname});
+  f.reset();btn.textContent=orig;btn.disabled=false;
+  dfShowModal('You\'re on the list.','The DexaFit Signal lands quarterly — research findings, data notes, and what our network is seeing. Check your inbox for a confirmation.');
+}
+async function handleResearcherSubmit(event,type){
+  event.preventDefault();const f=event.target;
+  const email=f.querySelector('input[name="email"]').value.trim();
+  const nameEl=f.querySelector('input[name="name"]');
+  const orgEl=f.querySelector('input[name="org"]');
+  const msgEl=f.querySelector('textarea[name="message"]');
+  const btn=f.querySelector('button[type="submit"]');
+  if(btn){btn.textContent='Sending…';btn.disabled=true;}
+  await dfGHL({
+    email,
+    name:nameEl?nameEl.value:'',
+    organization:orgEl?orgEl.value:'',
+    message:msgEl?msgEl.value:'',
+    source:'work-with-us',
+    partnerType:type||'general',
+    tags:['research-site-collab',type||'general'],
+    page:window.location.pathname
+  });
+  f.reset();if(btn){btn.textContent='Send message →';btn.disabled=false;}
+  dfShowModal('Message received.','The DexaFit Research team will be in touch within 2 business days. In the meantime, explore our published research and findings.');
+}
+
+</script>
 </body>
 </html>

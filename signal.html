@@ -409,27 +409,51 @@ footer .footer-col a:hover {
   footer { padding: 60px 20px; }
   footer .footer-grid { grid-template-columns: 1fr; gap: 40px; }
 }
+
+/* DF SUCCESS MODAL */
+.df-modal-overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.45);align-items:center;justify-content:center;}
+.df-modal-overlay.open{display:flex;}
+.df-modal{background:#fff;border-radius:20px;padding:48px 40px 40px;max-width:420px;width:90%;text-align:center;position:relative;box-shadow:0 24px 60px rgba(0,0,0,0.18);animation:df-in 0.3s ease;}
+@keyframes df-in{from{opacity:0;transform:translateY(16px) scale(0.97);}to{opacity:1;transform:translateY(0) scale(1);}}
+.df-modal-icon{width:56px;height:56px;border-radius:50%;background:#EDF6FF;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}
+.df-modal-icon svg{width:28px;height:28px;}
+.df-modal-title{font-family:'DM Serif Display',Georgia,serif;font-size:22px;color:#1d1d1f;margin-bottom:10px;line-height:1.2;}
+.df-modal-body{font-family:'DM Sans',-apple-system,sans-serif;font-size:15px;color:#525252;line-height:1.6;margin-bottom:28px;}
+.df-modal-close{font-family:'DM Sans',-apple-system,sans-serif;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#46A5FC;background:none;border:1.5px solid #46A5FC;border-radius:100px;padding:10px 28px;cursor:pointer;transition:all .2s;}
+.df-modal-close:hover{background:#46A5FC;color:#fff;}
+
 </style>
 
 </head>
 <body>
+<!-- DF MODAL -->
+<div class="df-modal-overlay" id="dfModal" onclick="if(event.target===this)dfCloseModal()">
+  <div class="df-modal">
+    <div class="df-modal-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#46A5FC" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+    </div>
+    <div class="df-modal-title" id="dfModalTitle">You're on the list.</div>
+    <div class="df-modal-body" id="dfModalBody">The DexaFit Signal lands quarterly. Check your inbox for a confirmation.</div>
+    <button class="df-modal-close" onclick="dfCloseModal()">Got it</button>
+  </div>
+</div>
 
 <!-- SCROLL PROGRESS BAR -->
 <div class="scroll-progress"></div>
 
 <!-- NAVIGATION -->
 <nav>
-  <a href="/" class="logo-group">
+  <a href="/research" class="logo-group">
     <span class="logo-text-1">DexaFit</span>
     <span class="logo-text-2">Research</span>
   </a>
   <div class="links">
-    <a href="/">Research & Topics</a>
+    <a href="/research">Research & Topics</a>
     <a href="/signal" class="nav-active">The Signal</a>
     <a href="/work-with-us">Work With Us</a>
     <a href="/about">About</a>
   </div>
-  <a href="/" class="nav-cta">Explore the Data</a>
+  <a href="/research" class="nav-cta">Explore the Data</a>
 </nav>
 
 <!-- HERO SECTION -->
@@ -442,7 +466,7 @@ footer .footer-col a:hover {
 <!-- NEWSLETTER SIGNUP SECTION -->
 <section class="newsletter-section reveal">
   <div class="newsletter-box">
-    <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+    <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event,'signal-newsletter')">
       <input type="email" placeholder="you@institution.edu" required aria-label="Email address">
       <button type="submit">Subscribe → Free</button>
     </form>
@@ -456,7 +480,7 @@ footer .footer-col a:hover {
   <h2 class="issues-title">Quarterly Issues</h2>
 
   <div class="issues-grid">
-    <a href="/signal/glp1-body-composition" class="issue-card current reveal">
+    <a href="/research/glp1-lean-mass-loss" class="issue-card current reveal">
       <div class="issue-content">
         <span class="issue-status">Current</span>
         <h3 class="issue-title">The GLP-1 Body Composition Problem</h3>
@@ -465,7 +489,7 @@ footer .footer-col a:hover {
       <div class="issue-meta">Q1 2026</div>
     </a>
 
-    <a href="/signal/bone-density" class="issue-card reveal">
+    <a href="/research/body-fat-percentage-reference-ranges" class="issue-card reveal">
       <div class="issue-content">
         <span class="issue-status">Upcoming</span>
         <h3 class="issue-title">Bone Density at Scale</h3>
@@ -474,7 +498,7 @@ footer .footer-col a:hover {
       <div class="issue-meta">Q2 2026</div>
     </a>
 
-    <a href="/signal/tofi-phenotype" class="issue-card reveal">
+    <a href="/research/visceral-fat-cardiometabolic-risk" class="issue-card reveal">
       <div class="issue-content">
         <span class="issue-status">Upcoming</span>
         <h3 class="issue-title">The TOFI Phenotype</h3>
@@ -495,21 +519,21 @@ footer .footer-col a:hover {
     <div class="footer-col">
       <h3>Explore</h3>
       <a href="/research">All Research</a>
-      <a href="/research/original">Original Research</a>
-      <a href="/research/guides">Guides</a>
-      <a href="/research/data-notes">Data Notes</a>
+      <a href="/research">Original Research</a>
+      <a href="/research">Guides</a>
+      <a href="/research">Data Notes</a>
     </div>
     <div class="footer-col">
       <h3>The Signal</h3>
       <a href="/signal">Quarterly Publication</a>
-      <a href="/signal/archive">Archive</a>
+      <a href="/signal">Archive</a>
     </div>
     <div class="footer-col">
       <h3>About</h3>
       <a href="/work-with-us">Work With Us</a>
       <a href="/about">About</a>
-      <a href="/contact">Contact</a>
-      <a href="/privacy">Privacy</a>
+      <a href="/work-with-us">Contact</a>
+      <a href="/about">Privacy</a>
     </div>
   </div>
   <div class="footer-bottom">
@@ -556,14 +580,36 @@ const observer = new IntersectionObserver((entries) => {
 
 revealElements.forEach(el => observer.observe(el));
 
-function handleNewsletterSubmit(event) {
+
+const DF_WH='https://services.leadconnectorhq.com/hooks/SY0yrzaa1L1PlxdCWvOi/webhook-trigger/b8b24866-6457-4994-83ed-c8d2e1a9567e';
+function dfShowModal(t,b){document.getElementById('dfModalTitle').textContent=t;document.getElementById('dfModalBody').textContent=b;document.getElementById('dfModal').classList.add('open');document.body.style.overflow='hidden';}
+function dfCloseModal(){document.getElementById('dfModal').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')dfCloseModal();});
+async function dfGHL(p){try{await fetch(DF_WH,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(p),mode:'no-cors'});}catch(e){console.warn('GHL:',e);}}
+async function handleNewsletterSubmit(event,src){
   event.preventDefault();
-  const form = event.target;
-  const email = form.querySelector('input[type="email"]').value;
-  console.log('Newsletter signup:', email);
-  form.reset();
-  alert('Thank you for subscribing! Check your email for confirmation.');
+  const f=event.target;
+  const email=f.querySelector('input[type="email"]').value.trim();
+  const btn=f.querySelector('button');
+  const orig=btn.textContent;
+  btn.textContent='Sending…';btn.disabled=true;
+  await dfGHL({email,source:src||'newsletter',tags:['research-the-signal-subscriber-newsletter'],page:window.location.pathname});
+  f.reset();btn.textContent=orig;btn.disabled=false;
+  dfShowModal('You\'re on the list.','The DexaFit Signal lands quarterly — research findings, data notes, and what our network is seeing. Check your inbox for a confirmation.');
 }
+async function handleResearcherSubmit(event,type){
+  event.preventDefault();
+  const f=event.target;
+  const email=f.querySelector('input[type="email"]').value.trim();
+  const nameEl=f.querySelector('input[name="name"]');
+  const orgEl=f.querySelector('input[name="org"]');
+  const btn=f.querySelector('button[type="submit"]');
+  if(btn){btn.textContent='Sending…';btn.disabled=true;}
+  await dfGHL({email,name:nameEl?nameEl.value:'',organization:orgEl?orgEl.value:'',source:'work-with-us',partnerType:type||'general',tags:['researcher-inquiry',type||'general','research-site'],page:window.location.pathname});
+  f.reset();if(btn){btn.textContent='Send';btn.disabled=false;}
+  dfShowModal('Message received.','The DexaFit Research team will be in touch within 2 business days.');
+}
+
 </script>
 
 </body>
