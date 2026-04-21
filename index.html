@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DexaFit Research — Clinical Body Composition & Metabolic Research</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+/* ─── HERO ───────────────────────────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; padding: 120px 48px 100px;
+  position: relative; overflow: hidden;
+}
+.hero-bg-grid {
+  position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background-image:
+    linear-gradient(rgba(70,165,252,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(70,165,252,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 40%, black 30%, transparent 100%);
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 40%, black 30%, transparent 100%);
+}
+.hero-glow {
+  position: absolute; width: 600px; height: 600px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(70,165,252,0.08) 0%, transparent 70%);
+  top: 50%; left: 50%; transform: translate(-50%, -55%);
+  pointer-events: none; z-index: 0;
+}
+.hero-content { position: relative; z-index: 2; max-width: 820px; width: 100%; }
+.hero-stats-hint { z-index: 2; }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.hero-eyebrow::before {
+  content: ''; width: 20px; height: 2px; border-radius: 2px; display: block;
+}
+.hero-headline {
+  font-family: var(--sans); font-weight: 800;
+  font-size: clamp(2.8rem, 4vw, 4.5rem);
+  line-height: 1.08; letter-spacing: -0.03em;
+  margin-bottom: 24px;
+}
+.hero-headline .accent { color: var(--blue); }
+.hero-sub {
+  font-size: 17px; line-height: 1.7;
+  max-width: 520px; margin: 0 auto 40px;
+}
+.hero-ctas { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
+/* Stat teasers at fold */
+.hero-stats-hint {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  display: flex; justify-content: center; gap: 1px;
+  pointer-events: none;
+}
+.hint-card {
+  padding: 20px 32px; display: flex; flex-direction: column; gap: 4px;
+  border-top: 1px solid; flex: 1; max-width: 240px;
+}
+.hint-num {
+  font-family: var(--mono); font-weight: 600; font-size: 22px; line-height: 1;
+}
+.hint-label { font-size: 11px; font-weight: 500; letter-spacing: 0.04em; }
+
+/* Atlas hero layout override */
+.v-atlas .hero { flex-direction: row; text-align: left; gap: 60px; max-width: 1200px; margin: 0 auto; padding: 120px 60px 80px; align-items: center; }
+.v-atlas .hero-sub, .v-atlas .hero-ctas { margin-left: 0; justify-content: flex-start; }
+.v-atlas .hero-content { flex: 1; }
+.v-atlas .hero-viz-wrapper { flex: 1.2; display: flex !important; flex-direction: column; gap: 16px; }
+.hero-viz-wrapper { display: none; }
+
+/* ─── SIGNAL variant ─────────────────────────────────────────── */
+.v-signal .hero, .v-atlas .hero { background: var(--dark); }
+.v-signal .hero-headline, .v-atlas .hero-headline { color: #fff; }
+.v-signal .hero-sub, .v-atlas .hero-sub { color: rgba(255,255,255,0.55); }
+.v-signal .hero-eyebrow, .v-atlas .hero-eyebrow { color: rgba(70,165,252,0.7); }
+.v-signal .hero-eyebrow::before, .v-atlas .hero-eyebrow::before { background: rgba(70,165,252,0.5); }
+.v-signal .hint-card { background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.07); }
+.v-signal .hint-num { color: var(--blue); }
+.v-signal .hint-label { color: rgba(255,255,255,0.35); }
+
+/* ─── JOURNAL variant ─────────────────────────────────────────── */
+.v-journal .hero { background: #fff; border-top: 3px solid var(--blue); text-align: left; align-items: flex-start; }
+.v-journal .hero-content { max-width: 700px; margin: 0 auto; }
+.v-journal .hero-headline { font-family: var(--serif); font-weight: 400; font-style: italic; color: var(--ink); }
+.v-journal .hero-headline .accent { font-family: var(--sans); font-style: normal; font-weight: 800; }
+.v-journal .hero-sub { color: var(--muted); margin-left: 0; }
+.v-journal .hero-eyebrow { color: var(--blue); }
+.v-journal .hero-eyebrow::before { background: var(--blue); }
+.v-journal .hero-ctas { justify-content: flex-start; }
+.v-journal .btn-ghost-white { border-color: rgba(0,0,0,0.2); color: var(--muted); }
+.v-journal .btn-ghost-white:hover { background: var(--section); color: var(--ink); border-color: rgba(0,0,0,0.3); }
+.v-journal .hint-card { background: var(--section); border-color: var(--line); }
+.v-journal .hint-num { color: var(--blue); }
+.v-journal .hint-label { color: var(--muted); }
+.v-journal .hero-bg-grid, .v-journal .hero-glow { opacity: 0.3; }
+
+/* ─── STATS SECTION ──────────────────────────────────────────── */
+.stats-section { padding: 96px 0; background: var(--white); }
+.stats-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 40px; }
+.stat-card {
+  border: 1px solid var(--line); border-radius: var(--r-lg);
+  padding: 32px 28px; background: var(--section);
+  transition: transform 0.22s var(--ease), box-shadow 0.22s, border-color 0.22s;
+}
+.stat-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lift); border-color: rgba(70,165,252,0.3); }
+.stat-num {
+  font-family: var(--mono); font-size: 44px; font-weight: 600;
+  color: var(--blue); line-height: 1; margin-bottom: 14px;
+  letter-spacing: -0.02em;
+}
+.stat-desc { font-size: 15px; color: var(--muted); line-height: 1.6; }
+
+/* ─── VIZ SECTION ───────────────────────────────────────────── */
+.viz-section { padding: 96px 0; background: var(--section); }
+.viz-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 40px; flex-wrap: wrap; gap: 20px; }
+.viz-title { font-size: clamp(22px, 3vw, 32px); font-weight: 800; letter-spacing: -0.02em; color: var(--ink); margin-top: 12px; line-height: 1.2; max-width: 480px; }
+.viz-controls { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.seg-group {
+  display: flex; border: 1.5px solid var(--line); border-radius: var(--r-pill);
+  background: var(--white); overflow: hidden;
+}
+.seg-btn {
+  padding: 8px 16px; font-size: 12px; font-weight: 700;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  color: var(--muted); background: transparent; border: none;
+  transition: all 0.2s; cursor: pointer;
+}
+.seg-btn.active { background: var(--blue); color: #fff; }
+.seg-btn:not(.active):hover { background: var(--section-2); color: var(--ink); }
+.viz-canvas-wrap {
+  background: var(--white); border-radius: var(--r-xl);
+  border: 1px solid var(--line); padding: 32px 32px 0;
+  box-shadow: var(--shadow-card);
+  position: relative; overflow: hidden;
+}
+#bfCanvas { width: 100%; height: 220px; display: block; }
+.viz-legend {
+  display: flex; justify-content: space-between;
+  padding: 16px 0 24px; border-top: 1px solid var(--line); margin-top: 8px;
+  flex-wrap: wrap; gap: 8px;
+}
+.legend-item { display: flex; align-items: center; gap: 8px; font-size: 12px; }
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.legend-label { color: var(--muted); font-weight: 600; letter-spacing: 0.03em; }
+.legend-range { font-family: var(--mono); font-size: 11px; color: var(--faint); }
+.viz-source { font-size: 12px; color: var(--faint); margin-top: 12px; }
+
+/* ─── FEATURED ───────────────────────────────────────────────── */
+.featured-section { padding: 96px 0; background: var(--white); }
+.featured-card {
+  background: var(--white); border: 1px solid var(--line);
+  border-radius: var(--r-xl); padding: 44px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+  align-items: center; box-shadow: var(--shadow-card);
+  transition: transform 0.22s var(--ease), box-shadow 0.22s, border-color 0.22s;
+}
+.featured-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lift); border-color: rgba(70,165,252,0.25); }
+.featured-title {
+  font-family: var(--serif); font-size: clamp(24px,3vw,36px);
+  font-weight: 400; line-height: 1.2; color: var(--ink);
+  margin: 16px 0; letter-spacing: -0.01em;
+}
+.featured-desc { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 28px; }
+.featured-meta { display: flex; align-items: center; gap: 16px; }
+.featured-author { font-size: 12px; color: var(--faint); font-weight: 500; }
+.featured-viz-placeholder {
+  background: linear-gradient(135deg, var(--section) 0%, var(--blue-tint) 100%);
+  border-radius: var(--r-lg); height: 240px;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+#featuredCanvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+/* ─── LATEST + TOPICS ────────────────────────────────────────── */
+.latest-section { padding: 96px 0; background: var(--section); }
+.latest-grid { display: grid; grid-template-columns: 1fr 380px; gap: 48px; align-items: start; margin-top: 40px; }
+.latest-col-head { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue); margin-bottom: 4px; }
+.topics-grid { display: flex; flex-direction: column; gap: 8px; }
+.topic-card {
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--r-md);
+  padding: 16px 18px; display: flex; align-items: center; justify-content: space-between;
+  cursor: pointer; transition: all 0.2s var(--ease);
+}
+.topic-card:hover { border-color: rgba(70,165,252,0.35); transform: translateX(4px); background: var(--blue-soft); }
+.topic-name { font-size: 14px; font-weight: 700; color: var(--ink); }
+.topic-desc { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.topic-count { font-family: var(--mono); font-size: 12px; color: var(--faint); flex-shrink: 0; }
+
+/* ─── SIGNAL SECTION ─────────────────────────────────────────── */
+.signal-section { padding: 96px 0; }
+.v-signal .signal-section, .v-atlas .signal-section { background: var(--dark); }
+.v-journal .signal-section { background: var(--blue-tint); border-top: 1px solid rgba(70,165,252,0.15); border-bottom: 1px solid rgba(70,165,252,0.15); }
+.signal-inner {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+  align-items: center;
+}
+.signal-headline {
+  font-family: var(--serif); font-size: clamp(26px,3.5vw,44px);
+  line-height: 1.15; letter-spacing: -0.01em;
+}
+.v-signal .signal-headline, .v-atlas .signal-headline { color: #fff; }
+.v-journal .signal-headline { color: var(--ink); font-style: italic; }
+.signal-desc { font-size: 16px; line-height: 1.7; margin-top: 16px; }
+.v-signal .signal-desc, .v-atlas .signal-desc { color: rgba(255,255,255,0.5); }
+.v-journal .signal-desc { color: var(--muted); }
+.signal-meta { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 20px; }
+.v-signal .signal-meta, .v-atlas .signal-meta { color: rgba(70,165,252,0.7); }
+.v-journal .signal-meta { color: var(--blue); }
+.signal-form-wrap { display: flex; flex-direction: column; gap: 12px; }
+.signal-form { display: flex; gap: 8px; }
+.signal-form input {
+  flex: 1; padding: 13px 18px;
+  border-radius: var(--r-pill); font-family: var(--sans); font-size: 14px;
+  transition: all 0.2s; outline: none;
+}
+.v-signal .signal-form input, .v-atlas .signal-form input { background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.12); color: #fff; }
+.v-signal .signal-form input::placeholder, .v-atlas .signal-form input::placeholder { color: rgba(255,255,255,0.3); }
+.v-signal .signal-form input:focus, .v-atlas .signal-form input:focus { border-color: var(--blue); background: rgba(255,255,255,0.12); }
+.v-journal .signal-form input { background: #fff; border: 1.5px solid rgba(0,0,0,0.12); color: var(--ink); }
+.v-journal .signal-form input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(70,165,252,0.1); }
+.signal-helper { font-size: 12px; letter-spacing: 0.04em; }
+.v-signal .signal-helper, .v-atlas .signal-helper { color: rgba(255,255,255,0.25); }
+.v-journal .signal-helper { color: var(--faint); }
+
+/* ─── TWEAKS PANEL ───────────────────────────────────────────── */
+#tweaksPanel {
+  position: fixed; bottom: 24px; right: 24px; z-index: 900;
+  background: var(--white); border-radius: var(--r-xl);
+  padding: 20px; width: 240px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+  border: 1px solid var(--line);
+  display: none;
+}
+#tweaksPanel h3 { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint); margin-bottom: 16px; }
+.tweak-label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; display: block; }
+.tweak-options { display: flex; flex-direction: column; gap: 6px; }
+.tweak-opt {
+  padding: 10px 14px; border-radius: var(--r-md);
+  font-size: 13px; font-weight: 600; color: var(--muted);
+  background: var(--section); border: 1.5px solid transparent;
+  cursor: pointer; transition: all 0.18s; text-align: left;
+}
+.tweak-opt:hover { color: var(--ink); background: var(--section-2); }
+.tweak-opt.active { border-color: var(--blue); color: var(--blue); background: var(--blue-soft); }
+.tweak-opt small { display: block; font-size: 11px; font-weight: 400; color: var(--faint); margin-top: 2px; }
+
+/* ─── RESPONSIVE ─────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .stats-grid { grid-template-columns: 1fr; gap: 16px; }
+  .featured-card { grid-template-columns: 1fr; gap: 32px; }
+  .featured-viz-placeholder { height: 180px; }
+  .latest-grid { grid-template-columns: 1fr; }
+  .signal-inner { grid-template-columns: 1fr; gap: 40px; }
+  .v-atlas .hero { flex-direction: column; text-align: center; }
+  .v-atlas .hero-sub, .v-atlas .hero-ctas { margin-left: auto; margin-right: auto; justify-content: center; }
+  .hero-stats-hint { display: none; }
+}
+@media (max-width: 600px) {
+  .hero { padding: 100px 20px 60px; }
+  .stats-section, .viz-section, .featured-section, .latest-section, .signal-section { padding: 64px 0; }
+  .stat-num { font-size: 36px; }
+  .viz-canvas-wrap { padding: 20px 16px 0; }
+  #tweaksPanel { bottom: 12px; right: 12px; width: 220px; }
+}
+</style>
+</head>
+<body class="v-signal">
+
+<div id="progress"></div>
+
+<!-- MODAL -->
+<div class="df-modal-overlay" id="dfModal" onclick="if(event.target===this)dfCloseModal()">
+  <div class="df-modal">
+    <div class="df-modal-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#46A5FC" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+    <div class="df-modal-title" id="dfModalTitle">You're on the list.</div>
+    <div class="df-modal-body" id="dfModalBody">The DexaFit Signal lands quarterly. Check your inbox for a confirmation.</div>
+    <button class="df-modal-close" onclick="dfCloseModal()">Got it</button>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <div class="nav-pill">
+    <a href="index.html" class="nav-brand">
+      <img src="assets/logo-bug.svg" class="nav-bug" alt="">
+      <span class="nav-brand-text">DexaFit <span class="accent">Research</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="research.html">Research</a>
+      <a href="signal.html">The Signal</a>
+      <a href="work-with-us.html">Work With Us</a>
+      <a href="about.html">About</a>
+    </div>
+    <a href="research.html" class="nav-cta">Explore the Data</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Clinical Body Composition Research</span>
+    <h1 class="hero-headline">The measurement<br>layer. <span class="accent">Decoded.</span></h1>
+    <p class="hero-sub">Research that changes how you train, eat, age, and treat — built on the largest clinical-grade body composition and metabolic dataset in the world.</p>
+    <div class="hero-ctas">
+      <a href="research.html" class="btn btn-primary">Explore the Data</a>
+      <a href="signal.html" class="btn btn-ghost-white">Subscribe to The Signal</a>
+    </div>
+  </div>
+  <!-- Atlas variant visualization -->
+  <div class="hero-viz-wrapper" id="heroVizWrapper">
+    <canvas id="heroCanvas" style="width:100%;height:200px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08)"></canvas>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <div class="seg-group" id="heroSexGroup">
+        <button class="seg-btn active" data-val="female">Women</button>
+        <button class="seg-btn" data-val="male">Men</button>
+      </div>
+      <div class="seg-group" id="heroAgeGroup">
+        <button class="seg-btn active" data-val="20-29">20s</button>
+        <button class="seg-btn" data-val="30-39">30s</button>
+        <button class="seg-btn" data-val="40-49">40s</button>
+        <button class="seg-btn" data-val="50-59">50s</button>
+        <button class="seg-btn" data-val="60+">60s</button>
+      </div>
+    </div>
+  </div>
+  <!-- Stat hint cards at bottom fold -->
+  <div class="hero-stats-hint">
+    <div class="hint-card"><span class="hint-num">30.4%</span><span class="hint-label">GLP-1 lean mass loss in women</span></div>
+    <div class="hint-card"><span class="hint-num">Age 38</span><span class="hint-label">Bone density decline begins</span></div>
+    <div class="hint-card"><span class="hint-num">11%</span><span class="hint-label">Normal BMI, metabolically obese</span></div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-section">
+  <div class="container">
+    <span class="eyebrow reveal">What the data shows</span>
+    <div class="stats-grid">
+      <div class="stat-card reveal d1">
+        <div class="stat-num" data-count="30.4" data-suffix="%" data-dec="1">0%</div>
+        <p class="stat-desc">of women on GLP-1 medications lose clinically significant lean mass — 1.6× the rate observed in men</p>
+      </div>
+      <div class="stat-card reveal d2">
+        <div class="stat-num" data-count="38" data-prefix="Age " data-suffix="">Age 0</div>
+        <p class="stat-desc">is when bone mineral density begins its measurable decline in women — a full decade before most screening guidelines recommend testing</p>
+      </div>
+      <div class="stat-card reveal d3">
+        <div class="stat-num" data-count="11" data-suffix="%" data-dec="0">0%</div>
+        <p class="stat-desc">of adults with a "normal" BMI are metabolically obese on DXA — carrying 1.4× higher cardiometabolic disease prevalence</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BODY FAT VIZ -->
+<section class="viz-section">
+  <div class="container">
+    <div class="viz-header reveal">
+      <div>
+        <span class="eyebrow">Reference Data</span>
+        <h2 class="viz-title">Body fat percentage — population distribution by age and sex</h2>
+      </div>
+      <div class="viz-controls">
+        <div class="seg-group" id="mainSexGroup">
+          <button class="seg-btn active" data-val="female">Women</button>
+          <button class="seg-btn" data-val="male">Men</button>
+        </div>
+        <div class="seg-group" id="mainAgeGroup">
+          <button class="seg-btn active" data-val="20-29">20s</button>
+          <button class="seg-btn" data-val="30-39">30s</button>
+          <button class="seg-btn" data-val="40-49">40s</button>
+          <button class="seg-btn" data-val="50-59">50s</button>
+          <button class="seg-btn" data-val="60+">60s</button>
+        </div>
+      </div>
+    </div>
+    <div class="viz-canvas-wrap reveal d1">
+      <canvas id="bfCanvas"></canvas>
+      <div class="viz-legend">
+        <div class="legend-item"><span class="legend-dot" style="background:#4CAF50"></span><span class="legend-label">Excellent</span><span class="legend-range" id="l-excellent">—</span></div>
+        <div class="legend-item"><span class="legend-dot" style="background:#46A5FC"></span><span class="legend-label">Good</span><span class="legend-range" id="l-good">—</span></div>
+        <div class="legend-item"><span class="legend-dot" style="background:#F5A623"></span><span class="legend-label">Fair</span><span class="legend-range" id="l-fair">—</span></div>
+        <div class="legend-item"><span class="legend-dot" style="background:#E05533"></span><span class="legend-label">Needs Focus</span><span class="legend-range" id="l-focus">—</span></div>
+      </div>
+    </div>
+    <p class="viz-source reveal d2">Derived from 100,000+ clinical-grade DXA assessments. DexaFit Research, 2026.</p>
+  </div>
+</section>
+
+<!-- FEATURED -->
+<section class="featured-section">
+  <div class="container">
+    <span class="eyebrow reveal">Featured Research</span>
+    <div class="featured-card reveal d1" style="margin-top:32px">
+      <div>
+        <span class="badge badge-research">Original Research</span>
+        <h2 class="featured-title">Body Fat Percentage Reference Ranges by Age and Sex</h2>
+        <p class="featured-desc">The first population-scale DXA-derived reference ranges, stratified by age and sex from over 100,000 clinical-grade assessments across four continents — establishing a new standard for body composition assessment.</p>
+        <div class="featured-meta">
+          <a href="research/body-fat-percentage-reference-ranges.html" class="btn btn-primary">Read the Study</a>
+          <span class="featured-author">DexaFit Research Team · 2026</span>
+        </div>
+      </div>
+      <div class="featured-viz-placeholder">
+        <canvas id="featuredCanvas"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LATEST + TOPICS -->
+<section class="latest-section">
+  <div class="container">
+    <div class="latest-grid">
+      <div>
+        <span class="latest-col-head reveal">Latest</span>
+        <div class="article-row reveal d1"><div class="article-row-meta"><span class="badge badge-reference">Reference Guide</span><span class="article-row-topic">Body Composition</span></div><div class="article-row-title">How to Read a DEXA Scan Report</div><div class="article-row-source">DexaFit Research</div></div>
+        <div class="article-row reveal d2"><div class="article-row-meta"><span class="badge badge-research">Original Research</span><span class="article-row-topic">Metabolic Health</span></div><div class="article-row-title">Visceral Fat — Normal, Elevated, and High-Risk Ranges</div><div class="article-row-source">DexaFit Research</div></div>
+        <div class="article-row reveal d3"><div class="article-row-meta"><span class="badge badge-research">Original Research</span><span class="article-row-topic">Weight Loss & GLP-1</span></div><div class="article-row-title">GLP-1 Medications and Body Composition — What the Data Shows</div><div class="article-row-source">DexaFit Research</div></div>
+        <div class="article-row reveal d4"><div class="article-row-meta"><span class="badge badge-note">Data Note</span><span class="article-row-topic">Bone Health</span></div><div class="article-row-title">GE Lunar vs Hologic — Why Your T-Scores Don't Match</div><div class="article-row-source">DexaFit Research</div></div>
+        <div class="article-row reveal d5"><div class="article-row-meta"><span class="badge badge-curated">Curated</span><span class="article-row-topic">Performance & Longevity</span></div><div class="article-row-title">Cardiorespiratory Fitness as a Quantitative Predictor of All-Cause Mortality</div><div class="article-row-source">JAMA Network Open · Mandsager et al.</div></div>
+        <div style="margin-top:20px" class="reveal"><a href="research.html" class="btn btn-ghost" style="font-size:12px;padding:10px 20px">View all research →</a></div>
+      </div>
+      <div>
+        <span class="latest-col-head reveal">Topic Collections</span>
+        <div class="topics-grid" style="margin-top:16px">
+          <div class="topic-card reveal d1"><div><div class="topic-name">Body Composition</div><div class="topic-desc">Reference ranges, testing, interpretation</div></div><span class="topic-count">4</span></div>
+          <div class="topic-card reveal d2"><div><div class="topic-name">Weight Loss & GLP-1</div><div class="topic-desc">Pharmacological interventions & trade-offs</div></div><span class="topic-count">4</span></div>
+          <div class="topic-card reveal d3"><div><div class="topic-name">Bone Health</div><div class="topic-desc">T-scores, screening, cross-manufacturer data</div></div><span class="topic-count">3</span></div>
+          <div class="topic-card reveal d4"><div><div class="topic-name">Metabolic Health</div><div class="topic-desc">Visceral fat, cardiometabolic risk, TOFI</div></div><span class="topic-count">3</span></div>
+          <div class="topic-card reveal d5"><div><div class="topic-name">Performance & Longevity</div><div class="topic-desc">VO₂ Max, endurance, metabolic flexibility</div></div><span class="topic-count">3</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE SIGNAL -->
+<section class="signal-section">
+  <div class="container">
+    <div class="signal-inner">
+      <div class="reveal">
+        <span class="eyebrow" style="color:rgba(70,165,252,0.7)" id="signalEyebrow">Quarterly Publication</span>
+        <h2 class="signal-headline" style="margin-top:12px">The DexaFit Signal</h2>
+        <p class="signal-desc">Stay on top of what the data reveals in body composition, longevity, weight loss, and metabolic health — curated with the largest real-world dataset in the field.</p>
+        <div class="signal-meta">Q1 2026 Issue Now Available</div>
+      </div>
+      <div class="reveal d2">
+        <div class="signal-form-wrap">
+          <form class="signal-form" onsubmit="handleNewsletterSubmit(event)">
+            <input type="email" placeholder="you@institution.edu" required>
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+          <span class="signal-helper">Quarterly delivery. No spam. Unsubscribe anytime.</span>
+        </div>
+        <a href="signal.html" style="display:inline-flex;align-items:center;gap:6px;margin-top:20px;font-size:13px;font-weight:600;color:var(--blue)">Preview Q1 2026 issue →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>DexaFit Research</h4>
+        <p>The largest clinical body composition database of its kind. Original research and curated evidence from hundreds of thousands of DXA, VO₂ Max, and RMR scans.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="research.html">All Research</a>
+        <a href="research.html">Original Research</a>
+        <a href="research.html">Reference Guides</a>
+        <a href="research.html">Data Notes</a>
+      </div>
+      <div class="footer-col">
+        <h4>Publication</h4>
+        <a href="signal.html">The Signal</a>
+        <a href="signal.html">Archive</a>
+        <a href="work-with-us.html">Work With Us</a>
+      </div>
+      <div class="footer-col">
+        <h4>About</h4>
+        <a href="about.html">About</a>
+        <a href="about.html">Editorial Standards</a>
+        <a href="work-with-us.html">Contact</a>
+        <a href="about.html">Privacy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-brand-row">
+        <img src="assets/logo-bug-white.svg" alt="">
+        <span>DexaFit Research</span>
+      </div>
+      <span class="footer-copy">© 2026 DexaFit, Inc. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- TWEAKS PANEL -->
+<div id="tweaksPanel">
+  <h3>Tweaks</h3>
+  <span class="tweak-label">Visual Variant</span>
+  <div class="tweak-options">
+    <button class="tweak-opt active" data-variant="signal">Signal<small>Dark hero, high contrast</small></button>
+    <button class="tweak-opt" data-variant="journal">Journal<small>White editorial, serif display</small></button>
+    <button class="tweak-opt" data-variant="atlas">Atlas<small>Data visualization hero</small></button>
+  </div>
+</div>
+
+<script>
+// ── SCROLL PROGRESS ───────────────────────────────────────────
+window.addEventListener('scroll', () => {
+  const pct = window.scrollY / (document.documentElement.scrollHeight - innerHeight) * 100;
+  document.getElementById('progress').style.width = pct + '%';
+}, { passive: true });
+
+// ── REVEAL OBSERVER ───────────────────────────────────────────
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+// ── COUNT-UP ──────────────────────────────────────────────────
+function countUp(el) {
+  const target = parseFloat(el.dataset.count);
+  const suffix = el.dataset.suffix || '';
+  const prefix = el.dataset.prefix || '';
+  const dec = parseInt(el.dataset.dec || 0);
+  const dur = 1800;
+  const start = performance.now();
+  const run = (now) => {
+    const t = Math.min((now - start) / dur, 1);
+    const ease = 1 - Math.pow(1 - t, 3);
+    const val = ease * target;
+    el.textContent = prefix + val.toFixed(dec) + suffix;
+    if (t < 1) requestAnimationFrame(run);
+    else el.textContent = prefix + target.toFixed(dec) + suffix;
+  };
+  requestAnimationFrame(run);
+}
+const statObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { countUp(e.target); statObserver.unobserve(e.target); } });
+}, { threshold: 0.5 });
+document.querySelectorAll('.stat-num[data-count]').forEach(el => statObserver.observe(el));
+
+// ── BODY FAT REFERENCE DATA ───────────────────────────────────
+const BF_RANGES = {
+  female: {
+    '20-29': { ex:[14,20], good:[20,24], fair:[24,29], min:5, max:50, mean:22, sd:7 },
+    '30-39': { ex:[15,21], good:[21,26], fair:[26,31], min:5, max:52, mean:24, sd:7 },
+    '40-49': { ex:[17,23], good:[23,27], fair:[27,32], min:5, max:52, mean:26, sd:7 },
+    '50-59': { ex:[19,25], good:[25,30], fair:[30,35], min:8, max:54, mean:29, sd:7 },
+    '60+':   { ex:[20,26], good:[26,31], fair:[31,36], min:10,max:54, mean:30, sd:7 }
+  },
+  male: {
+    '20-29': { ex:[6,11], good:[11,17], fair:[17,22], min:2, max:42, mean:14, sd:6 },
+    '30-39': { ex:[8,13], good:[13,18], fair:[18,23], min:2, max:44, mean:16, sd:6 },
+    '40-49': { ex:[9,14], good:[14,19], fair:[19,24], min:2, max:46, mean:18, sd:6 },
+    '50-59': { ex:[11,16], good:[16,21], fair:[21,26], min:3, max:46, mean:20, sd:6 },
+    '60+':   { ex:[12,18], good:[18,23], fair:[23,28], min:3, max:48, mean:22, sd:6 }
+  }
+};
+const BAND_COLORS = [
+  { key:'ex',    color:'#4CAF50', alpha:0.18, label:'Excellent' },
+  { key:'good',  color:'#46A5FC', alpha:0.18, label:'Good' },
+  { key:'fair',  color:'#F5A623', alpha:0.18, label:'Fair' },
+  { key:'focus', color:'#E05533', alpha:0.18, label:'Needs Focus' }
+];
+
+function drawDistribution(canvas, sex, age, progress = 1, dark = false) {
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const rect = canvas.getBoundingClientRect();
+  const W = rect.width, H = rect.height;
+  canvas.width = W * dpr; canvas.height = H * dpr;
+  const ctx = canvas.getContext('2d');
+  ctx.scale(dpr, dpr);
+  ctx.clearRect(0, 0, W, H);
+
+  const r = BF_RANGES[sex][age];
+  const xMin = r.min, xMax = r.max;
+  const mapX = v => ((v - xMin) / (xMax - xMin)) * W;
+  const baseY = H * 0.78;
+  const curveH = H * 0.65;
+
+  const gauss = (x) => Math.exp(-0.5 * ((x - r.mean) / r.sd) ** 2);
+
+  // Background bands
+  const bands = [
+    { start: r.ex[0], end: r.ex[1], color: '#4CAF50' },
+    { start: r.good[0], end: r.good[1], color: '#46A5FC' },
+    { start: r.fair[0], end: r.fair[1], color: '#F5A623' },
+    { start: r.fair[1], end: xMax, color: '#E05533' }
+  ];
+  bands.forEach(b => {
+    ctx.fillStyle = b.color + '20';
+    ctx.fillRect(mapX(b.start), 0, mapX(b.end) - mapX(b.start), baseY);
+  });
+
+  // Band dividers
+  [r.ex[1], r.good[1], r.fair[1]].forEach(v => {
+    ctx.beginPath();
+    ctx.moveTo(mapX(v), 0);
+    ctx.lineTo(mapX(v), baseY);
+    ctx.strokeStyle = dark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.08)';
+    ctx.lineWidth = 1;
+    ctx.setLineDash([4, 4]);
+    ctx.stroke();
+    ctx.setLineDash([]);
+  });
+
+  // Distribution curve fill
+  const steps = Math.floor(W * progress);
+  ctx.beginPath();
+  ctx.moveTo(0, baseY);
+  for (let px = 0; px <= steps; px++) {
+    const bf = xMin + (px / W) * (xMax - xMin);
+    const y = baseY - gauss(bf) * curveH;
+    ctx.lineTo(px, y);
+  }
+  ctx.lineTo(steps, baseY);
+  ctx.closePath();
+  const grad = ctx.createLinearGradient(0, 0, W, 0);
+  grad.addColorStop(0, 'rgba(70,165,252,0.05)');
+  grad.addColorStop(0.5, 'rgba(70,165,252,0.18)');
+  grad.addColorStop(1, 'rgba(70,165,252,0.03)');
+  ctx.fillStyle = grad;
+  ctx.fill();
+
+  // Curve stroke
+  ctx.beginPath();
+  for (let px = 0; px <= steps; px++) {
+    const bf = xMin + (px / W) * (xMax - xMin);
+    const y = baseY - gauss(bf) * curveH;
+    if (px === 0) ctx.moveTo(px, y); else ctx.lineTo(px, y);
+  }
+  ctx.strokeStyle = '#46A5FC';
+  ctx.lineWidth = 2.5;
+  ctx.lineJoin = 'round';
+  ctx.stroke();
+
+  // Mean marker
+  const meanX = mapX(r.mean);
+  const meanY = baseY - gauss(r.mean) * curveH;
+  ctx.beginPath();
+  ctx.arc(meanX, meanY, 5, 0, Math.PI * 2);
+  ctx.fillStyle = '#46A5FC';
+  ctx.fill();
+  ctx.strokeStyle = dark ? '#1C2230' : '#fff';
+  ctx.lineWidth = 2.5;
+  ctx.stroke();
+
+  // Baseline
+  ctx.beginPath();
+  ctx.moveTo(0, baseY); ctx.lineTo(W, baseY);
+  ctx.strokeStyle = dark ? 'rgba(255,255,255,0.12)' : 'rgba(0,0,0,0.1)';
+  ctx.lineWidth = 1;
+  ctx.stroke();
+
+  // X-axis labels
+  ctx.font = `500 10px ${getComputedStyle(document.body).getPropertyValue('--mono') || 'monospace'}`;
+  ctx.fillStyle = dark ? 'rgba(255,255,255,0.4)' : 'rgba(0,0,0,0.35)';
+  ctx.textAlign = 'center';
+  const ticks = [xMin, r.ex[1], r.good[1], r.fair[1], xMax];
+  ticks.forEach(v => {
+    ctx.fillText(v + '%', mapX(v), H - 4);
+  });
+}
+
+// Main viz
+let mainSex = 'female', mainAge = '20-29';
+let vizAnimated = false;
+const bfCanvas = document.getElementById('bfCanvas');
+
+function updateMainViz(progress = 1) {
+  if (!bfCanvas.getBoundingClientRect().width) return;
+  drawDistribution(bfCanvas, mainSex, mainAge, progress);
+  updateLegend();
+}
+
+function updateLegend() {
+  const r = BF_RANGES[mainSex][mainAge];
+  document.getElementById('l-excellent').textContent = `< ${r.ex[1]}%`;
+  document.getElementById('l-good').textContent = `${r.good[0]}–${r.good[1]}%`;
+  document.getElementById('l-fair').textContent = `${r.fair[0]}–${r.fair[1]}%`;
+  document.getElementById('l-focus').textContent = `> ${r.fair[1]}%`;
+}
+
+function animateViz(canvas, sex, age, dark) {
+  let progress = 0;
+  const run = () => {
+    progress = Math.min(progress + 0.025, 1);
+    drawDistribution(canvas, sex, age, progress, dark);
+    if (progress < 1) requestAnimationFrame(run);
+  };
+  requestAnimationFrame(run);
+}
+
+const vizObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting && !vizAnimated) {
+      vizAnimated = true;
+      animateViz(bfCanvas, mainSex, mainAge, false);
+      updateLegend();
+    }
+  });
+}, { threshold: 0.3 });
+vizObserver.observe(bfCanvas);
+
+// Seg controls
+function setupSegGroup(groupId, onChange) {
+  const group = document.getElementById(groupId);
+  if (!group) return;
+  group.querySelectorAll('.seg-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      group.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      onChange(btn.dataset.val);
+    });
+  });
+}
+setupSegGroup('mainSexGroup', v => { mainSex = v; animateViz(bfCanvas, mainSex, mainAge, false); updateLegend(); });
+setupSegGroup('mainAgeGroup', v => { mainAge = v; animateViz(bfCanvas, mainSex, mainAge, false); updateLegend(); });
+
+// Featured mini-viz
+const featCanvas = document.getElementById('featuredCanvas');
+const featObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { animateViz(featCanvas, 'female', '30-39', false); featObs.unobserve(e.target); } });
+}, { threshold: 0.3 });
+featObs.observe(featCanvas);
+
+// Hero viz (atlas mode)
+let heroSex = 'female', heroAge = '20-29';
+function updateHeroViz() {
+  const hc = document.getElementById('heroCanvas');
+  if (hc.getBoundingClientRect().width > 0) animateViz(hc, heroSex, heroAge, true);
+}
+setupSegGroup('heroSexGroup', v => { heroSex = v; updateHeroViz(); });
+setupSegGroup('heroAgeGroup', v => { heroAge = v; updateHeroViz(); });
+
+// Resize
+let resizeTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    updateMainViz();
+    const fc = document.getElementById('featuredCanvas');
+    if (fc) drawDistribution(fc, 'female', '30-39');
+    const hc = document.getElementById('heroCanvas');
+    if (hc && document.body.classList.contains('v-atlas')) updateHeroViz();
+  }, 200);
+});
+
+// ── TWEAKS ────────────────────────────────────────────────────
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "variant": "journal",
+  "accentColor": "#46A5FC"
+}/*EDITMODE-END*/;
+let tweaks = { ...TWEAK_DEFAULTS };
+
+function applyVariant(v) {
+  document.body.className = `v-${v}`;
+  document.querySelectorAll('.tweak-opt').forEach(b => b.classList.toggle('active', b.dataset.variant === v));
+  // Re-draw hero viz for atlas
+  if (v === 'atlas') setTimeout(updateHeroViz, 100);
+  // Post to parent
+  window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { variant: v } }, '*');
+}
+
+window.addEventListener('message', e => {
+  if (e.data?.type === '__activate_edit_mode') document.getElementById('tweaksPanel').style.display = 'block';
+  if (e.data?.type === '__deactivate_edit_mode') document.getElementById('tweaksPanel').style.display = 'none';
+});
+window.parent.postMessage({ type: '__edit_mode_available' }, '*');
+
+applyVariant(tweaks.variant);
+document.querySelectorAll('.tweak-opt').forEach(btn => {
+  btn.addEventListener('click', () => applyVariant(btn.dataset.variant));
+});
+
+// ── NEWSLETTER ────────────────────────────────────────────────
+const DF_WH = 'https://services.leadconnectorhq.com/hooks/SY0yrzaa1L1PlxdCWvOi/webhook-trigger/b8b24866-6457-4994-83ed-c8d2e1a9567e';
+function dfShowModal(t, b) {
+  document.getElementById('dfModalTitle').textContent = t;
+  document.getElementById('dfModalBody').textContent = b;
+  document.getElementById('dfModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function dfCloseModal() {
+  document.getElementById('dfModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') dfCloseModal(); });
+async function handleNewsletterSubmit(event) {
+  event.preventDefault();
+  const f = event.target;
+  const email = f.querySelector('input[type="email"]').value.trim();
+  const btn = f.querySelector('button');
+  btn.textContent = 'Subscribing…'; btn.disabled = true;
+  try { await fetch(DF_WH, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, source: 'signal-newsletter', tags: ['research-the-signal-subscriber-newsletter'] }), mode: 'no-cors' }); } catch(e) {}
+  f.reset(); btn.textContent = 'Subscribe'; btn.disabled = false;
+  dfShowModal('You\'re on the list.', 'The DexaFit Signal lands quarterly — research findings, data notes, and what our network is seeing.');
+}
+</script>
+</body>
+</html>

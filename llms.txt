@@ -1,0 +1,34 @@
+# DexaFit Research
+
+> Original research, curated evidence, and clinical-grade reference data from the largest body composition and metabolic health database in the world.
+
+## About
+
+DexaFit Research is the research and publishing arm of DexaFit, the largest network of clinical-grade body composition and metabolic testing facilities in the world. We publish original research drawn from hundreds of thousands of DXA, VO₂ Max, and RMR scans across four continents, and curate findings from leading journals including JAMA, The Lancet, Nature, and PubMed.
+
+## Topics
+
+- Body Composition: DXA-derived reference ranges, body fat percentage, lean mass, regional composition
+- Weight Loss & GLP-1: Semaglutide, tirzepatide, body composition changes during pharmacological weight loss
+- Bone Health: T-scores, bone density screening, cross-manufacturer discordance (GE Lunar vs Hologic)
+- Metabolic Health: Visceral fat, TOFI phenotype, cardiometabolic risk assessment
+- Sarcopenia & Muscle: Age-related muscle loss, screening tools, BMI limitations
+- Performance & Longevity: VO₂ Max, cardiorespiratory fitness, all-cause mortality prediction
+
+## Research
+
+- [Body Fat Percentage Reference Ranges by Age and Sex](https://research.dexafit.com/research/body-fat-percentage-reference-ranges): The first large-scale, DXA-derived body fat percentage reference ranges stratified by age decade and sex.
+- [Visceral Fat—Normal, Elevated, and High-Risk Ranges](https://research.dexafit.com/research/visceral-fat-ranges): Clinical thresholds for visceral adipose tissue measured by DXA.
+- [GLP-1 Medications and Body Composition](https://research.dexafit.com/research/glp1-body-composition): What paired DXA scans reveal about muscle loss during GLP-1 treatment.
+- [Bone Density T-Scores—What Your Results Mean](https://research.dexafit.com/research/bone-density-t-scores): Interpreting DXA bone density results with age-stratified context.
+- [TOFI—Why Normal Weight Adults Can Be Metabolically Obese](https://research.dexafit.com/research/tofi-metabolically-obese): 11% of normal-BMI adults carry dangerous visceral fat levels.
+
+## Data
+
+All research is drawn from de-identified clinical data collected under HIPAA Safe Harbor standards. The dataset includes DXA (body composition and bone density), VO₂ Max (cardiorespiratory fitness), and RMR (resting metabolic rate) scans from 40+ facility locations across four continents.
+
+## Contact
+
+- Website: https://research.dexafit.com
+- Data partnerships: https://research.dexafit.com/work-with-us
+- Newsletter: https://research.dexafit.com/signal

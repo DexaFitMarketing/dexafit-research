@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Research — DexaFit Research</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+body { background: var(--white); }
+
+/* PAGE HERO */
+.page-hero {
+  padding: 100px 0 64px;
+  background: var(--dark);
+  position: relative; overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 80% at 80% 60%, rgba(70,165,252,0.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+.page-hero-inner { position: relative; z-index: 1; }
+.page-eyebrow { color: rgba(70,165,252,0.7) !important; }
+.page-eyebrow::before { background: rgba(70,165,252,0.5) !important; }
+.page-title {
+  font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800;
+  letter-spacing: -0.03em; color: #fff;
+  line-height: 1.05; margin: 16px 0 16px;
+}
+.page-title .accent { color: var(--blue); }
+.page-subtitle { font-size: 17px; color: rgba(255,255,255,0.5); max-width: 540px; line-height: 1.65; }
+
+/* FILTER BAR */
+.filter-bar {
+  padding: 32px 0 0;
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+  position: sticky; top: 64px; z-index: 100;
+}
+.filter-inner { padding-bottom: 20px; }
+.filter-row { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; flex-wrap: wrap; }
+.filter-label { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); flex-shrink: 0; margin-right: 4px; }
+.filter-pill {
+  padding: 7px 16px; border-radius: var(--r-pill);
+  font-family: var(--sans); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.03em; color: var(--muted);
+  background: var(--section); border: 1.5px solid transparent;
+  cursor: pointer; transition: all 0.18s var(--ease);
+}
+.filter-pill:hover { color: var(--ink); background: var(--section-2); }
+.filter-pill.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+.filter-pill.active-blue { background: var(--blue); color: #fff; border-color: var(--blue); }
+.filter-count { font-size: 12px; color: var(--faint); margin-left: auto; font-family: var(--mono); }
+
+/* ARTICLES LIST */
+.articles-wrap { padding: 0 0 80px; }
+.article-card {
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+  display: flex; align-items: flex-start; gap: 20px;
+  cursor: pointer;
+  transition: padding-left 0.2s var(--ease);
+  text-decoration: none; color: inherit;
+}
+.article-card:hover { padding-left: 8px; }
+.article-body { flex: 1; }
+.article-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
+.article-topic-tag { font-size: 11px; color: var(--faint); font-weight: 500; }
+.article-title {
+  font-size: 17px; font-weight: 700; color: var(--ink);
+  line-height: 1.35; margin-bottom: 6px;
+  transition: color 0.2s;
+  font-family: var(--sans);
+}
+.article-card:hover .article-title { color: var(--blue); }
+.article-source { font-size: 13px; color: var(--blue); font-weight: 500; }
+.article-year-col { font-family: var(--mono); font-size: 12px; color: var(--faint); flex-shrink: 0; padding-top: 4px; }
+.arrow-col {
+  flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%;
+  background: var(--section); display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+  margin-top: 2px;
+}
+.article-card:hover .arrow-col { background: var(--blue); transform: translateX(4px); }
+.arrow-col svg { width: 14px; height: 14px; color: var(--muted); transition: color 0.2s; }
+.article-card:hover .arrow-col svg { color: #fff; }
+
+/* NO RESULTS */
+.no-results { padding: 80px 0; text-align: center; color: var(--faint); font-size: 16px; }
+</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<nav class="site-nav">
+  <div class="nav-pill">
+    <a href="index.html" class="nav-brand">
+      <img src="assets/logo-bug.svg" class="nav-bug" alt="">
+      <span class="nav-brand-text">DexaFit <span class="accent">Research</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="research.html" class="active">Research</a>
+      <a href="signal.html">The Signal</a>
+      <a href="work-with-us.html">Work With Us</a>
+      <a href="about.html">About</a>
+    </div>
+    <a href="research.html" class="nav-cta">Explore the Data</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner reveal">
+      <span class="eyebrow page-eyebrow">All Research</span>
+      <h1 class="page-title">Original research.<br><span class="accent">Real-world data.</span></h1>
+      <p class="page-subtitle">Original studies, curated evidence, and clinical-grade reference data — filtered by topic, type, or year.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <div class="container filter-inner">
+    <div class="filter-row">
+      <span class="filter-label">Topic</span>
+      <button class="filter-pill active" data-topic="all">All</button>
+      <button class="filter-pill" data-topic="body-composition">Body Composition</button>
+      <button class="filter-pill" data-topic="weight-loss-glp1">Weight Loss & GLP-1</button>
+      <button class="filter-pill" data-topic="bone-health">Bone Health</button>
+      <button class="filter-pill" data-topic="metabolic-health">Metabolic Health</button>
+      <button class="filter-pill" data-topic="sarcopenia-muscle">Sarcopenia & Muscle</button>
+      <button class="filter-pill" data-topic="performance-longevity">Performance & Longevity</button>
+    </div>
+    <div class="filter-row">
+      <span class="filter-label">Type</span>
+      <button class="filter-pill active" data-type="all">All</button>
+      <button class="filter-pill" data-type="Original Research">Original Research</button>
+      <button class="filter-pill" data-type="Reference Guide">Reference Guide</button>
+      <button class="filter-pill" data-type="Data Note">Data Note</button>
+      <button class="filter-pill" data-type="Curated">Curated</button>
+      <button class="filter-pill" data-type="Evidence Review">Evidence Review</button>
+      <span class="filter-count"><span id="resultCount">14</span> results</span>
+    </div>
+  </div>
+</div>
+
+<!-- ARTICLES -->
+<div class="container articles-wrap">
+  <div id="articleList"></div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col"><h4>DexaFit Research</h4><p>The largest clinical body composition database. Clinical-grade reference data from hundreds of thousands of DXA, VO₂ Max, and RMR scans.</p></div>
+      <div class="footer-col"><h4>Explore</h4><a href="research.html">All Research</a><a href="research.html">Original Research</a><a href="research.html">Guides</a><a href="research.html">Data Notes</a></div>
+      <div class="footer-col"><h4>Publication</h4><a href="signal.html">The Signal</a><a href="signal.html">Archive</a><a href="work-with-us.html">Work With Us</a></div>
+      <div class="footer-col"><h4>About</h4><a href="about.html">About</a><a href="about.html">Editorial Standards</a><a href="work-with-us.html">Contact</a></div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-brand-row"><img src="assets/logo-bug-white.svg" alt=""><span>DexaFit Research</span></div>
+      <span class="footer-copy">© 2026 DexaFit, Inc. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => {
+  document.getElementById('progress').style.width = (window.scrollY / (document.documentElement.scrollHeight - innerHeight) * 100) + '%';
+}, { passive: true });
+
+const ro = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); } }), { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+const ARTICLES = [
+  { id:1, title:'Body Fat Percentage Reference Ranges by Age and Sex', type:'Original Research', badge:'badge-research', topic:'body-composition', source:'DexaFit Research', year:'2026', href:'research/body-fat-percentage-reference-ranges.html' },
+  { id:2, title:'How to Read a DEXA Scan Report', type:'Reference Guide', badge:'badge-reference', topic:'body-composition', source:'DexaFit Research', year:'2026', href:'#' },
+  { id:3, title:'Visceral Fat — Normal, Elevated, and High-Risk Ranges', type:'Original Research', badge:'badge-research', topic:'metabolic-health', source:'DexaFit Research', year:'2026', href:'research/visceral-fat-cardiometabolic-risk.html' },
+  { id:4, title:'GLP-1 Medications and Body Composition — What the Data Shows', type:'Original Research', badge:'badge-research', topic:'weight-loss-glp1', source:'DexaFit Research', year:'2026', href:'research/glp1-lean-mass-loss.html' },
+  { id:5, title:'Bone Density T-Scores — What Your Results Mean', type:'Original Research', badge:'badge-research', topic:'bone-health', source:'DexaFit Research', year:'2026', href:'#' },
+  { id:6, title:'TOFI — Why "Normal Weight" Adults Can Be Metabolically Obese', type:'Data Note', badge:'badge-note', topic:'metabolic-health', source:'DexaFit Research', year:'2026', href:'#' },
+  { id:7, title:'GE Lunar vs Hologic — Why Your T-Scores Don\'t Match', type:'Data Note', badge:'badge-note', topic:'bone-health', source:'DexaFit Research', year:'2026', href:'research/ge-lunar-vs-hologic.html' },
+  { id:8, title:'Muscle Matters: The Effects of Medically Induced Weight Loss on Skeletal Muscle', type:'Curated', badge:'badge-curated', topic:'weight-loss-glp1', source:'The Lancet Diabetes & Endocrinology', year:'2026', href:'#' },
+  { id:9, title:'Cardiorespiratory Fitness as a Quantitative Predictor of All-Cause Mortality', type:'Curated', badge:'badge-curated', topic:'performance-longevity', source:'JAMA Network Open · Mandsager et al.', year:'2026', href:'research/vo2-max-mortality.html' },
+  { id:10, title:'Body Composition Changes During Weight Reduction with Tirzepatide (SURMOUNT-1)', type:'Curated', badge:'badge-curated', topic:'weight-loss-glp1', source:'Diabetes, Obesity and Metabolism · Look et al.', year:'2026', href:'#' },
+  { id:11, title:'SEMALEAN: Impact of Semaglutide on Fat Mass, Lean Mass and Muscle Function', type:'Curated', badge:'badge-curated', topic:'weight-loss-glp1', source:'Diabetes, Obesity and Metabolism', year:'2026', href:'#' },
+  { id:12, title:'Midlife Cardiorespiratory Fitness and the Long-Term Risk of Mortality: 46 Years of Follow-Up', type:'Evidence Review', badge:'badge-review', topic:'performance-longevity', source:'JACC · Strømstad et al.', year:'2026', href:'#' },
+  { id:13, title:'Sarcopenia Screening — Why BMI Misses It and What to Measure', type:'Curated', badge:'badge-curated', topic:'sarcopenia-muscle', source:'DexaFit Research', year:'2026', href:'#' },
+  { id:14, title:'Semaglutide Therapy and Accelerated Sarcopenia in Older Adults with Type 2 Diabetes', type:'Curated', badge:'badge-curated', topic:'sarcopenia-muscle', source:'Clinical Interventions in Aging', year:'2026', href:'#' }
+];
+
+const TOPIC_NAMES = {
+  'body-composition': 'Body Composition',
+  'weight-loss-glp1': 'Weight Loss & GLP-1',
+  'bone-health': 'Bone Health',
+  'metabolic-health': 'Metabolic Health',
+  'sarcopenia-muscle': 'Sarcopenia & Muscle',
+  'performance-longevity': 'Performance & Longevity'
+};
+
+let activeTopic = 'all', activeType = 'all';
+
+function render() {
+  const filtered = ARTICLES.filter(a =>
+    (activeTopic === 'all' || a.topic === activeTopic) &&
+    (activeType === 'all' || a.type === activeType)
+  );
+  document.getElementById('resultCount').textContent = filtered.length;
+  const list = document.getElementById('articleList');
+  if (!filtered.length) {
+    list.innerHTML = '<div class="no-results">No results for this filter combination.</div>';
+    return;
+  }
+  list.innerHTML = filtered.map((a, i) => `
+    <a href="${a.href}" class="article-card" style="animation-delay:${i * 0.04}s">
+      <div class="article-body">
+        <div class="article-meta">
+          <span class="badge ${a.badge}">${a.type}</span>
+          <span class="article-topic-tag">${TOPIC_NAMES[a.topic]}</span>
+        </div>
+        <div class="article-title">${a.title}</div>
+        <div class="article-source">${a.source}</div>
+      </div>
+      <div class="article-year-col">${a.year}</div>
+      <div class="arrow-col">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </div>
+    </a>
+  `).join('');
+}
+
+document.querySelectorAll('[data-topic]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('[data-topic]').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeTopic = btn.dataset.topic;
+    render();
+  });
+});
+document.querySelectorAll('[data-type]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('[data-type]').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeType = btn.dataset.type;
+    render();
+  });
+});
+
+render();
+</script>
+</body>
+</html>
