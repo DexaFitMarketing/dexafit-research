@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DexaFit Research — Clinical Body Composition & Metabolic Research</title>
+<link rel="icon" href="assets/new-favicon.png" type="image/png">
 <link rel="stylesheet" href="shared.css">
 <style>
 /* ─── HERO ───────────────────────────────────────────────────── */
@@ -40,9 +41,9 @@
   content: ''; width: 20px; height: 2px; border-radius: 2px; display: block;
 }
 .hero-headline {
-  font-family: var(--sans); font-weight: 800;
+  font-family: var(--serif); font-weight: 400;
   font-size: clamp(2.8rem, 4vw, 4.5rem);
-  line-height: 1.08; letter-spacing: -0.03em;
+  line-height: 1.1; letter-spacing: -0.01em;
   margin-bottom: 24px;
 }
 .hero-headline .accent { color: var(--blue); }
@@ -86,7 +87,7 @@
 /* ─── JOURNAL variant ─────────────────────────────────────────── */
 .v-journal .hero { background: #fff; border-top: 3px solid var(--blue); text-align: left; align-items: flex-start; }
 .v-journal .hero-content { max-width: 700px; margin: 0 auto; }
-.v-journal .hero-headline { font-family: var(--serif); font-weight: 400; font-style: italic; color: var(--ink); }
+.v-journal .hero-headline { font-family: var(--serif); font-weight: 400; color: var(--ink); }
 .v-journal .hero-headline .accent { font-family: var(--sans); font-style: normal; font-weight: 800; }
 .v-journal .hero-sub { color: var(--muted); margin-left: 0; }
 .v-journal .hero-eyebrow { color: var(--blue); }
@@ -155,10 +156,11 @@
 .featured-card {
   background: var(--white); border: 1px solid var(--line);
   border-radius: var(--r-xl); padding: 44px;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
-  align-items: center; box-shadow: var(--shadow-card);
+  display: block;
+  box-shadow: var(--shadow-card);
   transition: transform 0.22s var(--ease), box-shadow 0.22s, border-color 0.22s;
 }
+.featured-card .featured-desc { max-width: 640px; }
 .featured-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lift); border-color: rgba(70,165,252,0.25); }
 .featured-title {
   font-family: var(--serif); font-size: clamp(24px,3vw,36px);
@@ -287,8 +289,7 @@
 <nav class="site-nav">
   <div class="nav-pill">
     <a href="index.html" class="nav-brand">
-      <img src="assets/logo-bug.svg" class="nav-bug" alt="">
-      <span class="nav-brand-text">DexaFit <span class="accent">Research</span></span>
+      <img src="assets/dexafit-research-logo.png" alt="DexaFit Research" class="nav-logo">
     </a>
     <div class="nav-links">
       <a href="research.html">Research</a>
@@ -330,12 +331,6 @@
       </div>
     </div>
   </div>
-  <!-- Stat hint cards at bottom fold -->
-  <div class="hero-stats-hint">
-    <div class="hint-card"><span class="hint-num">30.4%</span><span class="hint-label">GLP-1 lean mass loss in women</span></div>
-    <div class="hint-card"><span class="hint-num">Age 38</span><span class="hint-label">Bone density decline begins</span></div>
-    <div class="hint-card"><span class="hint-num">11%</span><span class="hint-label">Normal BMI, metabolically obese</span></div>
-  </div>
 </section>
 
 <!-- STATS -->
@@ -353,7 +348,7 @@
       </div>
       <div class="stat-card reveal d3">
         <div class="stat-num" data-count="11" data-suffix="%" data-dec="0">0%</div>
-        <p class="stat-desc">of adults with a "normal" BMI are metabolically obese on DXA — carrying 1.4× higher cardiometabolic disease prevalence</p>
+        <p class="stat-desc">of adults with a "normal" BMI are metabolically obese on DEXA — carrying 1.4× higher cardiometabolic disease prevalence</p>
       </div>
     </div>
   </div>
@@ -390,7 +385,7 @@
         <div class="legend-item"><span class="legend-dot" style="background:#E05533"></span><span class="legend-label">Needs Focus</span><span class="legend-range" id="l-focus">—</span></div>
       </div>
     </div>
-    <p class="viz-source reveal d2">Derived from 100,000+ clinical-grade DXA assessments. DexaFit Research, 2026.</p>
+    <p class="viz-source reveal d2">Derived from hundreds of thousands of clinical-grade DEXA assessments. DexaFit Research, 2026.</p>
   </div>
 </section>
 
@@ -402,14 +397,11 @@
       <div>
         <span class="badge badge-research">Original Research</span>
         <h2 class="featured-title">Body Fat Percentage Reference Ranges by Age and Sex</h2>
-        <p class="featured-desc">The first population-scale DXA-derived reference ranges, stratified by age and sex from over 100,000 clinical-grade assessments across four continents — establishing a new standard for body composition assessment.</p>
+        <p class="featured-desc">Population-scale DEXA-derived reference ranges, stratified by age and sex from hundreds of thousands of clinical-grade assessments across four continents — establishing a new standard for body composition assessment.</p>
         <div class="featured-meta">
           <a href="research/body-fat-percentage-reference-ranges.html" class="btn btn-primary">Read the Study</a>
           <span class="featured-author">DexaFit Research Team · 2026</span>
         </div>
-      </div>
-      <div class="featured-viz-placeholder">
-        <canvas id="featuredCanvas"></canvas>
       </div>
     </div>
   </div>
@@ -472,7 +464,7 @@
     <div class="footer-grid">
       <div class="footer-col">
         <h4>DexaFit Research</h4>
-        <p>The largest clinical body composition database of its kind. Original research and curated evidence from hundreds of thousands of DXA, VO₂ Max, and RMR scans.</p>
+        <p>The largest clinical body composition database of its kind. Original research and curated evidence from hundreds of thousands of DEXA, VO₂ Max, and RMR scans.</p>
       </div>
       <div class="footer-col">
         <h4>Explore</h4>
@@ -497,8 +489,7 @@
     </div>
     <div class="footer-bottom">
       <div class="footer-brand-row">
-        <img src="assets/logo-bug-white.svg" alt="">
-        <span>DexaFit Research</span>
+        <img src="assets/white-research-logo.png" alt="DexaFit Research" class="footer-logo-sm">
       </div>
       <span class="footer-copy">© 2026 DexaFit, Inc. All rights reserved.</span>
     </div>
@@ -730,12 +721,6 @@ function setupSegGroup(groupId, onChange) {
 setupSegGroup('mainSexGroup', v => { mainSex = v; animateViz(bfCanvas, mainSex, mainAge, false); updateLegend(); });
 setupSegGroup('mainAgeGroup', v => { mainAge = v; animateViz(bfCanvas, mainSex, mainAge, false); updateLegend(); });
 
-// Featured mini-viz
-const featCanvas = document.getElementById('featuredCanvas');
-const featObs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { animateViz(featCanvas, 'female', '30-39', false); featObs.unobserve(e.target); } });
-}, { threshold: 0.3 });
-featObs.observe(featCanvas);
 
 // Hero viz (atlas mode)
 let heroSex = 'female', heroAge = '20-29';

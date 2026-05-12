@@ -1,9 +1,10 @@
 /* ============================================================
    DexaFit Research — Shared Design System
-   Fonts: Poppins (brand) + Roboto Mono (data) + Instrument Serif (editorial)
+   Fonts: DM Serif Display (headlines) + DM Sans (body/UI) + Roboto Mono (data)
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Roboto+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=DM+Serif+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600&display=swap');
 
 /* ── TOKENS ────────────────────────────────────────────────── */
 :root {
@@ -27,9 +28,9 @@
   --line:        rgba(0,0,0,0.08);
   --dark-line:   rgba(255,255,255,0.09);
 
-  --sans:   'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  --sans:   'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --mono:   'Roboto Mono', ui-monospace, 'SF Mono', monospace;
-  --serif:  'Instrument Serif', Georgia, serif;
+  --serif:  'DM Serif Display', Georgia, serif;
 
   --r-sm:   9px;
   --r-md:   12px;
@@ -63,6 +64,7 @@ a { color: var(--blue); text-decoration: none; }
 a:hover { text-decoration: none; }
 img, svg { display: block; max-width: 100%; }
 button { font-family: inherit; cursor: pointer; border: none; }
+h1, h2 { font-family: var(--serif); }
 
 /* ── SCROLL PROGRESS ────────────────────────────────────────── */
 #progress {
@@ -84,13 +86,14 @@ button { font-family: inherit; cursor: pointer; border: none; }
   border-bottom: 1px solid var(--line);
   padding: 0 48px;
   display: flex; align-items: center; justify-content: space-between;
-  height: 60px; gap: 12px;
+  height: 70px; gap: 12px;
 }
 .nav-brand {
   display: flex; align-items: center; gap: 8px;
   text-decoration: none; flex-shrink: 0;
 }
 .nav-bug { width: 15px; height: 15px; }
+.nav-logo { height: 42px; width: auto; display: block; }
 .nav-brand-text {
   font-size: 12px; font-weight: 800;
   letter-spacing: 0.08em; text-transform: uppercase;
@@ -101,9 +104,9 @@ button { font-family: inherit; cursor: pointer; border: none; }
   display: flex; gap: 0; align-items: center; flex: 1; justify-content: center;
 }
 .nav-links a {
-  font-size: 12px; font-weight: 600;
-  letter-spacing: 0.06em; text-transform: uppercase;
-  color: var(--muted); padding: 0 16px; height: 60px;
+  font-family: var(--serif); font-size: 15px; font-weight: 400;
+  letter-spacing: 0.01em; text-transform: none;
+  color: var(--muted); padding: 0 16px; height: 70px;
   display: flex; align-items: center;
   border-bottom: 2px solid transparent;
   transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
@@ -113,9 +116,9 @@ button { font-family: inherit; cursor: pointer; border: none; }
 .nav-links a.active { color: var(--blue); border-bottom-color: var(--blue); }
 .nav-cta {
   background: var(--blue); color: #fff !important;
-  padding: 9px 20px; border-radius: var(--r-pill);
-  font-size: 12px; font-weight: 700;
-  letter-spacing: 0.07em; text-transform: uppercase;
+  padding: 10px 22px; border-radius: var(--r-pill);
+  font-family: var(--serif); font-size: 15px; font-weight: 400;
+  letter-spacing: 0.01em; text-transform: none;
   transition: background 0.2s var(--ease), box-shadow 0.2s var(--ease);
   white-space: nowrap; flex-shrink: 0;
 }
@@ -247,12 +250,7 @@ section { position: relative; }
 .footer-brand-row {
   display: flex; align-items: center; gap: 10px;
 }
-.footer-brand-row img { width: 18px; opacity: 0.4; }
-.footer-brand-row span {
-  font-size: 11px; font-weight: 700;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  color: rgba(255,255,255,0.3);
-}
+.footer-logo-sm { height: 22px; width: auto; opacity: 0.75; }
 .footer-copy { font-size: 12px; color: rgba(255,255,255,0.25); }
 
 /* ── ARTICLE CARD (list item) ───────────────────────────────── */
@@ -336,6 +334,17 @@ section { position: relative; }
 }
 .form-field textarea { resize: vertical; min-height: 120px; }
 
+/* ── ARTICLE THUMBNAIL ──────────────────────────────────────── */
+.article-thumb {
+  width: 88px; height: 66px; flex-shrink: 0;
+  background: var(--section);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+.article-thumb svg { width: 24px; height: 24px; color: var(--faint); opacity: 0.5; }
+
 /* ── RESPONSIVE ─────────────────────────────────────────────── */
 @media (max-width: 900px) {
   .container { padding-left: 28px; padding-right: 28px; }
@@ -349,4 +358,7 @@ section { position: relative; }
   .footer-grid { grid-template-columns: 1fr; gap: 28px; }
   .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
   .site-footer { padding: 56px 20px 32px; }
+  .article-thumb { display: none; }
+  .filter-row { overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; padding-bottom: 4px; }
+  .filter-row::-webkit-scrollbar { display: none; }
 }

@@ -4,28 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About — DexaFit Research</title>
+<link rel="icon" href="assets/new-favicon.png" type="image/png">
 <link rel="stylesheet" href="shared.css">
 <style>
 /* PAGE HERO */
 .page-hero {
-  background: var(--dark); padding: 100px 0 80px;
+  background: var(--section); padding: 100px 0 80px;
   position: relative; overflow: hidden;
 }
-.page-hero::before {
-  content: ''; position: absolute; inset: 0;
-  background: radial-gradient(ellipse 60% 70% at 10% 80%, rgba(70,165,252,0.07) 0%, transparent 65%);
-  pointer-events: none;
-}
 .hero-inner { position: relative; z-index: 1; max-width: 680px; }
-.page-eyebrow { color: rgba(70,165,252,0.7) !important; }
-.page-eyebrow::before { background: rgba(70,165,252,0.5) !important; }
 .page-title {
   font-family: var(--serif); font-size: clamp(2.8rem,5vw,4.5rem);
-  font-weight: 400; font-style: italic;
-  letter-spacing: -0.02em; color: #fff;
+  font-weight: 400;
+  letter-spacing: -0.02em; color: var(--ink);
   line-height: 1.08; margin: 20px 0 20px;
 }
-.page-subtitle { font-size: 17px; color: rgba(255,255,255,0.5); line-height: 1.7; max-width: 520px; }
+.page-subtitle { font-size: 17px; color: var(--muted); line-height: 1.7; max-width: 520px; }
 
 /* INTRO SECTION */
 .intro-section { padding: 96px 0; }
@@ -83,22 +77,22 @@
 
 /* CTA BLOCK */
 .cta-block {
-  background: var(--dark); border-radius: var(--r-xl);
+  background: var(--section-2); border-radius: var(--r-xl);
   padding: 48px; margin-top: 32px;
   display: flex; align-items: center; justify-content: space-between; gap: 40px;
 }
-.cta-block h3 { font-size: 20px; font-weight: 700; color: #fff; line-height: 1.3; max-width: 400px; }
+.cta-block h3 { font-size: 20px; font-weight: 700; color: var(--ink); line-height: 1.3; max-width: 400px; }
 .cta-block-actions { display: flex; gap: 12px; flex-shrink: 0; flex-wrap: wrap; }
 
-/* DATA SECTION (dark) */
-.data-section { padding: 96px 0; background: var(--dark); }
+/* DATA SECTION */
+.data-section { padding: 96px 0; background: var(--section); }
 .data-section-inner { max-width: 720px; margin: 0 auto; text-align: center; }
 .data-section .section-marker { justify-content: center; }
 .data-section .section-marker::before { display: none; }
 .data-numbers { display: grid; grid-template-columns: repeat(3,1fr); gap: 40px; margin: 48px 0; }
 .data-num { font-family: var(--mono); font-size: 40px; font-weight: 600; color: var(--blue); line-height: 1; margin-bottom: 10px; }
-.data-label { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.5; }
-.data-desc { font-size: 16px; color: rgba(255,255,255,0.45); line-height: 1.7; }
+.data-label { font-size: 13px; color: var(--muted); line-height: 1.5; }
+.data-desc { font-size: 16px; color: var(--muted); line-height: 1.7; }
 
 @media (max-width: 900px) {
   .intro-grid { grid-template-columns: 1fr; gap: 48px; }
@@ -123,8 +117,7 @@
 <nav class="site-nav">
   <div class="nav-pill">
     <a href="index.html" class="nav-brand">
-      <img src="assets/logo-bug.svg" class="nav-bug" alt="">
-      <span class="nav-brand-text">DexaFit <span class="accent">Research</span></span>
+      <img src="assets/dexafit-research-logo.png" alt="DexaFit Research" class="nav-logo">
     </a>
     <div class="nav-links">
       <a href="research.html">Research</a>
@@ -153,8 +146,8 @@
     <div class="data-section-inner">
       <span class="section-marker">The Dataset</span>
       <div class="data-numbers">
-        <div class="reveal d1"><div class="data-num" data-count="100" data-suffix="K+">0K+</div><div class="data-label">DXA assessments across four continents</div></div>
-        <div class="reveal d2"><div class="data-num">3</div><div class="data-label">Testing modalities: DXA, VO₂ Max, RMR</div></div>
+        <div class="reveal d1"><div class="data-num" style="font-size:24px;line-height:1.3">Hundreds of<br>thousands</div><div class="data-label">DEXA assessments across four continents</div></div>
+        <div class="reveal d2"><div class="data-num">3</div><div class="data-label">Testing modalities: DEXA, VO₂ Max, RMR</div></div>
         <div class="reveal d3"><div class="data-num" data-count="10" data-suffix="+">0+</div><div class="data-label">Years of real-world biometric data</div></div>
       </div>
       <p class="data-desc reveal">Most body composition reference data is decades old, based on small samples, or measured with imprecise methods. DexaFit's clinical network generates high-fidelity measurements with demographic context that no published cohort can match.</p>
@@ -194,8 +187,8 @@
           <span class="section-marker">Why This Exists</span>
           <h2 class="section-title">The gap between measurement and knowledge is large.</h2>
           <div class="section-body">
-            <p>Most body composition reference data is decades old, based on small samples, or measured with imprecise methods. Clinicians interpret DXA results against population norms derived from radically different cohorts.</p>
-            <p>DexaFit's clinical network generates hundreds of thousands of DXA, VO₂ Max, and RMR scans with high-fidelity labels and demographic context. That data has never been systematically analyzed and published — until now.</p>
+            <p>Most body composition reference data is decades old, based on small samples, or measured with imprecise methods. Clinicians interpret DEXA results against population norms derived from radically different cohorts.</p>
+            <p>DexaFit's clinical network generates hundreds of thousands of DEXA, VO₂ Max, and RMR scans with high-fidelity labels and demographic context. That data has never been systematically analyzed and published — until now.</p>
           </div>
         </div>
 
@@ -203,7 +196,7 @@
 
         <div class="about-section reveal" id="editorial">
           <span class="section-marker">Editorial Standards</span>
-          <h2 class="section-title">Rigorous, disclosed, honest.</h2>
+          <h2 class="section-title">Expert-reviewed. Methodology disclosed.</h2>
           <div class="section-body">
             <p>Every original research article is reviewed by at least one domain expert. We use the term <em>expert-reviewed</em> rather than <em>peer-reviewed</em> to acknowledge that our review process is rigorous but distinct from traditional journal peer review.</p>
             <p>Methodology, limitations, and conflicts of interest are disclosed on every page. Curated content from outside sources is annotated with DexaFit context, caveats, or opposing viewpoints when appropriate.</p>
@@ -254,7 +247,7 @@
             <h3>Interested in working with DexaFit data?</h3>
             <div class="cta-block-actions">
               <a href="work-with-us.html" class="btn btn-primary">Work With Us</a>
-              <a href="research.html" class="btn btn-ghost-white">Explore Research</a>
+              <a href="research.html" class="btn btn-ghost">Explore Research</a>
             </div>
           </div>
         </div>
@@ -267,13 +260,13 @@
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-grid">
-      <div class="footer-col"><h4>DexaFit Research</h4><p>The largest clinical body composition database. Clinical-grade reference data from hundreds of thousands of DXA, VO₂ Max, and RMR scans.</p></div>
+      <div class="footer-col"><h4>DexaFit Research</h4><p>The largest clinical body composition database. Clinical-grade reference data from hundreds of thousands of DEXA, VO₂ Max, and RMR scans.</p></div>
       <div class="footer-col"><h4>Explore</h4><a href="research.html">All Research</a><a href="research.html">Original Research</a><a href="research.html">Guides</a><a href="research.html">Data Notes</a></div>
       <div class="footer-col"><h4>Publication</h4><a href="signal.html">The Signal</a><a href="signal.html">Archive</a><a href="work-with-us.html">Work With Us</a></div>
       <div class="footer-col"><h4>About</h4><a href="about.html">About</a><a href="about.html">Editorial Standards</a><a href="work-with-us.html">Contact</a></div>
     </div>
     <div class="footer-bottom">
-      <div class="footer-brand-row"><img src="assets/logo-bug-white.svg" alt=""><span>DexaFit Research</span></div>
+      <div class="footer-brand-row"><img src="assets/white-research-logo.png" alt="DexaFit Research" class="footer-logo-sm"></div>
       <span class="footer-copy">© 2026 DexaFit, Inc. All rights reserved.</span>
     </div>
   </div>

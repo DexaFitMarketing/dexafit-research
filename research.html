@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>All Research — DexaFit Research</title>
+<link rel="icon" href="assets/new-favicon.png" type="image/png">
 <link rel="stylesheet" href="shared.css">
 <style>
 body { background: var(--white); }
@@ -11,25 +12,17 @@ body { background: var(--white); }
 /* PAGE HERO */
 .page-hero {
   padding: 100px 0 64px;
-  background: var(--dark);
+  background: var(--section);
   position: relative; overflow: hidden;
 }
-.page-hero::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: radial-gradient(ellipse 70% 80% at 80% 60%, rgba(70,165,252,0.07) 0%, transparent 65%);
-  pointer-events: none;
-}
 .page-hero-inner { position: relative; z-index: 1; }
-.page-eyebrow { color: rgba(70,165,252,0.7) !important; }
-.page-eyebrow::before { background: rgba(70,165,252,0.5) !important; }
 .page-title {
-  font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800;
-  letter-spacing: -0.03em; color: #fff;
-  line-height: 1.05; margin: 16px 0 16px;
+  font-family: var(--serif); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 400;
+  letter-spacing: -0.01em; color: var(--ink);
+  line-height: 1.08; margin: 16px 0 16px;
 }
 .page-title .accent { color: var(--blue); }
-.page-subtitle { font-size: 17px; color: rgba(255,255,255,0.5); max-width: 540px; line-height: 1.65; }
+.page-subtitle { font-size: 17px; color: var(--muted); max-width: 540px; line-height: 1.65; }
 
 /* FILTER BAR */
 .filter-bar {
@@ -56,7 +49,7 @@ body { background: var(--white); }
 /* ARTICLES LIST */
 .articles-wrap { padding: 0 0 80px; }
 .article-card {
-  padding: 28px 0;
+  padding: 36px 0;
   border-bottom: 1px solid var(--line);
   display: flex; align-items: flex-start; gap: 20px;
   cursor: pointer;
@@ -71,7 +64,7 @@ body { background: var(--white); }
   font-size: 17px; font-weight: 700; color: var(--ink);
   line-height: 1.35; margin-bottom: 6px;
   transition: color 0.2s;
-  font-family: var(--sans);
+  font-family: var(--serif);
 }
 .article-card:hover .article-title { color: var(--blue); }
 .article-source { font-size: 13px; color: var(--blue); font-weight: 500; }
@@ -96,8 +89,7 @@ body { background: var(--white); }
 <nav class="site-nav">
   <div class="nav-pill">
     <a href="index.html" class="nav-brand">
-      <img src="assets/logo-bug.svg" class="nav-bug" alt="">
-      <span class="nav-brand-text">DexaFit <span class="accent">Research</span></span>
+      <img src="assets/dexafit-research-logo.png" alt="DexaFit Research" class="nav-logo">
     </a>
     <div class="nav-links">
       <a href="research.html" class="active">Research</a>
@@ -137,10 +129,8 @@ body { background: var(--white); }
       <span class="filter-label">Type</span>
       <button class="filter-pill active" data-type="all">All</button>
       <button class="filter-pill" data-type="Original Research">Original Research</button>
-      <button class="filter-pill" data-type="Reference Guide">Reference Guide</button>
-      <button class="filter-pill" data-type="Data Note">Data Note</button>
-      <button class="filter-pill" data-type="Curated">Curated</button>
-      <button class="filter-pill" data-type="Evidence Review">Evidence Review</button>
+      <button class="filter-pill" data-type="Research Summaries">Research Summaries</button>
+      <button class="filter-pill" data-type="Curated Summaries">Curated Summaries</button>
       <span class="filter-count"><span id="resultCount">14</span> results</span>
     </div>
   </div>
@@ -155,13 +145,13 @@ body { background: var(--white); }
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-grid">
-      <div class="footer-col"><h4>DexaFit Research</h4><p>The largest clinical body composition database. Clinical-grade reference data from hundreds of thousands of DXA, VO₂ Max, and RMR scans.</p></div>
+      <div class="footer-col"><h4>DexaFit Research</h4><p>The largest clinical body composition database. Clinical-grade reference data from hundreds of thousands of DEXA, VO₂ Max, and RMR scans.</p></div>
       <div class="footer-col"><h4>Explore</h4><a href="research.html">All Research</a><a href="research.html">Original Research</a><a href="research.html">Guides</a><a href="research.html">Data Notes</a></div>
       <div class="footer-col"><h4>Publication</h4><a href="signal.html">The Signal</a><a href="signal.html">Archive</a><a href="work-with-us.html">Work With Us</a></div>
       <div class="footer-col"><h4>About</h4><a href="about.html">About</a><a href="about.html">Editorial Standards</a><a href="work-with-us.html">Contact</a></div>
     </div>
     <div class="footer-bottom">
-      <div class="footer-brand-row"><img src="assets/logo-bug-white.svg" alt=""><span>DexaFit Research</span></div>
+      <div class="footer-brand-row"><img src="assets/white-research-logo.png" alt="DexaFit Research" class="footer-logo-sm"></div>
       <span class="footer-copy">© 2026 DexaFit, Inc. All rights reserved.</span>
     </div>
   </div>
@@ -177,19 +167,19 @@ document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
 
 const ARTICLES = [
   { id:1, title:'Body Fat Percentage Reference Ranges by Age and Sex', type:'Original Research', badge:'badge-research', topic:'body-composition', source:'DexaFit Research', year:'2026', href:'research/body-fat-percentage-reference-ranges.html' },
-  { id:2, title:'How to Read a DEXA Scan Report', type:'Reference Guide', badge:'badge-reference', topic:'body-composition', source:'DexaFit Research', year:'2026', href:'#' },
-  { id:3, title:'Visceral Fat — Normal, Elevated, and High-Risk Ranges', type:'Original Research', badge:'badge-research', topic:'metabolic-health', source:'DexaFit Research', year:'2026', href:'research/visceral-fat-cardiometabolic-risk.html' },
-  { id:4, title:'GLP-1 Medications and Body Composition — What the Data Shows', type:'Original Research', badge:'badge-research', topic:'weight-loss-glp1', source:'DexaFit Research', year:'2026', href:'research/glp1-lean-mass-loss.html' },
+  { id:2, title:'How to Read a DEXA Scan Report', type:'Original Research', badge:'badge-reference', topic:'body-composition', source:'DexaFit Research', year:'2026', href:'#' },
+  { id:3, title:'Visceral Fat — Normal, Elevated, and High-Risk Ranges', type:'Original Research', badge:'badge-research', topic:'metabolic-health', source:'DexaFit Research', year:'2026', href:'research/visceral-fat-cardiometabolic-risk (1).html' },
+  { id:4, title:'GLP-1 Medications and Body Composition — What the Data Shows', type:'Original Research', badge:'badge-research', topic:'weight-loss-glp1', source:'DexaFit Research', year:'2026', href:'research/glp1-lean-mass-loss (1).html' },
   { id:5, title:'Bone Density T-Scores — What Your Results Mean', type:'Original Research', badge:'badge-research', topic:'bone-health', source:'DexaFit Research', year:'2026', href:'#' },
-  { id:6, title:'TOFI — Why "Normal Weight" Adults Can Be Metabolically Obese', type:'Data Note', badge:'badge-note', topic:'metabolic-health', source:'DexaFit Research', year:'2026', href:'#' },
-  { id:7, title:'GE Lunar vs Hologic — Why Your T-Scores Don\'t Match', type:'Data Note', badge:'badge-note', topic:'bone-health', source:'DexaFit Research', year:'2026', href:'research/ge-lunar-vs-hologic.html' },
-  { id:8, title:'Muscle Matters: The Effects of Medically Induced Weight Loss on Skeletal Muscle', type:'Curated', badge:'badge-curated', topic:'weight-loss-glp1', source:'The Lancet Diabetes & Endocrinology', year:'2026', href:'#' },
-  { id:9, title:'Cardiorespiratory Fitness as a Quantitative Predictor of All-Cause Mortality', type:'Curated', badge:'badge-curated', topic:'performance-longevity', source:'JAMA Network Open · Mandsager et al.', year:'2026', href:'research/vo2-max-mortality.html' },
-  { id:10, title:'Body Composition Changes During Weight Reduction with Tirzepatide (SURMOUNT-1)', type:'Curated', badge:'badge-curated', topic:'weight-loss-glp1', source:'Diabetes, Obesity and Metabolism · Look et al.', year:'2026', href:'#' },
-  { id:11, title:'SEMALEAN: Impact of Semaglutide on Fat Mass, Lean Mass and Muscle Function', type:'Curated', badge:'badge-curated', topic:'weight-loss-glp1', source:'Diabetes, Obesity and Metabolism', year:'2026', href:'#' },
-  { id:12, title:'Midlife Cardiorespiratory Fitness and the Long-Term Risk of Mortality: 46 Years of Follow-Up', type:'Evidence Review', badge:'badge-review', topic:'performance-longevity', source:'JACC · Strømstad et al.', year:'2026', href:'#' },
-  { id:13, title:'Sarcopenia Screening — Why BMI Misses It and What to Measure', type:'Curated', badge:'badge-curated', topic:'sarcopenia-muscle', source:'DexaFit Research', year:'2026', href:'#' },
-  { id:14, title:'Semaglutide Therapy and Accelerated Sarcopenia in Older Adults with Type 2 Diabetes', type:'Curated', badge:'badge-curated', topic:'sarcopenia-muscle', source:'Clinical Interventions in Aging', year:'2026', href:'#' }
+  { id:6, title:'TOFI — Why "Normal Weight" Adults Can Be Metabolically Obese', type:'Original Research', badge:'badge-note', topic:'metabolic-health', source:'DexaFit Research', year:'2026', href:'#' },
+  { id:7, title:'GE Lunar vs Hologic — Why Your T-Scores Don\'t Match', type:'Original Research', badge:'badge-note', topic:'bone-health', source:'DexaFit Research', year:'2026', href:'research/ge-lunar-vs-hologic (1).html' },
+  { id:8, title:'Muscle Matters: The Effects of Medically Induced Weight Loss on Skeletal Muscle', type:'Curated Summaries', badge:'badge-curated', topic:'weight-loss-glp1', source:'The Lancet Diabetes & Endocrinology', year:'2026', href:'#' },
+  { id:9, title:'Cardiorespiratory Fitness as a Quantitative Predictor of All-Cause Mortality', type:'Curated Summaries', badge:'badge-curated', topic:'performance-longevity', source:'JAMA Network Open · Mandsager et al.', year:'2026', href:'research/vo2-max-mortality (1).html' },
+  { id:10, title:'Body Composition Changes During Weight Reduction with Tirzepatide (SURMOUNT-1)', type:'Curated Summaries', badge:'badge-curated', topic:'weight-loss-glp1', source:'Diabetes, Obesity and Metabolism · Look et al.', year:'2026', href:'#' },
+  { id:11, title:'SEMALEAN: Impact of Semaglutide on Fat Mass, Lean Mass and Muscle Function', type:'Curated Summaries', badge:'badge-curated', topic:'weight-loss-glp1', source:'Diabetes, Obesity and Metabolism', year:'2026', href:'#' },
+  { id:12, title:'Midlife Cardiorespiratory Fitness and the Long-Term Risk of Mortality: 46 Years of Follow-Up', type:'Research Summaries', badge:'badge-review', topic:'performance-longevity', source:'JACC · Strømstad et al.', year:'2026', href:'#' },
+  { id:13, title:'Sarcopenia Screening — Why BMI Misses It and What to Measure', type:'Curated Summaries', badge:'badge-curated', topic:'sarcopenia-muscle', source:'DexaFit Research', year:'2026', href:'#' },
+  { id:14, title:'Semaglutide Therapy and Accelerated Sarcopenia in Older Adults with Type 2 Diabetes', type:'Curated Summaries', badge:'badge-curated', topic:'sarcopenia-muscle', source:'Clinical Interventions in Aging', year:'2026', href:'#' }
 ];
 
 const TOPIC_NAMES = {
@@ -216,6 +206,9 @@ function render() {
   }
   list.innerHTML = filtered.map((a, i) => `
     <a href="${a.href}" class="article-card" style="animation-delay:${i * 0.04}s">
+      <div class="article-thumb">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      </div>
       <div class="article-body">
         <div class="article-meta">
           <span class="badge ${a.badge}">${a.type}</span>

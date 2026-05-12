@@ -3,805 +3,366 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Work with DexaFit Data. Access de-identified, clinical-grade body composition and metabolic datasets for CROs, pharma, biotech, and health platforms.">
-<meta name="robots" content="index, follow">
-<meta name="canonical" content="https://research.dexafit.com/work-with-us">
-
-<!-- Open Graph -->
-<meta property="og:title" content="Work With DexaFit Data — Partnerships & Data Licensing">
-<meta property="og:description" content="Access de-identified, clinical-grade body composition and metabolic datasets with high-fidelity labels, longitudinal data pairs, and broader demographic representation.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://research.dexafit.com/work-with-us">
-<meta property="og:image" content="https://research.dexafit.com/og-image.png">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Work With DexaFit Data — Partnerships & Data Licensing">
-<meta name="twitter:description" content="Collaborate with DexaFit for research partnerships, data licensing, and clinical endpoints.">
-
 <title>Work With DexaFit Data — Partnerships & Data Licensing</title>
-
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
-
+<link rel="icon" href="assets/new-favicon.png" type="image/png">
+<link rel="stylesheet" href="shared.css">
 <style>
-:root {
-  --b: #46A5FC;
-  --b2: #2D8BE8;
-  --bl: #EDF6FF;
-  --bg: #ffffff;
-  --bg2: #F5F5F7;
-  --bg3: #EEEEF0;
-  --t: #1d1d1f;
-  --ts: #525252;
-  --tm: #8e8e93;
-  --sf: 'DM Serif Display', Georgia, serif;
-  --sn: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+/* PAGE HERO */
+.page-hero {
+  background: var(--section); padding: 100px 0 80px;
+  position: relative; overflow: hidden;
 }
+.page-hero-inner { position: relative; z-index: 1; }
+.page-title {
+  font-family: var(--serif); font-size: clamp(2.5rem,5vw,4.5rem); font-weight: 400;
+  letter-spacing: -0.01em; color: var(--ink);
+  line-height: 1.08; margin: 16px 0 16px; text-wrap: balance;
+}
+.page-title .accent { color: var(--blue); }
+.page-subtitle { font-size: 17px; color: var(--muted); max-width: 540px; line-height: 1.65; }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: var(--sn);
-  background: var(--bg);
-  color: var(--t);
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-  line-height: 1.6;
-}
-::selection { background: var(--b); color: #fff; }
-
-/* SCROLL PROGRESS BAR */
-.scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; background: var(--b); transform: scaleX(0); transform-origin: left; z-index: 200; }
-
-/* NAVIGATION */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  padding: 16px 48px;
-  display: flex; align-items: center; justify-content: space-between;
-  background: rgba(255,255,255,.9); backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(0,0,0,.06);
-}
-nav .logo-group {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
-}
-nav .logo-text-1 {
-  font-family: var(--sn);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: #000;
-}
-nav .logo-text-2 {
-  font-family: var(--sn);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--b);
-}
-nav .links {
-  display: flex;
-  gap: 32px;
-  flex: 1;
-  margin-left: 80px;
-}
-nav .links a {
-  font-size: 13px;
-  color: var(--ts);
-  text-decoration: none;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  transition: color .3s;
-}
-nav .links a:hover { color: var(--t); }
-nav .links a.nav-active { color: var(--b); }
-
-.nav-cta {
-  background: var(--b);
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 100px;
-  font-size: 13px;
-  font-weight: 600;
-  text-decoration: none;
-  letter-spacing: .05em;
-  text-transform: uppercase;
-  transition: background .3s;
-}
-.nav-cta:hover { background: var(--b2); }
-
-/* HERO SECTION */
-.hero {
-  padding: 120px 48px;
-  padding-top: 160px;
-  text-align: center;
-  max-width: 1080px;
-  margin: 0 auto;
-  opacity: 0;
-  animation: fadeInUp 0.8s ease forwards;
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.hero-title {
-  font-family: var(--sf);
-  font-size: 48px;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  margin-bottom: 24px;
-  color: var(--t);
-}
-
-.hero-subtitle {
-  font-size: 18px;
-  color: var(--ts);
-  line-height: 1.6;
-  max-width: 600px;
-  margin: 0 auto;
-}
+/* PARTNER STATS ROW */
+.stats-row { display: flex; gap: 0; border-top: 1px solid var(--line); margin-top: 60px; }
+.partner-stat { flex: 1; padding: 32px 0 0; border-right: 1px solid var(--line); padding-right: 40px; padding-left: 8px; }
+.partner-stat:first-child { padding-left: 0; }
+.partner-stat:last-child { border-right: none; }
+.partner-stat-num { font-family: var(--mono); font-size: 36px; font-weight: 600; color: var(--blue); line-height: 1; margin-bottom: 8px; }
+.partner-stat-label { font-size: 13px; color: var(--muted); line-height: 1.5; }
 
 /* TABS SECTION */
-.tabs-section {
-  padding: 80px 48px;
-  max-width: 1080px;
-  margin: 0 auto;
-}
-
+.tabs-section { padding: 96px 0; }
 .tabs-nav {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 60px;
-  border-bottom: 1px solid rgba(0,0,0,.1);
-  overflow-x: auto;
+  display: flex; gap: 4px; border-bottom: 1px solid var(--line);
+  overflow-x: auto; padding-bottom: 0; margin-bottom: 56px;
+  scrollbar-width: none;
 }
-
+.tabs-nav::-webkit-scrollbar { display: none; }
 .tab-btn {
-  padding: 12px 20px;
-  background: transparent;
-  border: 1px solid rgba(0,0,0,.1);
-  border-bottom: 2px solid transparent;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: .05em;
-  text-transform: uppercase;
-  color: var(--ts);
-  cursor: pointer;
-  transition: all .3s;
-  white-space: nowrap;
-  font-family: var(--sn);
-  border-radius: 8px 8px 0 0;
+  padding: 14px 20px; background: transparent; border: none;
+  font-family: var(--sans); font-size: 13px; font-weight: 700;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  color: var(--faint); cursor: pointer; white-space: nowrap;
+  border-bottom: 2.5px solid transparent; margin-bottom: -1px;
+  transition: color 0.2s, border-color 0.2s;
 }
+.tab-btn:hover { color: var(--ink); }
+.tab-btn.active { color: var(--blue); border-bottom-color: var(--blue); }
 
-.tab-btn:hover {
-  color: var(--t);
+.tab-panel { display: none; }
+.tab-panel.active {
+  display: grid; grid-template-columns: 40% 1fr;
+  gap: 72px; align-items: start;
+  animation: fadeUp 0.35s var(--ease);
 }
+@keyframes fadeUp { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
 
-.tab-btn.active {
-  background: var(--t);
-  color: #fff;
-  border-color: var(--t);
-}
-
-.tabs-content {
-  display: none;
-}
-
-.tabs-content.active {
-  display: grid;
-  grid-template-columns: 40% 60%;
-  gap: 60px;
-  animation: fadeInUp 0.5s ease;
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.tab-content-left {
-  display: flex;
-  flex-direction: column;
-}
-
-.tab-title {
-  font-family: var(--sf);
-  font-size: 28px;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 20px;
-  color: var(--t);
-}
-
-.tab-desc {
-  font-size: 16px;
-  color: var(--ts);
-  line-height: 1.6;
-  margin-bottom: 32px;
-}
-
-.tab-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--b);
-  color: #fff;
-  padding: 12px 24px;
-  border-radius: 100px;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: .05em;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: background .3s;
-  width: fit-content;
-}
-
-.tab-cta:hover {
-  background: var(--b2);
-}
-
-.tab-content-right {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.tab-feature {
-  padding: 20px;
-  background: var(--bg2);
-  border-radius: 12px;
-  border: 1px solid rgba(0,0,0,.06);
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
-  transition: border-color .3s, transform .3s, box-shadow .3s;
-}
-
-.tab-feature:hover {
-  border-color: rgba(70,165,252,.25);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(0,0,0,.06);
-}
-
-.tab-feature-check {
-  flex-shrink: 0;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: var(--bl);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--b);
-  font-weight: 700;
-  font-size: 13px;
-}
-
-.tab-feature-text {
-  font-size: 16px;
-  color: var(--t);
-  line-height: 1.5;
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* FOOTER */
-footer {
-  background: var(--bg);
-  border-top: 1px solid rgba(0,0,0,.06);
-  padding: 80px 48px;
-}
-
-footer .footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 60px;
-  margin-bottom: 60px;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-footer .footer-col h3 {
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  color: var(--t);
+.tab-left {}
+.tab-badge {
+  display: inline-block; padding: 5px 12px; border-radius: var(--r-pill);
+  background: var(--blue-tint); color: var(--blue);
+  font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
   margin-bottom: 16px;
 }
+.tab-title { font-size: clamp(22px,2.5vw,30px); font-weight: 800; color: var(--ink); letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px; }
+.tab-desc { font-size: 16px; color: var(--muted); line-height: 1.7; margin-bottom: 32px; }
 
-footer .footer-col p {
-  font-size: 14px;
-  color: var(--ts);
-  line-height: 1.6;
-  margin-bottom: 16px;
+.tab-right { display: flex; flex-direction: column; gap: 12px; }
+.feature-row {
+  display: flex; align-items: flex-start; gap: 16px;
+  padding: 18px 20px; background: var(--section);
+  border-radius: var(--r-md); border: 1px solid var(--line);
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
-
-footer .footer-col a {
-  display: block;
-  font-size: 14px;
-  color: var(--ts);
-  text-decoration: none;
-  margin-bottom: 12px;
-  transition: color .2s;
+.feature-row:hover { border-color: rgba(70,165,252,0.3); transform: translateX(4px); box-shadow: var(--shadow-card); }
+.feature-check {
+  flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%;
+  background: var(--blue-tint); display: flex; align-items: center; justify-content: center;
+  margin-top: 1px;
 }
+.feature-check svg { width: 11px; height: 11px; color: var(--blue); }
+.feature-text { font-size: 15px; color: var(--ink); line-height: 1.5; }
 
-footer .footer-col a:hover {
-  color: var(--b);
+/* CONTACT SECTION */
+.contact-section { padding: 96px 0; background: var(--section); }
+.contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.contact-left {}
+.contact-title { font-family: var(--serif); font-size: clamp(28px,3.5vw,44px); font-weight: 400; font-style: italic; color: var(--ink); line-height: 1.15; margin: 16px 0 16px; letter-spacing: -0.01em; }
+.contact-desc { font-size: 16px; color: var(--muted); line-height: 1.7; }
+.contact-note { margin-top: 32px; padding: 20px; background: var(--blue-soft); border-radius: var(--r-md); border-left: 3px solid var(--blue); }
+.contact-note p { font-size: 14px; color: var(--blue); line-height: 1.6; margin: 0; }
+
+.contact-form { display: flex; flex-direction: column; gap: 14px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%; padding: 13px 16px;
+  border: 1.5px solid var(--line); border-radius: var(--r-md);
+  font-family: var(--sans); font-size: 15px;
+  background: var(--white); color: var(--ink);
+  transition: border-color 0.2s, box-shadow 0.2s; outline: none;
 }
-
-.footer-bottom {
-  border-top: 1px solid rgba(0,0,0,.06);
-  padding-top: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 12px;
-  color: var(--ts);
+.form-field input:focus, .form-field select:focus, .form-field textarea:focus {
+  border-color: var(--blue); box-shadow: 0 0 0 3px rgba(70,165,252,0.1);
 }
+.form-field textarea { min-height: 120px; resize: vertical; }
+.form-field.full { grid-column: 1 / -1; }
 
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-  nav { padding: 16px 24px; }
-  nav .links { margin-left: 40px; gap: 24px; }
-  .hero { padding: 100px 40px; padding-top: 120px; }
-  .tabs-section { padding: 80px 40px; }
-  .tabs-content.active { grid-template-columns: 1fr; gap: 40px; }
-  footer .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
-  .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
+@media (max-width: 900px) {
+  .tab-panel.active { grid-template-columns: 1fr; gap: 40px; }
+  .contact-inner { grid-template-columns: 1fr; gap: 48px; }
+  .stats-row { flex-wrap: wrap; }
+  .partner-stat { min-width: 40%; padding: 24px 0 0; }
 }
-
-@media (max-width: 768px) {
-  nav { padding: 12px 16px; }
-  nav .links { display: none; }
-  nav .logo-text-1, nav .logo-text-2 { font-size: 11px; }
-  .nav-cta { padding: 8px 16px; font-size: 11px; }
-  .hero { padding: 80px 20px; padding-top: 100px; }
-  .hero-title { font-size: 32px; }
-  .tabs-section { padding: 60px 20px; }
-  .tabs-nav { flex-wrap: wrap; }
-  .tabs-content.active { grid-template-columns: 1fr; gap: 40px; }
-  footer { padding: 60px 20px; }
-  footer .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+@media (max-width: 600px) {
+  .page-hero { padding-top: 100px; }
+  .tabs-section, .contact-section { padding: 64px 0; }
+  .form-row { grid-template-columns: 1fr; }
 }
-
-/* DF SUCCESS MODAL */
-.df-modal-overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.45);align-items:center;justify-content:center;}
-.df-modal-overlay.open{display:flex;}
-.df-modal{background:#fff;border-radius:20px;padding:48px 40px 40px;max-width:420px;width:90%;text-align:center;position:relative;box-shadow:0 24px 60px rgba(0,0,0,0.18);animation:df-in 0.3s ease;}
-@keyframes df-in{from{opacity:0;transform:translateY(16px) scale(0.97);}to{opacity:1;transform:translateY(0) scale(1);}}
-.df-modal-icon{width:56px;height:56px;border-radius:50%;background:#EDF6FF;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}
-.df-modal-icon svg{width:28px;height:28px;}
-.df-modal-title{font-family:'DM Serif Display',Georgia,serif;font-size:22px;color:#1d1d1f;margin-bottom:10px;line-height:1.2;}
-.df-modal-body{font-family:'DM Sans',-apple-system,sans-serif;font-size:15px;color:#525252;line-height:1.6;margin-bottom:28px;}
-.df-modal-close{font-family:'DM Sans',-apple-system,sans-serif;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#46A5FC;background:none;border:1.5px solid #46A5FC;border-radius:100px;padding:10px 28px;cursor:pointer;transition:all .2s;}
-.df-modal-close:hover{background:#46A5FC;color:#fff;}
-
-/* CONTACT FORM SECTION */
-.contact-section{padding:80px 48px;max-width:760px;margin:0 auto;}
-.contact-section-label{display:block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#46A5FC;margin-bottom:16px;}
-.contact-section h2{font-family:'DM Serif Display',Georgia,serif;font-size:32px;line-height:1.2;color:#1d1d1f;margin-bottom:12px;}
-.contact-section p{font-size:16px;color:#525252;line-height:1.6;margin-bottom:40px;}
-.contact-form{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-.contact-form .full{grid-column:1/-1;}
-.contact-form input,.contact-form select,.contact-form textarea{width:100%;padding:13px 16px;border:1px solid rgba(0,0,0,0.12);border-radius:10px;font-size:15px;font-family:'DM Sans',-apple-system,sans-serif;background:#fff;color:#1d1d1f;transition:border-color .2s;}
-.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{outline:none;border-color:#46A5FC;box-shadow:0 0 0 3px rgba(70,165,252,0.1);}
-.contact-form textarea{resize:vertical;min-height:120px;}
-.contact-form-submit{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:#46A5FC;color:#fff;border:none;border-radius:100px;font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;font-family:'DM Sans',-apple-system,sans-serif;transition:background .2s;margin-top:8px;}
-.contact-form-submit:hover{background:#2D8BE8;}
-.contact-form-submit:disabled{opacity:0.6;cursor:not-allowed;}
-@media(max-width:768px){.contact-section{padding:60px 20px;}.contact-form{grid-template-columns:1fr;}}
-
 </style>
-
 </head>
 <body>
-<!-- DF MODAL -->
+<div id="progress"></div>
+
 <div class="df-modal-overlay" id="dfModal" onclick="if(event.target===this)dfCloseModal()">
   <div class="df-modal">
-    <div class="df-modal-icon">
-      <svg viewBox="0 0 24 24" fill="none" stroke="#46A5FC" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-    </div>
+    <div class="df-modal-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#46A5FC" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
     <div class="df-modal-title" id="dfModalTitle">Message received.</div>
     <div class="df-modal-body" id="dfModalBody">The DexaFit Research team will be in touch within 2 business days.</div>
     <button class="df-modal-close" onclick="dfCloseModal()">Got it</button>
   </div>
 </div>
 
-<!-- SCROLL PROGRESS BAR -->
-<div class="scroll-progress"></div>
-
-<!-- NAVIGATION -->
-<nav>
-  <a href="/research" class="logo-group">
-    <span class="logo-text-1">DexaFit</span>
-    <span class="logo-text-2">Research</span>
-  </a>
-  <div class="links">
-    <a href="/research">Research & Topics</a>
-    <a href="/signal">The Signal</a>
-    <a href="/work-with-us" class="nav-active">Work With Us</a>
-    <a href="/about">About</a>
+<nav class="site-nav">
+  <div class="nav-pill">
+    <a href="index.html" class="nav-brand">
+      <img src="assets/dexafit-research-logo.png" alt="DexaFit Research" class="nav-logo">
+    </a>
+    <div class="nav-links">
+      <a href="research.html">Research</a>
+      <a href="signal.html">The Signal</a>
+      <a href="work-with-us.html" class="active">Work With Us</a>
+      <a href="about.html">About</a>
+    </div>
+    <a href="#contact" class="nav-cta">Start a Conversation</a>
   </div>
-  <a href="/research" class="nav-cta">Explore the Data</a>
 </nav>
 
-<!-- HERO SECTION -->
-<section class="hero reveal">
-  <h1 class="hero-title">Work With DexaFit Data</h1>
-  <p class="hero-subtitle">Access de-identified, clinical-grade body composition and metabolic datasets with high-fidelity labels, longitudinal data pairs, and broader demographic representation than published cohorts.</p>
-</section>
+<!-- HERO -->
+<div class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner reveal">
+      <span class="eyebrow page-eyebrow">Data Partnerships</span>
+      <h1 class="page-title">Work with the world's<br><span class="accent">deepest dataset.</span></h1>
+      <p class="page-subtitle">De-identified, clinical-grade body composition and metabolic data with high-fidelity labels, longitudinal pairs, and demographic breadth beyond any published cohort.</p>
+    </div>
+    <div class="stats-row reveal d2">
+      <div class="partner-stat">
+        <div class="partner-stat-num" style="font-size:20px;line-height:1.3">Hundreds of<br>thousands</div>
+        <div class="partner-stat-label">DEXA assessments<br>across four continents</div>
+      </div>
+      <div class="partner-stat">
+        <div class="partner-stat-num">Nationwide</div>
+        <div class="partner-stat-label">Clinical locations<br>with standardized protocols</div>
+      </div>
+      <div class="partner-stat">
+        <div class="partner-stat-num">3</div>
+        <div class="partner-stat-label">Testing modalities:<br>DEXA, VO₂ Max, RMR</div>
+      </div>
+      <div class="partner-stat">
+        <div class="partner-stat-num">HIPAA</div>
+        <div class="partner-stat-label">Safe Harbor de-identification<br>on all data</div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- TABS SECTION -->
 <section class="tabs-section">
-  <div class="tabs-nav">
-    <button class="tab-btn active" data-tab="cros">CROs & Research Partners</button>
-    <button class="tab-btn" data-tab="pharma">Pharma & Biotech</button>
-    <button class="tab-btn" data-tab="business">Businesses & Platforms</button>
-    <button class="tab-btn" data-tab="licensing">Data Licensing</button>
-    <button class="tab-btn" data-tab="publish">Publish With Us</button>
-  </div>
+  <div class="container">
+    <div class="tabs-nav">
+      <button class="tab-btn active" data-tab="cros">CROs & Research Partners</button>
+      <button class="tab-btn" data-tab="pharma">Pharma & Biotech</button>
+      <button class="tab-btn" data-tab="business">Businesses & Platforms</button>
+      <button class="tab-btn" data-tab="licensing">Data Licensing</button>
+      <button class="tab-btn" data-tab="publish">Publish With Us</button>
+    </div>
 
-  <!-- CROs & Research Partners -->
-  <div id="cros" class="tabs-content active">
-    <div class="tab-content-left">
-      <h3 class="tab-title">CROs & Research Partners</h3>
-      <p class="tab-desc">Offload recruitment, testing, data collection, quality assurance, and statistical analysis to DexaFit. Leverage our clinical network, standardized protocols, and real-world dataset to power your research.</p>
-      <a href="#contact" class="tab-cta">Start a Conversation →</a>
-    </div>
-    <div class="tab-content-right">
-      <div class="tab-feature reveal">
-        <div class="tab-feature-check">✓</div>
-        <div class="tab-feature-text">Participant recruitment and screening across 40+ locations</div>
+    <div id="cros" class="tab-panel active">
+      <div class="tab-left">
+        <span class="tab-badge">Research Partners</span>
+        <h2 class="tab-title">CROs & Research Partners</h2>
+        <p class="tab-desc">Offload recruitment, testing, data collection, quality assurance, and statistical analysis. Leverage our clinical network, standardized protocols, and real-world dataset to power your research.</p>
+        <a href="#contact" class="btn btn-primary">Start a Conversation</a>
       </div>
-      <div class="tab-feature reveal">
-        <div class="tab-feature-check">✓</div>
-        <div class="tab-feature-text">DXA, VO₂ Max, and RMR testing with standardized protocols</div>
-      </div>
-      <div class="tab-feature reveal">
-        <div class="tab-feature-check">✓</div>
-        <div class="tab-feature-text">Data collection, cleaning, and quality assurance</div>
-      </div>
-      <div class="tab-feature reveal">
-        <div class="tab-feature-check">✓</div>
-        <div class="tab-feature-text">Statistical analysis, cohort matching, and reporting</div>
-      </div>
-      <div class="tab-feature reveal">
-        <div class="tab-feature-check">✓</div>
-        <div class="tab-feature-text">Cross-validation against your existing datasets</div>
-      </div>
-      <div class="tab-feature reveal">
-        <div class="tab-feature-check">✓</div>
-        <div class="tab-feature-text">Co-authored research and publication support</div>
+      <div class="tab-right">
+        <div class="feature-row"><div class="feature-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l3 3 5-5"/></svg></div><span class="feature-text">Participant recruitment and screening across our nationwide clinical locations</span></div>
+        <div class="feature-row"><div class="feature-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l3 3 5-5"/></svg></div><span class="feature-text">DEXA, VO₂ Max, and RMR testing with standardized protocols</span></div>
+        <div class="feature-row"><div class="feature-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l3 3 5-5"/></svg></div><span class="feature-text">Data collection, cleaning, and quality assurance</span></div>
+        <div class="feature-row"><div class="feature-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l3 3 5-5"/></svg></div><span class="feature-text">Statistical analysis, cohort matching, and reporting</span></div>
+        <div class="feature-row"><div class="feature-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l3 3 5-5"/></svg></div><span class="feature-text">Cross-validation against your existing datasets</span></div>
+        <div class="feature-row"><div class="feature-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l3 3 5-5"/></svg></div><span class="feature-text">Co-authored research and publication support</span></div>
       </div>
     </div>
-  </div>
 
-  <!-- Pharma & Biotech -->
-  <div id="pharma" class="tabs-content">
-    <div class="tab-content-left">
-      <h3 class="tab-title">Pharma & Biotech</h3>
-      <p class="tab-desc">Use DexaFit's real-world data and clinical infrastructure to validate body composition endpoints in clinical trials. De-identified, longitudinal data with high-quality DXA and metabolic testing supports regulatory submissions and product development.</p>
-      <a href="#contact" class="tab-cta">Start a Conversation →</a>
-    </div>
-    <div class="tab-content-right">
-      <div class="tab-feature reveal">
-        <div class="tab-feature-check">✓</div>
-        <div class="tab-feature-text">Clinical trial body composition endpoints validation</div>
+    <div id="pharma" class="tab-panel">
+      <div class="tab-left">
+        <span class="tab-badge">Pharma & Biotech</span>
+        <h2 class="tab-title">Pharma & Biotech</h2>
+        <p class="tab-desc">Use DexaFit's real-world data and clinical infrastructure to validate body composition endpoints in clinical trials. De-identified, longitudinal data supports regulatory submissions and product development.</p>
+        <a href="#contact" class="btn btn-primary">Start a Conversation</a>
       </div>
-      <div class="tab-feature reveal">
-        <div class="tab-feature-check">✓</div>
-        <div class="tab-feature-text">GLP-1 and obesity trial-specific data cohorts</div>
-      </div>
-      <div class="tab-feature reveal">
-        <div class="tab-feature-check">✓</div>
-        <div class="tab-feature-text">Regulatory-grade DXA protocols and documentation</div>
-      </div>
-      <div class="tab-feature reveal">
-        <div class="tab-feature-check">✓</div>
-        <div class="tab-feature-text">Longitudinal paired scans for treatment efficacy analysis</div>
-      </div>
-      <div class="tab-feature reveal">
-        <div class="tab-feature-check">✓</div>
-        <div class="tab-feature-text">Custom cohort creation and matching services</div>
-      </div>
-      <div class="tab-feature reveal">
-        <div class="tab-feature-check">✓</div>
-        <div class="tab-feature-text">Biostat support for FDA submissions</div>
+      <div class="tab-right">
+        <div class="feature-row"><div class="feature-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l3 3 5-5"/></svg></div><span class="feature-text">Clinical trial body composition endpoints validation</span></div>
+        <div class="feature-row"><div class="feature-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l3 3 5-5"/></svg></div><span class="feature-text">GLP-1 and obesity trial-specific data cohorts</span></div>
+        <div class="feature-row"><div class="feature-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l3 3 5-5"/></svg></div><span class="feature-text">Regulatory-grade DEXA protocols and documentation</span></div>
+        <div class="feature-row"><div class="feature-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l3 3 5-5"/></svg></div><span class="feature-text">Longitudinal paired scans for treatment efficacy analysis</span></div>
+        <div class="feature-row"><div class="feature-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l3 3 5-5"/></svg></div><span class="feature-text">Custom cohort creation and matching services</span></div>
+        <div class="feature-row"><div class="feature-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l3 3 5-5"/></svg></div><span class="feature-text">Biostatistical support for FDA submissions</span></div>
       </div>
     </div>
-  </div>
 
-  <!-- Businesses & Platforms -->
-  <div id="business" class="tabs-content">
-    <div class="tab-content-left">
-      <h3 class="tab-title">Businesses & Platforms</h3>
-      <p class="tab-desc">Integrate DexaFit reference data, research insights, and body composition algorithms into health tech platforms, fitness applications, insurance products, and wellness solutions.</p>
-      <a href="#contact" class="tab-cta">Start a Conversation →</a>
-    </div>
-    <div class="tab-content-right">
-      <div class="tab-feature reveal">
-        <div class="tab-feature-check">✓</div>
-        <div class="tab-feature-text">Health tech and fitness platform integrations</div>
+    <div id="business" class="tab-panel">
+      <div class="tab-left">
+        <span class="tab-badge">Businesses & Platforms</span>
+        <h2 class="tab-title">Businesses & Platforms</h2>
+        <p class="tab-desc">Integrate DexaFit reference data, research insights, and body composition algorithms into health tech platforms, fitness applications, insurance products, and wellness solutions.</p>
+        <a href="#contact" class="btn btn-primary">Start a Conversation</a>
       </div>
-      <div class="tab-feature reveal">
-        <div class="tab-feature-check">✓</div>
-        <div class="tab-feature-text">Insurance risk modeling and underwriting data</div>
-      </div>
-      <div class="tab-feature reveal">
-        <div class="tab-feature-check">✓</div>
-        <div class="tab-feature-text">Wellness program benchmarking and analytics</div>
-      </div>
-      <div class="tab-feature reveal">
-        <div class="tab-feature-check">✓</div>
-        <div class="tab-feature-text">White-label reference ranges and algorithms</div>
-      </div>
-      <div class="tab-feature reveal">
-        <div class="tab-feature-check">✓</div>
-        <div class="tab-feature-text">Population health dashboards and reporting</div>
-      </div>
-      <div class="tab-feature reveal">
-        <div class="tab-feature-check">✓</div>
-        <div class="tab-feature-text">API access to validated reference data</div>
+      <div class="tab-right">
+        <div class="feature-row"><div class="feature-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l3 3 5-5"/></svg></div><span class="feature-text">Health tech and fitness platform integrations</span></div>
+        <div class="feature-row"><div class="feature-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l3 3 5-5"/></svg></div><span class="feature-text">Insurance risk modeling and underwriting data</span></div>
+        <div class="feature-row"><div class="feature-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l3 3 5-5"/></svg></div><span class="feature-text">Wellness program benchmarking and analytics</span></div>
+        <div class="feature-row"><div class="feature-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l3 3 5-5"/></svg></div><span class="feature-text">White-label reference ranges and algorithms</span></div>
+        <div class="feature-row"><div class="feature-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l3 3 5-5"/></svg></div><span class="feature-text">Population health dashboards and reporting</span></div>
+        <div class="feature-row"><div class="feature-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l3 3 5-5"/></svg></div><span class="feature-text">API access to validated reference data</span></div>
       </div>
     </div>
-  </div>
 
-  <!-- Data Licensing -->
-  <div id="licensing" class="tabs-content">
-    <div class="tab-content-left">
-      <h3 class="tab-title">Data Licensing</h3>
-      <p class="tab-desc">License de-identified datasets for research or product development. Access cohorts stratified by age, sex, BMI, metabolic health status, and other variables with clinical-grade DXA, VO₂ Max, and RMR measurements.</p>
-      <a href="#contact" class="tab-cta">Start a Conversation →</a>
-    </div>
-    <div class="tab-content-right">
-      <div class="tab-feature reveal">
-        <div class="tab-feature-check">✓</div>
-        <div class="tab-feature-text">Clinical-grade DXA, VO₂ Max, and RMR datasets</div>
+    <div id="licensing" class="tab-panel">
+      <div class="tab-left">
+        <span class="tab-badge">Data Licensing</span>
+        <h2 class="tab-title">Data Licensing</h2>
+        <p class="tab-desc">License de-identified datasets for research or product development. Access cohorts stratified by age, sex, BMI, and metabolic health status with clinical-grade DEXA, VO₂ Max, and RMR measurements.</p>
+        <a href="#contact" class="btn btn-primary">Start a Conversation</a>
       </div>
-      <div class="tab-feature reveal">
-        <div class="tab-feature-check">✓</div>
-        <div class="tab-feature-text">Longitudinal paired scans for before-and-after analysis</div>
-      </div>
-      <div class="tab-feature reveal">
-        <div class="tab-feature-check">✓</div>
-        <div class="tab-feature-text">Multi-continent diverse cohorts with rich demographics</div>
-      </div>
-      <div class="tab-feature reveal">
-        <div class="tab-feature-check">✓</div>
-        <div class="tab-feature-text">High-fidelity phenotypic labels and metadata</div>
-      </div>
-      <div class="tab-feature reveal">
-        <div class="tab-feature-check">✓</div>
-        <div class="tab-feature-text">Full data dictionary, methodology, and quality assurance docs</div>
-      </div>
-      <div class="tab-feature reveal">
-        <div class="tab-feature-check">✓</div>
-        <div class="tab-feature-text">HIPAA Safe Harbor de-identification certification</div>
+      <div class="tab-right">
+        <div class="feature-row"><div class="feature-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l3 3 5-5"/></svg></div><span class="feature-text">Clinical-grade DEXA, VO₂ Max, and RMR datasets</span></div>
+        <div class="feature-row"><div class="feature-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l3 3 5-5"/></svg></div><span class="feature-text">Longitudinal paired scans for before-and-after analysis</span></div>
+        <div class="feature-row"><div class="feature-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l3 3 5-5"/></svg></div><span class="feature-text">Multi-continent diverse cohorts with rich demographics</span></div>
+        <div class="feature-row"><div class="feature-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l3 3 5-5"/></svg></div><span class="feature-text">High-fidelity phenotypic labels and metadata</span></div>
+        <div class="feature-row"><div class="feature-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l3 3 5-5"/></svg></div><span class="feature-text">Full data dictionary, methodology, and QA documentation</span></div>
+        <div class="feature-row"><div class="feature-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l3 3 5-5"/></svg></div><span class="feature-text">HIPAA Safe Harbor de-identification certification</span></div>
       </div>
     </div>
-  </div>
 
-  <!-- Publish With Us -->
-  <div id="publish" class="tabs-content">
-    <div class="tab-content-left">
-      <h3 class="tab-title">Publish With Us</h3>
-      <p class="tab-desc">Submit research, collaborate on original studies, or co-author publications using DexaFit data. We support original research, methodology pieces, and reviews that advance the field of body composition science.</p>
-      <a href="#contact" class="tab-cta">Start a Conversation →</a>
-    </div>
-    <div class="tab-content-right">
-      <div class="tab-feature reveal">
-        <div class="tab-feature-check">✓</div>
-        <div class="tab-feature-text">Submit original research using DexaFit datasets</div>
+    <div id="publish" class="tab-panel">
+      <div class="tab-left">
+        <span class="tab-badge">Publish With Us</span>
+        <h2 class="tab-title">Publish With Us</h2>
+        <p class="tab-desc">Submit research, collaborate on original studies, or co-author publications using DexaFit data. We support original research, methodology pieces, and reviews that advance the science of body composition.</p>
+        <a href="#contact" class="btn btn-primary">Start a Conversation</a>
       </div>
-      <div class="tab-feature reveal">
-        <div class="tab-feature-check">✓</div>
-        <div class="tab-feature-text">Collaborate on joint publications and co-authorship</div>
-      </div>
-      <div class="tab-feature reveal">
-        <div class="tab-feature-check">✓</div>
-        <div class="tab-feature-text">Access dataset for independent analysis</div>
-      </div>
-      <div class="tab-feature reveal">
-        <div class="tab-feature-check">✓</div>
-        <div class="tab-feature-text">Expert-review support and editorial feedback</div>
-      </div>
-      <div class="tab-feature reveal">
-        <div class="tab-feature-check">✓</div>
-        <div class="tab-feature-text">Co-branding and publication visibility opportunities</div>
-      </div>
-      <div class="tab-feature reveal">
-        <div class="tab-feature-check">✓</div>
-        <div class="tab-feature-text">Support for methodology and supplementary materials</div>
+      <div class="tab-right">
+        <div class="feature-row"><div class="feature-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l3 3 5-5"/></svg></div><span class="feature-text">Submit original research using DexaFit datasets</span></div>
+        <div class="feature-row"><div class="feature-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l3 3 5-5"/></svg></div><span class="feature-text">Collaborate on joint publications and co-authorship</span></div>
+        <div class="feature-row"><div class="feature-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l3 3 5-5"/></svg></div><span class="feature-text">Access to dataset for independent analysis</span></div>
+        <div class="feature-row"><div class="feature-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l3 3 5-5"/></svg></div><span class="feature-text">Expert-review support and editorial feedback</span></div>
+        <div class="feature-row"><div class="feature-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l3 3 5-5"/></svg></div><span class="feature-text">Co-branding and publication visibility opportunities</span></div>
+        <div class="feature-row"><div class="feature-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l3 3 5-5"/></svg></div><span class="feature-text">Support for methodology and supplementary materials</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
-
-<!-- CONTACT FORM -->
+<!-- CONTACT -->
 <section class="contact-section" id="contact">
-  <span class="contact-section-label">Get in Touch</span>
-  <h2>Start a conversation.</h2>
-  <p>Tell us about your project and we'll follow up within 2 business days.</p>
-  <form class="contact-form" onsubmit="handleResearcherSubmit(event, document.getElementById('partnerType').value)">
-    <div>
-      <input type="text" name="name" placeholder="Your name" required>
-    </div>
-    <div>
-      <input type="email" name="email" placeholder="Work email" required>
-    </div>
-    <div>
-      <input type="text" name="org" placeholder="Organization / institution">
-    </div>
-    <div>
-      <select name="partnerType" id="partnerType">
-        <option value="cro-research">CRO / Research Partner</option>
-        <option value="pharma-biotech">Pharma & Biotech</option>
-        <option value="business-platform">Business / Platform</option>
-        <option value="data-licensing">Data Licensing</option>
-        <option value="publish-with-us">Publish With Us</option>
-        <option value="general">Other</option>
-      </select>
-    </div>
-    <div class="full">
-      <textarea name="message" placeholder="Tell us about your project or data needs..."></textarea>
-    </div>
-    <div class="full">
-      <button type="submit" class="contact-form-submit">Send message →</button>
-    </div>
-  </form>
-</section>
-
-<footer>
-  <div class="footer-grid">
-    <div class="footer-col">
-      <h3>DexaFit Research</h3>
-      <p>The largest clinical body composition database of its kind. Clinical-grade reference data from hundreds of thousands of DXA, VO₂ Max, and RMR scans.</p>
-    </div>
-    <div class="footer-col">
-      <h3>Explore</h3>
-      <a href="/research">All Research</a>
-      <a href="/research">Original Research</a>
-      <a href="/research">Guides</a>
-      <a href="/research">Data Notes</a>
-    </div>
-    <div class="footer-col">
-      <h3>The Signal</h3>
-      <a href="/signal">Quarterly Publication</a>
-      <a href="/signal">Archive</a>
-    </div>
-    <div class="footer-col">
-      <h3>About</h3>
-      <a href="/work-with-us">Work With Us</a>
-      <a href="/about">About</a>
-      <a href="/work-with-us">Contact</a>
-      <a href="/about">Privacy</a>
+  <div class="container">
+    <div class="contact-inner">
+      <div class="reveal">
+        <span class="eyebrow">Get in Touch</span>
+        <h2 class="contact-title">Start a conversation.</h2>
+        <p class="contact-desc">Tell us about your project, data needs, or research goals. We'll follow up within 2 business days.</p>
+        <div class="contact-note">
+          <p>We work with CROs, pharma, biotech, health platforms, and independent researchers. All inquiries are confidential.</p>
+        </div>
+      </div>
+      <div class="reveal d2">
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-field"><input type="text" name="name" placeholder="Your name" required></div>
+            <div class="form-field"><input type="email" name="email" placeholder="Work email" required></div>
+          </div>
+          <div class="form-row">
+            <div class="form-field"><input type="text" name="org" placeholder="Organization / institution"></div>
+            <div class="form-field">
+              <select name="type" id="partnerType">
+                <option value="cro-research">CRO / Research Partner</option>
+                <option value="pharma-biotech">Pharma & Biotech</option>
+                <option value="business-platform">Business / Platform</option>
+                <option value="data-licensing">Data Licensing</option>
+                <option value="publish-with-us">Publish With Us</option>
+                <option value="general">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-field full"><textarea name="message" placeholder="Tell us about your project or data needs…"></textarea></div>
+          <button type="submit" class="btn btn-primary">Send message →</button>
+        </form>
+      </div>
     </div>
   </div>
-  <div class="footer-bottom">
-    <span>&copy; 2026 DexaFit, Inc. All rights reserved.</span>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col"><h4>DexaFit Research</h4><p>The largest clinical body composition database. Clinical-grade reference data from hundreds of thousands of DEXA, VO₂ Max, and RMR scans.</p></div>
+      <div class="footer-col"><h4>Explore</h4><a href="research.html">All Research</a><a href="research.html">Original Research</a><a href="research.html">Guides</a><a href="research.html">Data Notes</a></div>
+      <div class="footer-col"><h4>Publication</h4><a href="signal.html">The Signal</a><a href="signal.html">Archive</a><a href="work-with-us.html">Work With Us</a></div>
+      <div class="footer-col"><h4>About</h4><a href="about.html">About</a><a href="about.html">Editorial Standards</a><a href="work-with-us.html">Contact</a></div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-brand-row"><img src="assets/white-research-logo.png" alt="DexaFit Research" class="footer-logo-sm"></div>
+      <span class="footer-copy">© 2026 DexaFit, Inc. All rights reserved.</span>
+    </div>
   </div>
 </footer>
 
-<!-- JSON-LD STRUCTURED DATA -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "DexaFit Research",
-  "url": "https://research.dexafit.com/work-with-us",
-  "logo": "https://research.dexafit.com/logo.png",
-  "description": "Work with DexaFit Data — Partnerships, collaborations, and data licensing for research.",
-  "sameAs": [
-    "https://www.twitter.com/dexafit",
-    "https://www.instagram.com/dexafit"
-  ]
-}
-</script>
-
 <script>
-// Scroll progress bar
 window.addEventListener('scroll', () => {
-  const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-  document.querySelector('.scroll-progress').style.transform = `scaleX(${scrollPercentage / 100})`;
-});
+  document.getElementById('progress').style.width = (window.scrollY / (document.documentElement.scrollHeight - innerHeight) * 100) + '%';
+}, { passive: true });
+const ro = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); } }), { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
 
-// Scroll reveal animation
-const revealElements = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('active');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.1 });
-
-revealElements.forEach(el => observer.observe(el));
-
-// Tab switching
-const tabBtns = document.querySelectorAll('.tab-btn');
-const tabContents = document.querySelectorAll('.tabs-content');
-
-tabBtns.forEach(btn => {
+document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    const tabName = btn.getAttribute('data-tab');
-
-    tabBtns.forEach(b => b.classList.remove('active'));
-    tabContents.forEach(content => content.classList.remove('active'));
-
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
     btn.classList.add('active');
-    document.getElementById(tabName).classList.add('active');
-
-    // Re-observe newly shown features
-    const newFeatures = document.getElementById(tabName).querySelectorAll('.tab-feature.reveal');
-    newFeatures.forEach(el => {
-      el.classList.remove('active');
-      observer.observe(el);
-    });
+    document.getElementById(btn.dataset.tab).classList.add('active');
   });
 });
-</script>
 
-<script>
-
-const DF_WH='https://services.leadconnectorhq.com/hooks/SY0yrzaa1L1PlxdCWvOi/webhook-trigger/b8b24866-6457-4994-83ed-c8d2e1a9567e';
+const DF_WH = 'https://services.leadconnectorhq.com/hooks/SY0yrzaa1L1PlxdCWvOi/webhook-trigger/b8b24866-6457-4994-83ed-c8d2e1a9567e';
 function dfShowModal(t,b){document.getElementById('dfModalTitle').textContent=t;document.getElementById('dfModalBody').textContent=b;document.getElementById('dfModal').classList.add('open');document.body.style.overflow='hidden';}
 function dfCloseModal(){document.getElementById('dfModal').classList.remove('open');document.body.style.overflow='';}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')dfCloseModal();});
-async function dfGHL(p){try{await fetch(DF_WH,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(p),mode:'no-cors'});}catch(e){console.warn('GHL:',e);}}
-async function handleNewsletterSubmit(event,src){
-  event.preventDefault();const f=event.target;
-  const email=f.querySelector('input[type="email"]').value.trim();
-  const btn=f.querySelector('button');const orig=btn.textContent;
-  btn.textContent='Sending…';btn.disabled=true;
-  await dfGHL({email,source:src||'newsletter',tags:['research-the-signal-subscriber-newsletter'],page:window.location.pathname});
-  f.reset();btn.textContent=orig;btn.disabled=false;
-  dfShowModal('You\'re on the list.','The DexaFit Signal lands quarterly — research findings, data notes, and what our network is seeing. Check your inbox for a confirmation.');
-}
-async function handleResearcherSubmit(event,type){
-  event.preventDefault();const f=event.target;
-  const email=f.querySelector('input[name="email"]').value.trim();
-  const nameEl=f.querySelector('input[name="name"]');
-  const orgEl=f.querySelector('input[name="org"]');
-  const msgEl=f.querySelector('textarea[name="message"]');
+async function handleSubmit(event){
+  event.preventDefault();
+  const f=event.target;
   const btn=f.querySelector('button[type="submit"]');
-  if(btn){btn.textContent='Sending…';btn.disabled=true;}
-  await dfGHL({
-    email,
-    name:nameEl?nameEl.value:'',
-    organization:orgEl?orgEl.value:'',
-    message:msgEl?msgEl.value:'',
-    source:'work-with-us',
-    partnerType:type||'general',
-    tags:['research-site-collab',type||'general'],
-    page:window.location.pathname
-  });
-  f.reset();if(btn){btn.textContent='Send message →';btn.disabled=false;}
-  dfShowModal('Message received.','The DexaFit Research team will be in touch within 2 business days. In the meantime, explore our published research and findings.');
+  const email=f.querySelector('[name="email"]').value.trim();
+  const name=f.querySelector('[name="name"]').value;
+  const org=f.querySelector('[name="org"]').value;
+  const msg=f.querySelector('[name="message"]').value;
+  const type=document.getElementById('partnerType').value;
+  btn.textContent='Sending…'; btn.disabled=true;
+  try{await fetch(DF_WH,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,name,organization:org,message:msg,source:'work-with-us',partnerType:type,tags:['research-site-collab',type]}),mode:'no-cors'});}catch(e){}
+  f.reset(); btn.textContent='Send message →'; btn.disabled=false;
+  dfShowModal('Message received.','The DexaFit Research team will be in touch within 2 business days.');
 }
-
 </script>
 </body>
 </html>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Document bracket: C-shape open to the right -->
+  <path d="M46 7 C28 7 12 15 12 32 C12 49 28 57 46 57"
+    stroke="#3C3C3C" stroke-width="7" stroke-linecap="round" fill="none"/>
+  <!-- Blue title bar -->
+  <rect x="19" y="20" width="24" height="7" rx="3.5" fill="#46A5FC"/>
+  <!-- Gray body bars, progressively lighter and slightly wider then narrowing -->
+  <rect x="19" y="31" width="30" height="6" rx="3" fill="#A8A8A8"/>
+  <rect x="19" y="41" width="30" height="6" rx="3" fill="#BEBEBE"/>
+  <rect x="19" y="51" width="22" height="6" rx="3" fill="#D2D2D2"/>
+</svg>
